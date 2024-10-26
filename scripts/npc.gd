@@ -105,11 +105,9 @@ func _on_dialogic_signal(argument:String):
 		
 func _on_timeline_started() -> void:
 	target_zoom = dialog_zoom
-	print("Started speaking")
 
 func _on_timeline_ended() -> void:
 	target_zoom = default_zoom
-	print("Finished speaking")
 
 func _on_animated_sprite_2d_frame_changed() -> void:
 	if animated_sprite.animation == "idle": return

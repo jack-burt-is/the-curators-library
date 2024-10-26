@@ -138,7 +138,7 @@ position = Vector2(-64, 383)
 unique_name_in_owner = true
 
 [node name="Door" parent="Entrance" instance=ExtResource("8_x81t4")]
-position = Vector2(1, -252)
+position = Vector2(-1, -246)
 
 [node name="NavigationPoints" type="Node2D" parent="."]
 

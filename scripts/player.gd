@@ -9,6 +9,7 @@ var footstep_frames: Array = [0, 4]
 
 func _process(delta: float) -> void:
 	if Dialogic.current_timeline != null:
+		animated_sprite.play("idle")
 		return
 		
 	# Initialize the movement vector
