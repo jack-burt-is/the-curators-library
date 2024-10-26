@@ -3,8 +3,14 @@ extends CharacterBody2D
 # Movement speed for the player
 @export var speed: float = 80.0
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var audio_stream_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
+var footstep_frames: Array = [0, 4]
 
 func _process(delta: float) -> void:
+	if Dialogic.current_timeline != null:
+		return
+		
 	# Initialize the movement vector
 	var movement_vector: Vector2 = Vector2.ZERO
 
@@ -39,3 +45,10 @@ func _process(delta: float) -> void:
 
 	# Apply movement
 	move_and_slide()
+
+
+func _on_animated_sprite_2d_frame_changed() -> void:
+	if animated_sprite.animation == "idle": return
+		
+	if animated_sprite.frame in footstep_frames:
+		audio_stream_player.play()

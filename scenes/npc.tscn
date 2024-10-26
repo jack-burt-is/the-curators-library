@@ -1,9 +1,13 @@
-[gd_scene load_steps=17 format=3 uid="uid://b1krcc7d0asqt"]
+[gd_scene load_steps=22 format=3 uid="uid://b1krcc7d0asqt"]
 
 [ext_resource type="Script" path="res://scripts/npc.gd" id="1_5ngs7"]
 [ext_resource type="Texture2D" uid="uid://bb3vwy0qvgrad" path="res://assets/sprites/character.png" id="1_raqav"]
-[ext_resource type="Resource" uid="uid://rsdyr1dlfbbd" path="res://dialogue/josephine.dialogue" id="2_ldj3n"]
 [ext_resource type="PackedScene" uid="uid://cu3ld8cpbe23m" path="res://scenes/interaction_area.tscn" id="3_5s8m6"]
+[ext_resource type="AudioStream" uid="uid://s8ocv5poekm6" path="res://sounds/footsteps/footstep_wood_000.ogg" id="4_aal8k"]
+[ext_resource type="AudioStream" uid="uid://c10s17t6ntxk2" path="res://sounds/footsteps/footstep_wood_001.ogg" id="5_frdgf"]
+[ext_resource type="AudioStream" uid="uid://dxuhmp72ksf60" path="res://sounds/footsteps/footstep_wood_002.ogg" id="6_wgwfo"]
+[ext_resource type="AudioStream" uid="uid://cpk1mfopg0p4w" path="res://sounds/footsteps/footstep_wood_003.ogg" id="7_fm8gj"]
+[ext_resource type="AudioStream" uid="uid://dy88vrplv86al" path="res://sounds/footsteps/footstep_wood_004.ogg" id="8_3g1ix"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_se3gd"]
 radius = 4.0
@@ -87,13 +91,19 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_ufsgp"]
 radius = 17.0
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ljj8m"]
+streams_count = 5
+stream_0/stream = ExtResource("4_aal8k")
+stream_1/stream = ExtResource("5_frdgf")
+stream_2/stream = ExtResource("6_wgwfo")
+stream_3/stream = ExtResource("7_fm8gj")
+stream_4/stream = ExtResource("8_3g1ix")
+
 [node name="NPC" type="CharacterBody2D"]
 y_sort_enabled = true
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_5ngs7")
-dialogue_resource = ExtResource("2_ldj3n")
-dialogue_tree = Array[String](["Hey there!", "My name is Josephine.", "Nice to meet you handsome."])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_se3gd")
@@ -103,9 +113,7 @@ z_index = 5
 y_sort_enabled = true
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_v0ldl")
-animation = &"walk"
-autoplay = "idle"
-frame_progress = 0.791074
+animation = &"idle"
 
 [node name="InteractionArea" parent="." instance=ExtResource("3_5s8m6")]
 action_name = "talk"
@@ -119,5 +127,15 @@ shape = SubResource("CircleShape2D_ufsgp")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.001
 
+[node name="DialogMarker" type="Marker2D" parent="."]
+position = Vector2(8, -16)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_ljj8m")
+max_distance = 500.0
+attenuation = 6.72716
+bus = &"SFX"
+
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="target_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_target_reached"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

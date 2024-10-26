@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ddbf2eyptt465"]
 
-[ext_resource type="FontFile" uid="uid://5ihhn67dre4l" path="res://assets/sprites/fonts/monogram-extended.ttf" id="1_aukl2"]
+[ext_resource type="FontFile" uid="uid://5ihhn67dre4l" path="res://assets/fonts/monogram-extended.ttf" id="1_aukl2"]
 [ext_resource type="Script" path="res://scripts/singletons/interaction_manager.gd" id="1_byueg"]
 
 [node name="InteractionManager" type="Node2D"]

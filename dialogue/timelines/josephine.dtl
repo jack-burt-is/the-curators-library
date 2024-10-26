@@ -1,0 +1,7 @@
+josephine (Neutral): Hi, my name's Josephine, it's nice to meet you!
+josephine (Neutral): I'm new to town, what is this place?
+- This is my library! Let me know if I can help you find anything.
+	josephine (Neutral): Thank you!
+- None of your business. | [mood="angry"]
+	josephine (Angry): Right, that's kinda rude, fuck you too I guess.
+	[signal arg="leave"]
