@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfeyc2q7uhq8a"]
+
+[sub_resource type="Curve" id="Curve_hpmq2"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.0681818, 0.982375), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_gjrd5"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.1825, 0.41, 0.7575)
+colors = PackedColorArray(1, 0.854172, 0.829497, 1, 0.938074, 0.530624, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_rx6b2"]
+interpolation_mode = 2
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xjv1a"]
+gradient = SubResource("Gradient_rx6b2")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0.1)
+
+[node name="Embers" type="Node2D"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+lifetime = 3.0
+randomness = 0.35
+emission_shape = 1
+emission_sphere_radius = 10.0
+gravity = Vector2(0, -25)
+radial_accel_min = -15.0
+radial_accel_max = 15.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_hpmq2")
+color_ramp = SubResource("Gradient_gjrd5")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 0.75
+texture = SubResource("GradientTexture2D_xjv1a")

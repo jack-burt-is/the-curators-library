@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://rsdyr1dlfbbd"
+path="res://.godot/imported/josephine.dialogue-c866dc12ea60931c6e75dfab0fb3fd98.tres"
+
+[deps]
+
+source_file="res://dialogue/josephine.dialogue"
+dest_files=["res://.godot/imported/josephine.dialogue-c866dc12ea60931c6e75dfab0fb3fd98.tres"]
+
+[params]
+
+defaults=true

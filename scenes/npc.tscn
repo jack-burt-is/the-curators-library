@@ -1,0 +1,123 @@
+[gd_scene load_steps=17 format=3 uid="uid://b1krcc7d0asqt"]
+
+[ext_resource type="Script" path="res://scripts/npc.gd" id="1_5ngs7"]
+[ext_resource type="Texture2D" uid="uid://bb3vwy0qvgrad" path="res://assets/sprites/character.png" id="1_raqav"]
+[ext_resource type="Resource" uid="uid://rsdyr1dlfbbd" path="res://dialogue/josephine.dialogue" id="2_ldj3n"]
+[ext_resource type="PackedScene" uid="uid://cu3ld8cpbe23m" path="res://scenes/interaction_area.tscn" id="3_5s8m6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_se3gd"]
+radius = 4.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ko2vh"]
+atlas = ExtResource("1_raqav")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7w4n"]
+atlas = ExtResource("1_raqav")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0ns4"]
+atlas = ExtResource("1_raqav")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfjc5"]
+atlas = ExtResource("1_raqav")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8urhm"]
+atlas = ExtResource("1_raqav")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aefuv"]
+atlas = ExtResource("1_raqav")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fbvo"]
+atlas = ExtResource("1_raqav")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uetf3"]
+atlas = ExtResource("1_raqav")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n5gqb"]
+atlas = ExtResource("1_raqav")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v0ldl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ko2vh")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c7w4n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n0ns4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfjc5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8urhm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aefuv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3fbvo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uetf3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5gqb")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ufsgp"]
+radius = 17.0
+
+[node name="NPC" type="CharacterBody2D"]
+y_sort_enabled = true
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_5ngs7")
+dialogue_resource = ExtResource("2_ldj3n")
+dialogue_tree = Array[String](["Hey there!", "My name is Josephine.", "Nice to meet you handsome."])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_se3gd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 5
+y_sort_enabled = true
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_v0ldl")
+animation = &"walk"
+autoplay = "idle"
+frame_progress = 0.791074
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_5s8m6")]
+action_name = "talk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, -9)
+shape = SubResource("CircleShape2D_ufsgp")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.001
+
+[connection signal="target_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_target_reached"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

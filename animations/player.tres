@@ -1,0 +1,79 @@
+[gd_resource type="SpriteFrames" load_steps=11 format=3 uid="uid://cmqhy1fkxdput"]
+
+[ext_resource type="Texture2D" uid="uid://bb3vwy0qvgrad" path="res://assets/sprites/character.png" id="1_g2okj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ef4q7"]
+atlas = ExtResource("1_g2okj")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blc2i"]
+atlas = ExtResource("1_g2okj")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2p8a"]
+atlas = ExtResource("1_g2okj")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7me5"]
+atlas = ExtResource("1_g2okj")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3tuxk"]
+atlas = ExtResource("1_g2okj")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpqoh"]
+atlas = ExtResource("1_g2okj")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bx7m"]
+atlas = ExtResource("1_g2okj")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wom4a"]
+atlas = ExtResource("1_g2okj")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64orc"]
+atlas = ExtResource("1_g2okj")
+region = Rect2(224, 0, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ef4q7")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_blc2i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2p8a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7me5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3tuxk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpqoh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0bx7m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wom4a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64orc")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
