@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://drvu6y7qatqg5"]
+
+[ext_resource type="Script" path="res://scripts/lamp.gd" id="1_ra7jg"]
+[ext_resource type="PackedScene" uid="uid://cu3ld8cpbe23m" path="res://scenes/interaction_area.tscn" id="2_6gp2u"]
+
+[sub_resource type="Gradient" id="Gradient_kbu5v"]
+interpolation_mode = 2
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ffqe5"]
+gradient = SubResource("Gradient_kbu5v")
+width = 512
+height = 512
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0.3)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_63b8q"]
+radius = 14.13
+
+[node name="Lamp1" type="PointLight2D"]
+position = Vector2(57, 72)
+energy = 0.62
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_ffqe5")
+script = ExtResource("1_ra7jg")
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_6gp2u")]
+action_name = "turn on/off"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+z_index = 5
+position = Vector2(0, 28.905)
+shape = SubResource("CircleShape2D_63b8q")

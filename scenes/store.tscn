@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b1krcc7d0asqt" path="res://scenes/npc.tscn" id="3_atub6"]
 [ext_resource type="SpriteFrames" uid="uid://bobs6mxdv1e8k" path="res://animations/jose.tres" id="4_ix2y1"]
 [ext_resource type="PackedScene" uid="uid://bfeyc2q7uhq8a" path="res://scenes/embers.tscn" id="4_tkxoj"]
+[ext_resource type="PackedScene" uid="uid://drvu6y7qatqg5" path="res://scenes/lamp.tscn" id="6_r1p8v"]
 
 [sub_resource type="GDScript" id="GDScript_c8cdf"]
 script/source = "extends TileMapLayer
@@ -29,14 +30,6 @@ glow_blend_mode = 0
 [sub_resource type="Gradient" id="Gradient_kbu5v"]
 interpolation_mode = 2
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_ffqe5"]
-gradient = SubResource("Gradient_kbu5v")
-width = 512
-height = 512
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.5, 0.3)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_g1yrr"]
 gradient = SubResource("Gradient_kbu5v")
@@ -110,24 +103,17 @@ environment = SubResource("Environment_3nojf")
 energy = 0.5
 blend_mode = 1
 
-[node name="Lamp1" type="PointLight2D" parent="."]
-position = Vector2(57, 72)
-energy = 0.62
-shadow_enabled = true
-texture = SubResource("GradientTexture2D_ffqe5")
+[node name="Lamp1" parent="." instance=ExtResource("6_r1p8v")]
 
-[node name="Lamp2" type="PointLight2D" parent="."]
-position = Vector2(-152, -7)
-energy = 0.4
-shadow_enabled = true
-texture = SubResource("GradientTexture2D_ffqe5")
+[node name="Lamp2" parent="." instance=ExtResource("6_r1p8v")]
+position = Vector2(-152, -8)
 
 [node name="TableLamp" type="PointLight2D" parent="."]
 position = Vector2(73, -40)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_g1yrr")
 
-[node name="TableLamp2" type="PointLight2D" parent="."]
+[node name="Candle" type="PointLight2D" parent="."]
 position = Vector2(122, 37)
 energy = 0.6
 shadow_enabled = true
