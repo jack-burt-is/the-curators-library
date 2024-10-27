@@ -20,7 +20,7 @@ func unregister_area(area: InteractionArea) -> void:
 		active_areas.remove_at(index)
 		
 func _process(_delta: float) -> void:
-	if active_areas.size() > 0 && can_interact:
+	if active_areas.size() > 0 && can_interact && Dialogic.current_timeline == null:
 		
 		# Find the closest interaction area
 		active_areas.sort_custom(sort_by_distance_to_player)

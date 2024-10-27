@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="DialogicGlossary" load_steps=2 format=3 uid="uid://c2dbtf8kj4g4m"]
+
+[ext_resource type="Script" path="res://addons/dialogic/Modules/Glossary/glossary_resource.gd" id="1_18bo5"]
+
+[resource]
+script = ExtResource("1_18bo5")
+entries = {
+"fuck": {
+"name": "fuck",
+"text": "A naughty word	",
+"title": "Ficl"
+}
+}
+enabled = true
+_translation_id = ""
+_translation_keys = {}

@@ -55,8 +55,11 @@ choices/reveal_by_input=false
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
-variables={}
+variables={
+"mood": "neutral"
+}
 text/input_action="interact"
+glossary/glossary_files=[]
 
 [dialogue_manager]
 

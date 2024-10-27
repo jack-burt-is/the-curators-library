@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://drvu6y7qatqg5"]
+[gd_scene load_steps=7 format=3 uid="uid://drvu6y7qatqg5"]
 
 [ext_resource type="Script" path="res://scripts/lamp.gd" id="1_ra7jg"]
 [ext_resource type="PackedScene" uid="uid://cu3ld8cpbe23m" path="res://scenes/interaction_area.tscn" id="2_6gp2u"]
+[ext_resource type="AudioStream" uid="uid://by1cwc22n4klg" path="res://sounds/lamp.wav" id="3_f5f5o"]
 
 [sub_resource type="Gradient" id="Gradient_kbu5v"]
 interpolation_mode = 2
@@ -18,7 +19,7 @@ fill_to = Vector2(0.5, 0.3)
 [sub_resource type="CircleShape2D" id="CircleShape2D_63b8q"]
 radius = 14.13
 
-[node name="Lamp1" type="PointLight2D"]
+[node name="Lamp" type="PointLight2D"]
 position = Vector2(57, 72)
 energy = 0.62
 shadow_enabled = true
@@ -32,3 +33,13 @@ action_name = "turn on/off"
 z_index = 5
 position = Vector2(0, 28.905)
 shape = SubResource("CircleShape2D_63b8q")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_f5f5o")
+volume_db = -15.559
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

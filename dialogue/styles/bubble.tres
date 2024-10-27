@@ -17,10 +17,10 @@ scene = ExtResource("4_jlo7b")
 overrides = {
 "box_modulate": "Color(0.121485, 0.104919, 0.210938, 1)",
 "box_wobble_amount": "1.0",
-"choices_text_color": "Color(0.6875, 0.6875, 0.6875, 1)",
+"choices_text_color": "Color(0.535055, 0.652211, 0.929688, 1)",
 "choices_text_color_disabled": "Color(0.320313, 0.320313, 0.320313, 1)",
-"choices_text_color_focus": "Color(1, 1, 1, 1)",
-"choices_text_color_hover": "Color(1, 1, 1, 1)",
+"choices_text_color_focus": "Color(0.796078, 0.843137, 0.972549, 1)",
+"choices_text_color_hover": "Color(0.794284, 0.841319, 0.971354, 1)",
 "choices_text_font": "\"res://assets/fonts/monogram-extended.ttf\"",
 "choices_text_size": "48.0",
 "italic_font": "\"res://assets/fonts/monogram-extended-italic.ttf\"",
