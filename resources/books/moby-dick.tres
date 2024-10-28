@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Book" load_steps=3 format=3 uid="uid://bvjglh3s0vjxv"]
+
+[ext_resource type="Script" path="res://resources/bases/book.gd" id="1_0n8oa"]
+[ext_resource type="Resource" uid="uid://tftp1io7rakb" path="res://resources/genres/adventure.tres" id="1_64dk8"]
+
+[resource]
+script = ExtResource("1_0n8oa")
+title = "Moby-Dick"
+author = "Herman Melville"
+released = "1851-10-18"
+genre = ExtResource("1_64dk8")
+cost = 0
+popularity = 0
+synopsis = "\"Moby Dick; Or, The Whale\" by Herman Melville is a novel written in the mid-19th century. The story follows Ishmael, a sailor on a whaling voyage, who seeks adventure and escape from his gloomy life on land. As he embarks on this journey, he becomes drawn into the complex world of whaling and is introduced to the ominous figure of Captain Ahab, whose obsession with a legendary white whale ultimately drives the narrative. At the start of the novel, Ishmael introduces himself and shares his philosophy about the sea as a remedy for his melancholic disposition. He muses on the magnetic pull of the ocean, describing not only his own urge to set sail but also the collective longing of city dwellers for the water. Ishmael's journey takes him to New Bedford, where he experiences a series of humorous and strange encounters while seeking lodging before joining a whaling ship. As he navigates his way through the town, he is introduced to Queequeg, a tattooed harpooner with a mysterious past, setting the stage for a unique friendship that unfolds amidst the backdrop of whaling adventures."

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Genre" load_steps=2 format=3 uid="uid://b6sb87tbxkmuw"]
+
+[ext_resource type="Script" path="res://resources/bases/genre.gd" id="1_807o2"]
+
+[resource]
+script = ExtResource("1_807o2")
+name = "Historical Fiction"
+alternatives = Array[String]([])

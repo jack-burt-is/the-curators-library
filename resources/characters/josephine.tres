@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Character" load_steps=5 format=3 uid="uid://nnxj0fpvsn2b"]
+
+[ext_resource type="Script" path="res://resources/bases/character.gd" id="1_xtgo8"]
+[ext_resource type="Script" path="res://resources/bases/taste.gd" id="2_fqten"]
+[ext_resource type="Resource" uid="uid://6mn6adt2y5wr" path="res://resources/genres/example_genre.tres" id="3_f46iq"]
+
+[sub_resource type="Resource" id="Resource_udvsq"]
+script = ExtResource("2_fqten")
+genre = ExtResource("3_f46iq")
+enjoyment = 50
+
+[resource]
+script = ExtResource("1_xtgo8")
+name = "Josephine"
+relationship = 0
+taste_profile = Array[ExtResource("2_fqten")]([SubResource("Resource_udvsq")])

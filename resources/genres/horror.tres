@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Genre" load_steps=2 format=3 uid="uid://be6ofta3yiyjx"]
+
+[ext_resource type="Script" path="res://resources/bases/genre.gd" id="1_sbs30"]
+
+[resource]
+script = ExtResource("1_sbs30")
+name = "Horror"
+alternatives = Array[String]([])

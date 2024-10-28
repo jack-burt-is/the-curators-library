@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Genre" load_steps=2 format=3 uid="uid://c2b7js4365ejc"]
+
+[ext_resource type="Script" path="res://resources/bases/genre.gd" id="1_p6uyb"]
+
+[resource]
+script = ExtResource("1_p6uyb")
+name = "Picaresque"
+alternatives = Array[String]([])
