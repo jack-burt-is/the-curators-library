@@ -1,3 +1,4 @@
+class_name NPC
 extends CharacterBody2D
 
 @export var speed: float = 80.0
@@ -9,16 +10,14 @@ extends CharacterBody2D
 @onready var timer: Timer = $Timer
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-@export var sprite_frames: SpriteFrames
-@export var target_positions: Node2D
-@onready var navigation_leave: Node2D = %NavigationLeave
+@onready var target_positions: Node2D = get_tree().current_scene.get_node("%NavigationPoints")
+@onready var navigation_leave: Node2D = get_tree().current_scene.get_node("%NevigationLeave")
 
-@export var dialogic_character: DialogicCharacter
 @onready var dialog_marker: Marker2D = $DialogMarker
 
 @onready var audio_stream_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
-@onready var camera: Camera2D = %Camera
+@onready var camera: Camera2D = get_tree().current_scene.get_node("%Camera")
 var default_zoom: Vector2
 var dialog_zoom: Vector2 = Vector2(6,6)
 var target_zoom: Vector2
@@ -28,6 +27,7 @@ var target_reached = false
 var interacting = false
 var leaving = false
 
+@export var character: Character
 var footstep_frames: Array = [1, 5]
 
 func _process(delta: float) -> void:
@@ -71,16 +71,17 @@ func _ready() -> void:
 	default_zoom = camera.zoom
 	target_zoom = default_zoom
 	
-	animated_sprite.sprite_frames = sprite_frames
 	interaction_area.interact = Callable(self, "_on_interact")
 	make_path()
 
 func _on_interact() -> void:
 	if Dialogic.current_timeline != null:
 		return
-	
-	var layout = Dialogic.start('josephine')
-	layout.register_character(dialogic_character, dialog_marker)
+			
+	var layout = Dialogic.start(character.generate_dialogic_timeline())
+	var char_resource = "res://dialogue/characters/{name}.dch".format({"name": character.name.to_lower()})
+	var loaded = load(char_resource)
+	layout.register_character(loaded, dialog_marker)
 	
 func make_path() -> void:
 	navigation_agent.target_position = target_positions.get_children(false).pick_random().global_position
@@ -114,3 +115,7 @@ func _on_animated_sprite_2d_frame_changed() -> void:
 		
 	if animated_sprite.frame in footstep_frames:
 		audio_stream_player.play()
+		
+func set_character(char) -> void:
+	character = char
+	animated_sprite.sprite_frames = character.sprite_frames

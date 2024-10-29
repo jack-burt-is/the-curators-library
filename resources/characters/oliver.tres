@@ -1,0 +1,114 @@
+[gd_resource type="Resource" script_class="Character" load_steps=20 format=3 uid="uid://dn5q1oo5ltsw8"]
+
+[ext_resource type="Script" path="res://resources/bases/hint.gd" id="1_8a45e"]
+[ext_resource type="Resource" uid="uid://4uh8fdrtn3vl" path="res://resources/books/celsius-232.tres" id="1_any0e"]
+[ext_resource type="Script" path="res://resources/bases/book.gd" id="2_wpv74"]
+[ext_resource type="Script" path="res://resources/bases/character.gd" id="3_hnupu"]
+[ext_resource type="Texture2D" uid="uid://bb3vwy0qvgrad" path="res://assets/sprites/character.png" id="5_dwpmn"]
+
+[sub_resource type="Resource" id="Resource_2xhmj"]
+script = ExtResource("1_8a45e")
+hint = "I'm looking for something bleak and dystopian that really makes me think"
+strength = 3
+
+[sub_resource type="Resource" id="Resource_rj2s2"]
+script = ExtResource("1_8a45e")
+hint = "How about a book with a dystopian future that is getting more relevant and realistic by the day..."
+strength = 5
+
+[sub_resource type="Resource" id="Resource_vlhgm"]
+script = ExtResource("1_8a45e")
+hint = "I'm intrigued by the idea of censorship and the protection of knowledge. "
+strength = 8
+
+[sub_resource type="Resource" id="Resource_j3chm"]
+script = ExtResource("1_8a45e")
+hint = "I haven't found anything that perfectly hits the mark. Maybe we should just burn all the books!"
+strength = 10
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsctp"]
+atlas = ExtResource("5_dwpmn")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3dl14"]
+atlas = ExtResource("5_dwpmn")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oi1ic"]
+atlas = ExtResource("5_dwpmn")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffhuh"]
+atlas = ExtResource("5_dwpmn")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t87x6"]
+atlas = ExtResource("5_dwpmn")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvd20"]
+atlas = ExtResource("5_dwpmn")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2ij4"]
+atlas = ExtResource("5_dwpmn")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5mdm"]
+atlas = ExtResource("5_dwpmn")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3f7pm"]
+atlas = ExtResource("5_dwpmn")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h1cmu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vsctp")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3dl14")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oi1ic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ffhuh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t87x6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fvd20")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2ij4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5mdm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3f7pm")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[resource]
+script = ExtResource("3_hnupu")
+name = "Oliver"
+favourite_book = ExtResource("1_any0e")
+previous_recommendations = Array[ExtResource("2_wpv74")]([])
+hints = Array[ExtResource("1_8a45e")]([SubResource("Resource_2xhmj"), SubResource("Resource_rj2s2"), SubResource("Resource_vlhgm"), SubResource("Resource_j3chm")])
+sprite_frames = SubResource("SpriteFrames_h1cmu")
+intro_line = "Hi, my name's Oliver and I was hoping you'd be able to recommend a book for me to read."
+previous_book_line = "Thanks for your recommendation to read {book}, it was {feeling} but not quite what I was looking for."
+no_more_hints_line = "Hmm, I don't know what more I can give you, maybe you just don't stock what I'm looking for yet... Do you have any other ideas?"

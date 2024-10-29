@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Character" load_steps=4 format=3 uid="uid://bv5qgku1cwhfr"]
+
+[ext_resource type="Script" path="res://resources/bases/hint.gd" id="1_58nb4"]
+[ext_resource type="Script" path="res://resources/bases/book.gd" id="2_m32b3"]
+[ext_resource type="Script" path="res://resources/bases/character.gd" id="3_fou0f"]
+
+[resource]
+script = ExtResource("3_fou0f")
+name = ""
+previous_recommendations = Array[ExtResource("2_m32b3")]([])
+hints = Array[ExtResource("1_58nb4")]([])

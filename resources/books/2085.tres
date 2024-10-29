@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Book" load_steps=7 format=3 uid="uid://dsnc6nxdswa3n"]
+
+[ext_resource type="Script" path="res://resources/bases/genre.gd" id="1_77g3l"]
+[ext_resource type="Resource" uid="uid://cs3i8wqwgms0l" path="res://resources/genres/political-fiction.tres" id="2_6axjt"]
+[ext_resource type="Script" path="res://resources/bases/book.gd" id="2_v3k5f"]
+[ext_resource type="Resource" uid="uid://ddu46dwkkyo4n" path="res://resources/genres/dystopian.tres" id="3_kot22"]
+[ext_resource type="Resource" uid="uid://cln36840m5gqr" path="res://resources/genres/science-fiction.tres" id="4_unxmo"]
+[ext_resource type="Resource" uid="uid://dtpes7prkxpda" path="res://resources/genres/classics.tres" id="5_3vwmf"]
+
+[resource]
+script = ExtResource("2_v3k5f")
+title = "2085"
+author = "Gordon Owl"
+released = "1949-06-08"
+category = 0
+genres = Array[ExtResource("1_77g3l")]([ExtResource("2_6axjt"), ExtResource("3_kot22"), ExtResource("4_unxmo"), ExtResource("5_3vwmf")])
+length = 328
+popularity = 0
+synopsis = "In a totalitarian state ruled by Big Brother, Winston rebels against oppressive surveillance. As he falls in love with Julia, they seek truth and freedom, only to face devastating consequences that expose the chilling power of the regime and the cost of individuality."

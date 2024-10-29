@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Book" load_steps=4 format=3 uid="uid://bsqghcnw64liy"]
+
+[ext_resource type="Script" path="res://resources/bases/genre.gd" id="1_rpuws"]
+[ext_resource type="Resource" uid="uid://d34hpm824su3b" path="res://resources/genres/fantasy.tres" id="2_3l33n"]
+[ext_resource type="Script" path="res://resources/bases/book.gd" id="2_uhfaj"]
+
+[resource]
+script = ExtResource("2_uhfaj")
+title = "The Path of Crowns"
+author = "Borris Sonderman"
+released = "2010-08-31"
+category = 0
+genres = Array[ExtResource("1_rpuws")]([ExtResource("2_3l33n")])
+length = 0
+popularity = 0
+synopsis = "In a realm forged by brutal storms, Kaelin, a disillusioned soldier bound to ancient, forbidden powers, seeks redemption beyond the battlefield. Meanwhile, Shaya, a scholar fleeing a shattered noble lineage, stumbles upon secrets of a lost order. Their fates intertwine as they confront hidden forces, fractured loyalties, and a world teetering on collapse."

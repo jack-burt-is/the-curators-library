@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Genre" load_steps=2 format=3 uid="uid://xyafurcfalqa"]
+
+[ext_resource type="Script" path="res://resources/bases/genre.gd" id="1_pwbwf"]
+
+[resource]
+script = ExtResource("1_pwbwf")
+name = "Post-Apocalyptic"
+alternatives = Array[String]([])

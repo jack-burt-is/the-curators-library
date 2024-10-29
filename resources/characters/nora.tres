@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Character" load_steps=5 format=3 uid="uid://rgk8gsr3hwid"]
+
+[ext_resource type="Script" path="res://resources/bases/hint.gd" id="1_cwcdv"]
+[ext_resource type="Script" path="res://resources/bases/book.gd" id="2_spi8o"]
+[ext_resource type="Script" path="res://resources/bases/character.gd" id="3_fykid"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qc3kd"]
+
+[resource]
+script = ExtResource("3_fykid")
+name = ""
+previous_recommendations = Array[ExtResource("2_spi8o")]([])
+hints = Array[ExtResource("1_cwcdv")]([])
+sprite_frames = SubResource("SpriteFrames_qc3kd")

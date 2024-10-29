@@ -1,16 +1,109 @@
-[gd_resource type="Resource" script_class="Character" load_steps=5 format=3 uid="uid://nnxj0fpvsn2b"]
+[gd_resource type="Resource" script_class="Character" load_steps=19 format=3 uid="uid://nnxj0fpvsn2b"]
 
+[ext_resource type="Resource" uid="uid://npq1ekumrk1" path="res://resources/books/a-realm-of-thistles-and-peonies.tres" id="1_nmv4j"]
 [ext_resource type="Script" path="res://resources/bases/character.gd" id="1_xtgo8"]
-[ext_resource type="Script" path="res://resources/bases/taste.gd" id="2_fqten"]
-[ext_resource type="Resource" uid="uid://6mn6adt2y5wr" path="res://resources/genres/example_genre.tres" id="3_f46iq"]
+[ext_resource type="Script" path="res://resources/bases/book.gd" id="2_tixm6"]
+[ext_resource type="Script" path="res://resources/bases/hint.gd" id="2_u4i1k"]
+[ext_resource type="Texture2D" uid="uid://bb3vwy0qvgrad" path="res://assets/sprites/character.png" id="5_4f4jq"]
 
-[sub_resource type="Resource" id="Resource_udvsq"]
-script = ExtResource("2_fqten")
-genre = ExtResource("3_f46iq")
-enjoyment = 50
+[sub_resource type="Resource" id="Resource_e6qeb"]
+script = ExtResource("2_u4i1k")
+hint = "I'm looking for a book to transport me to a whole new world..."
+strength = 2
+
+[sub_resource type="Resource" id="Resource_v1upj"]
+script = ExtResource("2_u4i1k")
+hint = "I love fantasy but I also love romance, do you have anything that fits both?"
+strength = 6
+
+[sub_resource type="Resource" id="Resource_bqkvs"]
+script = ExtResource("2_u4i1k")
+hint = "I heard about this romantic fantasy series to do with flowers and kingdoms, do you know the one I mean? "
+strength = 10
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5b80"]
+atlas = ExtResource("5_4f4jq")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4v7mr"]
+atlas = ExtResource("5_4f4jq")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_krq14"]
+atlas = ExtResource("5_4f4jq")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_co555"]
+atlas = ExtResource("5_4f4jq")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47nsq"]
+atlas = ExtResource("5_4f4jq")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gtlya"]
+atlas = ExtResource("5_4f4jq")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_td2g0"]
+atlas = ExtResource("5_4f4jq")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wk7aj"]
+atlas = ExtResource("5_4f4jq")
+region = Rect2(192, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ld531"]
+atlas = ExtResource("5_4f4jq")
+region = Rect2(224, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eo3bn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5b80")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4v7mr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_krq14")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_co555")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_47nsq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gtlya")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_td2g0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wk7aj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ld531")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
 
 [resource]
 script = ExtResource("1_xtgo8")
 name = "Josephine"
-relationship = 0
-taste_profile = Array[ExtResource("2_fqten")]([SubResource("Resource_udvsq")])
+favourite_book = ExtResource("1_nmv4j")
+previous_recommendations = Array[ExtResource("2_tixm6")]([])
+hints = Array[ExtResource("2_u4i1k")]([SubResource("Resource_e6qeb"), SubResource("Resource_v1upj"), SubResource("Resource_bqkvs")])
+sprite_frames = SubResource("SpriteFrames_eo3bn")
+intro_line = "Hi I'm Josephine, I'm new in town!"
+previous_book_line = "Thanks for recommending {book}, it was {feeling} but let's see if there's anything else you can find me"
+no_more_hints_line = "Hmm, it's hard to articulate what I need, any other suggetsions?"

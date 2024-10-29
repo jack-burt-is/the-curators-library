@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Book" load_steps=6 format=3 uid="uid://c6cnpo7jrnjex"]
+
+[ext_resource type="Script" path="res://resources/bases/genre.gd" id="1_h6fsy"]
+[ext_resource type="Resource" uid="uid://ddu46dwkkyo4n" path="res://resources/genres/dystopian.tres" id="2_3by5t"]
+[ext_resource type="Script" path="res://resources/bases/book.gd" id="2_7aycq"]
+[ext_resource type="Resource" uid="uid://xyafurcfalqa" path="res://resources/books/post-apocalyptic.tres" id="3_svu7c"]
+[ext_resource type="Resource" uid="uid://cln36840m5gqr" path="res://resources/genres/science-fiction.tres" id="4_50td4"]
+
+[resource]
+script = ExtResource("2_7aycq")
+title = "The Path"
+author = "Clive McArthur"
+released = "2006-09-26"
+category = 0
+genres = Array[ExtResource("1_h6fsy")]([ExtResource("2_3by5t"), ExtResource("3_svu7c"), ExtResource("4_50td4")])
+length = 287
+popularity = 0
+synopsis = ""

@@ -113,7 +113,7 @@ z_index = 5
 y_sort_enabled = true
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_v0ldl")
-animation = &"idle"
+animation = &"walk"
 
 [node name="InteractionArea" parent="." instance=ExtResource("3_5s8m6")]
 action_name = "talk"

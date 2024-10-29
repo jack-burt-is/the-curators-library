@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Book" load_steps=4 format=3 uid="uid://npq1ekumrk1"]
+
+[ext_resource type="Script" path="res://resources/bases/genre.gd" id="1_70oq3"]
+[ext_resource type="Resource" uid="uid://d34hpm824su3b" path="res://resources/genres/fantasy.tres" id="2_bhk6q"]
+[ext_resource type="Script" path="res://resources/bases/book.gd" id="2_ga2x5"]
+
+[resource]
+script = ExtResource("2_ga2x5")
+title = "A Realm of Thistles and Peonies"
+author = "Scarlett K Moos"
+released = "2015-05-05"
+category = 0
+genres = Array[ExtResource("1_70oq3")]([ExtResource("2_bhk6q")])
+length = 0
+popularity = 0
+synopsis = "Elara, a stubborn gardener, stumbles into the enchanted land of Bloomvale, ruled by fae lords with absurd floral powers. Trapped among competitive rose princes and brooding thistle knights, Elara must navigate endless garden feuds, pollen politics, and forbidden love—while avoiding deadly petal duels."

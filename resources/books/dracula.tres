@@ -1,14 +1,17 @@
-[gd_resource type="Resource" script_class="Book" load_steps=3 format=3 uid="uid://ccg38bdb5a7oj"]
+[gd_resource type="Resource" script_class="Book" load_steps=6 format=3 uid="uid://ccg38bdb5a7oj"]
 
 [ext_resource type="Script" path="res://resources/bases/book.gd" id="1_bvgyj"]
-[ext_resource type="Resource" uid="uid://be6ofta3yiyjx" path="res://resources/genres/horror.tres" id="1_i7mwy"]
+[ext_resource type="Script" path="res://resources/bases/genre.gd" id="1_hl7bk"]
+[ext_resource type="Resource" uid="uid://dta5vvvlct4wo" path="res://resources/genres/gothic.tres" id="2_8y4ev"]
+[ext_resource type="Resource" uid="uid://d34hpm824su3b" path="res://resources/genres/fantasy.tres" id="3_i30gf"]
+[ext_resource type="Resource" uid="uid://dtpes7prkxpda" path="res://resources/genres/classics.tres" id="4_il5jx"]
 
 [resource]
 script = ExtResource("1_bvgyj")
 title = "Dracula"
 author = "Bram Stoker"
 released = "1897-05-26"
-genre = ExtResource("1_i7mwy")
-cost = 0
-popularity = 0
+genres = Array[ExtResource("1_hl7bk")]([ExtResource("2_8y4ev"), ExtResource("3_i30gf"), ExtResource("2_8y4ev"), ExtResource("4_il5jx")])
+cost = null
+popularity = null
 synopsis = "\"Dracula\" by Bram Stoker is a Gothic horror novel written in the late 19th century. The story unfolds through a series of letters, journal entries, and newspaper clippings, primarily following the experiences of Jonathan Harker, a young English solicitor. Harker’s journey takes him to Transylvania, where he encounters the enigmatic Count Dracula, setting a thrilling and mysterious tone that delves into themes of fear, seduction, and the supernatural. The opening of the novel presents Jonathan Harker’s journal entries, marking the beginning of his travels to meet Count Dracula regarding a real estate transaction. Harker describes his train journey through the picturesque landscapes of eastern Europe, highlighting the eerie atmosphere and local superstitions that hint at the challenges he will face. Upon arriving at the Count's castle, Harker senses unease, especially when local villagers express concern and give him protective charms against evil spirits. The tension escalates as Harker meets Dracula, who, while courteous, exhibits strange and unsettling behavior. Kafkaesque and claustrophobic, the initial chapters effectively set the stage for Harker’s realization that he is trapped in Dracula’s world, creating an eerie, suspenseful foundation for the unfolding narrative."

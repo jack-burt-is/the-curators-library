@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Book" load_steps=6 format=3 uid="uid://dqc8ucfcnqsxe"]
+
+[ext_resource type="Script" path="res://resources/bases/genre.gd" id="1_ei3ag"]
+[ext_resource type="Resource" uid="uid://ddu46dwkkyo4n" path="res://resources/genres/dystopian.tres" id="2_a8t2v"]
+[ext_resource type="Script" path="res://resources/bases/book.gd" id="2_y14l3"]
+[ext_resource type="Resource" uid="uid://cln36840m5gqr" path="res://resources/genres/science-fiction.tres" id="3_1rj1u"]
+[ext_resource type="Resource" uid="uid://dtpes7prkxpda" path="res://resources/genres/classics.tres" id="4_hufwp"]
+
+[resource]
+script = ExtResource("2_y14l3")
+title = "The Servant's Story"
+author = "Mara Atwood"
+released = "1985-04-17"
+category = 0
+genres = Array[ExtResource("1_ei3ag")]([ExtResource("2_a8t2v"), ExtResource("3_1rj1u"), ExtResource("4_hufwp")])
+length = 311
+popularity = 0
+synopsis = "In a repressive society where women are subjugated, Clara lives as a servant, forced to bear children for powerful families. As she navigates her bleak existence, she holds onto fragments of her past and yearns for freedom, all while secretly plotting to challenge the regime that confines her."

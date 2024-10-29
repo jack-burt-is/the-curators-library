@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Book" load_steps=6 format=3 uid="uid://4uh8fdrtn3vl"]
+
+[ext_resource type="Script" path="res://resources/bases/genre.gd" id="1_k32u0"]
+[ext_resource type="Script" path="res://resources/bases/book.gd" id="2_n8h0u"]
+[ext_resource type="Resource" uid="uid://dtpes7prkxpda" path="res://resources/genres/classics.tres" id="2_rbb2u"]
+[ext_resource type="Resource" uid="uid://ddu46dwkkyo4n" path="res://resources/genres/dystopian.tres" id="3_apla7"]
+[ext_resource type="Resource" uid="uid://cln36840m5gqr" path="res://resources/genres/science-fiction.tres" id="4_rvy0p"]
+
+[resource]
+script = ExtResource("2_n8h0u")
+title = "Celsius 232"
+author = "Roy Bardsley"
+released = "1953-10-19"
+category = 0
+genres = Array[ExtResource("1_k32u0")]([ExtResource("2_rbb2u"), ExtResource("3_apla7"), ExtResource("4_rvy0p")])
+length = 194
+popularity = 0
+synopsis = "In a dystopian future where books are outlawed and “firemen” burn any that remain, Farren, a disillusioned fireman, begins to question his role in a society that suppresses knowledge. As he secretly discovers the power of literature, he forms a bond with a free-spirited rebel, sparking a dangerous rebellion against a world engulfed in ignorance and conformity."

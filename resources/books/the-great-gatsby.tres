@@ -1,14 +1,17 @@
-[gd_resource type="Resource" script_class="Book" load_steps=3 format=3 uid="uid://ybheeb2y4no4"]
+[gd_resource type="Resource" script_class="Book" load_steps=6 format=3 uid="uid://ybheeb2y4no4"]
 
+[ext_resource type="Script" path="res://resources/bases/genre.gd" id="1_dr7s3"]
 [ext_resource type="Resource" uid="uid://b6sb87tbxkmuw" path="res://resources/genres/historical-fiction.tres" id="1_oy8gp"]
 [ext_resource type="Script" path="res://resources/bases/book.gd" id="1_wxv40"]
+[ext_resource type="Resource" uid="uid://dtpes7prkxpda" path="res://resources/genres/classics.tres" id="3_ox2su"]
+[ext_resource type="Resource" uid="uid://x3kvf0tjpcpo" path="res://resources/genres/romance.tres" id="4_dj0x1"]
 
 [resource]
 script = ExtResource("1_wxv40")
 title = "The Great Gatsby"
 author = "F. Scott Fitzgerald"
 released = "1925-04-10"
-genre = ExtResource("1_oy8gp")
-cost = 0
-popularity = 0
+genres = Array[ExtResource("1_dr7s3")]([ExtResource("1_oy8gp"), ExtResource("3_ox2su"), ExtResource("4_dj0x1")])
+cost = null
+popularity = null
 synopsis = "\"The Great Gatsby\" by F. Scott Fitzgerald is a novel written in the early 20th century. The story is mainly narrated by Nick Carraway, who reflects on the life of his enigmatic neighbor, Jay Gatsby, and the extravagant world of wealth and excess he inhabits. The novel explores themes of the American Dream, love, and social class. At the start of the novel, Nick Carraway reflects on advice from his father about withholding judgment of others, which sets the stage for the unfolding narrative. We learn about Nick's background, his move to West Egg, and his connection to wealthy acquaintances like Tom and Daisy Buchanan. Nick's first glimpse of Gatsby is during a moment of solitude when he sees Gatsby reaching out toward a distant green light, symbolizing his unattainable dreams. This opening portion lays the groundwork for the intricate relationships and social dynamics in the world of 1920s America, hinting at the luxurious yet hollow lives that many characters lead."

@@ -1,14 +1,16 @@
-[gd_resource type="Resource" script_class="Book" load_steps=3 format=3 uid="uid://bv2ep7xus6n7h"]
+[gd_resource type="Resource" script_class="Book" load_steps=5 format=3 uid="uid://bv2ep7xus6n7h"]
 
 [ext_resource type="Resource" uid="uid://b6sb87tbxkmuw" path="res://resources/genres/historical-fiction.tres" id="1_bhg0g"]
 [ext_resource type="Script" path="res://resources/bases/book.gd" id="1_obun2"]
+[ext_resource type="Script" path="res://resources/bases/genre.gd" id="1_sjfj2"]
+[ext_resource type="Resource" uid="uid://dtpes7prkxpda" path="res://resources/genres/classics.tres" id="2_ex06b"]
 
 [resource]
 script = ExtResource("1_obun2")
 title = "Middlemarch"
 author = "George Eliot"
 released = "1872-01-01"
-genre = ExtResource("1_bhg0g")
-cost = 0
-popularity = 0
+genres = Array[ExtResource("1_sjfj2")]([ExtResource("2_ex06b"), ExtResource("1_bhg0g")])
+cost = null
+popularity = null
 synopsis = " \"Middlemarch\" by George Eliot is a novel written in the mid-19th century that explores the lives and interactions of residents in a provincial English town. The story primarily centers around Dorothea Brooke, a young woman with high ideals and aspirations for a meaningful life, who grapples with her search for love and purpose amid societal expectations. The novel addresses themes of marriage, ambition, and the intersection of personal and social values in a rapidly changing world. At the start of the novel, we are introduced to Miss Brooke, who is depicted as a strikingly beautiful and intelligent young woman, yet may be seen as eccentric due to her lofty aspirations and disregard for societal norms. She lives with her sister Celia and their uncle, Mr. Brooke, in a quiet country house, harboring dreams of making a significant impact on the world. As the opening chapters unfold, we see her rejection of traditional feminine pursuits and her desire to be with a man of intellect who can match her aspirations. Important characters such as the learned Reverend Edward Casaubon and the kind Sir James Chettam emerge, each representing different paths and values that will challenge Dorothea in her quest for fulfillment. The complexities of their interactions are foreshadowed early on, setting the stage for a rich exploration of human relationships and personal growth."

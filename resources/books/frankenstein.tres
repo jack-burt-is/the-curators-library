@@ -1,14 +1,18 @@
-[gd_resource type="Resource" script_class="Book" load_steps=3 format=3 uid="uid://c7w4hfemjfq1v"]
+[gd_resource type="Resource" script_class="Book" load_steps=7 format=3 uid="uid://c7w4hfemjfq1v"]
 
 [ext_resource type="Resource" uid="uid://be6ofta3yiyjx" path="res://resources/genres/horror.tres" id="1_dt5mh"]
+[ext_resource type="Script" path="res://resources/bases/genre.gd" id="1_l4kyg"]
 [ext_resource type="Script" path="res://resources/bases/book.gd" id="1_y0y4l"]
+[ext_resource type="Resource" uid="uid://dta5vvvlct4wo" path="res://resources/genres/gothic.tres" id="2_jm3ng"]
+[ext_resource type="Resource" uid="uid://dtpes7prkxpda" path="res://resources/genres/classics.tres" id="3_ft7i0"]
+[ext_resource type="Resource" uid="uid://cln36840m5gqr" path="res://resources/genres/science-fiction.tres" id="5_i1kht"]
 
 [resource]
 script = ExtResource("1_y0y4l")
 title = "Frankenstein"
 author = "Mary Shelley"
 released = "1818-01-01"
-genre = ExtResource("1_dt5mh")
-cost = 0
-popularity = 0
+genres = Array[ExtResource("1_l4kyg")]([ExtResource("2_jm3ng"), ExtResource("3_ft7i0"), ExtResource("1_dt5mh"), ExtResource("5_i1kht")])
+cost = null
+popularity = null
 synopsis = " \"Frankenstein; Or, The Modern Prometheus\" by Mary Wollstonecraft Shelley is a novel written in the early 19th century. The story explores themes of ambition, the quest for knowledge, and the consequences of man's hubris through the experiences of Victor Frankenstein and the monstrous creation of his own making. The opening of the book introduces Robert Walton, an ambitious explorer on a quest to discover new lands and knowledge in the icy regions of the Arctic. In his letters to his sister Margaret, he expresses both enthusiasm and the fear of isolation in his grand venture. As Walton's expedition progresses, he encounters a mysterious, emaciated stranger who has faced great suffering—furthering the intrigue of his narrative. This stranger ultimately reveals his tale of creation, loss, and the profound consequences of seeking knowledge that lies beyond human bounds. The narrative is set up in a manner that suggests a deep examination of the emotions and ethical dilemmas faced by those who dare to defy the natural order. (This is an automatically generated summary.) "
