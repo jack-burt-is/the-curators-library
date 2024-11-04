@@ -7,11 +7,13 @@
 [ext_resource type="Resource" uid="uid://tftp1io7rakb" path="res://resources/genres/adventure.tres" id="4_f13rp"]
 
 [resource]
+resource_name = "adventures-of-huckleberry-finn"
 script = ExtResource("1_8dxg0")
 title = "Adventures of Huckleberry Finn"
 author = "Mark Twain"
 released = "1884-12-10"
+category = 0
 genres = Array[ExtResource("1_mtvut")]([ExtResource("1_7803y"), ExtResource("3_0k1n2"), ExtResource("4_f13rp")])
-cost = null
+length = 0
 popularity = null
 synopsis = "\"Adventures of Huckleberry Finn\" by Mark Twain is a novel likely written in the late 19th century. The book explores the adventures of a young boy named Huckleberry Finn as he grapples with themes of freedom, morality, and societal expectations against the backdrop of the pre-Civil War American South. The narrative takes place as Huck escapes his restrictive life and embarks on a journey down the Mississippi River, where he encounters various characters that challenge his understanding of right and wrong. The opening of the book introduces Huck Finn, the protagonist, reflecting on his life before the events of the story, specifically referencing his previous adventures with Tom Sawyer. Huck describes his uncomfortable life with the Widow Douglas, who is trying to civilize him, and informs the reader about his father's abusive behavior and his desire to escape. The groundwork is laid for his quest for freedom and individuality, as he is soon joined by Jim, a runaway slave, hinting at the deeper moral complexities that will unfold throughout their journey. The tone is light-hearted yet critical, establishing Huck's voice and his perspective on the absurdities of societal norms."

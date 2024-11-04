@@ -7,11 +7,13 @@
 [ext_resource type="Resource" uid="uid://x3kvf0tjpcpo" path="res://resources/genres/romance.tres" id="4_vmfgl"]
 
 [resource]
+resource_name = "pride-and-prejudice"
 script = ExtResource("1_ub3b0")
 title = "Pride and Prejudice"
 author = "Jane Austen"
 released = "1813-01-28"
+category = 0
 genres = Array[ExtResource("1_uy5yn")]([ExtResource("2_6kakq"), ExtResource("1_up2b8"), ExtResource("4_vmfgl")])
-cost = null
+length = 0
 popularity = null
 synopsis = "y \"Pride and Prejudice\" by Jane Austen is a classic novel written in the early 19th century. The story delves into themes of love, social class, and individual agency, largely revolving around the life of Elizabeth Bennet, one of five sisters from a modest but genteel family navigating the complex social landscape of Regency England. The opening of the novel introduces the seemingly universal truth that a single man of wealth is a target for matchmaking mothers in the neighborhood. Mrs. Bennet is eager to marry off her daughters and is excited to hear about the arrival of Mr. Bingley, a wealthy young man who has taken up residence at Netherfield Park. Mr. Bennet's teasing yet indifferent nature contrasts sharply with Mrs. Bennet's anxious and businesslike demeanor as she plans to visit Mr. Bingley to create an opportunity for her daughters. Their witty exchanges set the tone for the story's exploration of family dynamics and social expectations, while also hinting at deeper character developments and the challenges Elizabeth will face regarding love and prejudice in her interactions with Mr. Darcy and the Bingley family."

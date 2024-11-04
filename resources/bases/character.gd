@@ -30,6 +30,8 @@ func get_dialogic_start():
 
 func generate_dialogic_timeline() -> DialogicTimeline:
 	var events : Array[String]
+	
+	# NPC Dialog Consruction
 	if previous_recommendations.size() == 0:
 		events.append(get_dialogic_start() + intro_line)
 	else:
@@ -39,7 +41,18 @@ func generate_dialogic_timeline() -> DialogicTimeline:
 		events.append(get_dialogic_start() + hints[previous_recommendations.size()].hint)
 	else:
 		events.append(get_dialogic_start() + no_more_hints_line)
+	
+	# Player choice construction
+	var choices = """
+		- I think I have just the book, bear with me one moment
+			{dialogic_start}Thank you!
+		- I know just the book but need to order it in, would you mind coming back tomorrow?
+			{dialogic_start}No problem, I'll see you tomorrow. 
+			[signal arg="leave_{name}"]
+		""".format({"dialogic_start": get_dialogic_start(), "name": name})
 
+	events.append_array(choices.split('\n'))
+	
 	var timeline : DialogicTimeline = DialogicTimeline.new()
 	timeline.events = events
 	

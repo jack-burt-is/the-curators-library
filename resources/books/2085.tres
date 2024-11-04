@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://dtpes7prkxpda" path="res://resources/genres/classics.tres" id="5_3vwmf"]
 
 [resource]
+resource_name = "2085"
 script = ExtResource("2_v3k5f")
 title = "2085"
 author = "Gordon Owl"

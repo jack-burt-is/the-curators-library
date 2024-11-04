@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://cln36840m5gqr" path="res://resources/genres/science-fiction.tres" id="4_rvy0p"]
 
 [resource]
+resource_name = "celsius-232"
 script = ExtResource("2_n8h0u")
 title = "Celsius 232"
 author = "Roy Bardsley"

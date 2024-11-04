@@ -8,11 +8,13 @@
 [ext_resource type="Resource" uid="uid://d34hpm824su3b" path="res://resources/genres/fantasy.tres" id="5_0u5r1"]
 
 [resource]
+resource_name = "alice-in-wonderland"
 script = ExtResource("1_tptfj")
 title = "Alice's Adventures in Wonderland"
 author = "Lewis Carroll"
 released = "1865-11"
+category = 0
 genres = Array[ExtResource("1_rhem5")]([ExtResource("1_i4d4j"), ExtResource("3_pwcfw"), ExtResource("4_8fc8s"), ExtResource("5_0u5r1")])
-cost = null
+length = 0
 popularity = null
 synopsis = " \"Alice's Adventures in Wonderland\" by Lewis Carroll is a classic children's novel written in the mid-19th century. The story follows a young girl named Alice who, feeling bored and sleepy while sitting by a riverbank, encounters a White Rabbit and follows it down a rabbit hole, plunging into a fantastical world filled with curious creatures and whimsical adventures. The opening of the book introduces Alice as she daydreams about her surroundings before spotting the White Rabbit, who is both flustered and animated. Curious, Alice pursues the Rabbit and finds herself tumbling down a deep rabbit hole, leading to a curious hall filled with doors, all locked. After experiencing a series of bizarre changes in size from eating and drinking mysterious substances, she begins exploring this new world, initially frustrated by her newfound challenges as she navigates her size and the peculiar inhabitants she meets. The narrative sets the tone for Alice's whimsical and often nonsensical adventures that characterize the entire tale."

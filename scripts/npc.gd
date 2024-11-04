@@ -11,7 +11,7 @@ extends CharacterBody2D
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 @onready var target_positions: Node2D = get_tree().current_scene.get_node("%NavigationPoints")
-@onready var navigation_leave: Node2D = get_tree().current_scene.get_node("%NevigationLeave")
+@onready var navigation_leave: Node2D = get_tree().current_scene.get_node("%NavigationLeave")
 
 @onready var dialog_marker: Marker2D = $DialogMarker
 
@@ -98,7 +98,7 @@ func _on_navigation_agent_2d_target_reached() -> void:
 	timer.start(delay)
 	
 func _on_dialogic_signal(argument:String):
-	if argument == "leave":
+	if argument == "leave_" + character.name:
 		timer.stop()
 		leaving = true
 		target_reached = false

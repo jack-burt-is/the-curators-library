@@ -5,6 +5,7 @@
 [ext_resource type="Script" path="res://resources/bases/book.gd" id="2_ga2x5"]
 
 [resource]
+resource_name = "a-realm-of-thistles-and-peonies"
 script = ExtResource("2_ga2x5")
 title = "A Realm of Thistles and Peonies"
 author = "Scarlett K Moos"

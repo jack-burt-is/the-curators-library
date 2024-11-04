@@ -27,5 +27,3 @@ enum Rights {PUBLIC, OBTAINED, FAKE}
 
 ## A summary of the book (type String)
 @export var synopsis: String
-
-## 

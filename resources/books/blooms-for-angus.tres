@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://dtpes7prkxpda" path="res://resources/genres/classics.tres" id="3_bww88"]
 
 [resource]
+resource_name = "blooms-for-angus"
 script = ExtResource("2_p6xbm")
 title = "Blooms for Angus"
 author = "David Locks"

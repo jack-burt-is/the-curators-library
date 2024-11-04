@@ -7,11 +7,13 @@
 [ext_resource type="Resource" uid="uid://d34hpm824su3b" path="res://resources/genres/fantasy.tres" id="3_nfpmx"]
 
 [resource]
+resource_name = "metamorphosis"
 script = ExtResource("1_8co6m")
 title = "Metamorphosis"
 author = "Franz Kafka"
 released = "1915"
+category = 0
 genres = Array[ExtResource("1_ptmqf")]([ExtResource("2_4u38o"), ExtResource("3_nfpmx"), ExtResource("1_ovynu")])
-cost = null
+length = 0
 popularity = null
 synopsis = "\"Metamorphosis\" by Franz Kafka is a novella written during the late 19th century. The book explores themes of alienation and identity through the strange and tragic transformation of its main character, Gregor Samsa, who wakes up one morning to find himself turned into a grotesque insect. The story grapples with Gregor's struggle to adapt to his new physical form and its implications for his family, shedding light on societal expectations and familial responsibilities. The opening of \"Metamorphosis\" presents an unsettling scene as Gregor Samsa discovers his shocking metamorphosis. Initially confused and in discomfort, he reflects on his life as a travelling salesman and the burdens of his job, all while grappling with the absurdity of his situation. As he struggles to get out of bed, the concern of his family begins to stir. His mother knocks on his door, anxious about his tardiness for work, and this prompts a cascade of worry for Gregor about how his family will react to his transformation. Despite his efforts to communicate and reassure them, the fear and misunderstanding stemming from his condition quickly become apparent. This launch into the bizarre and tragic sets the tone for the exploration of alienation and familial dynamics that unfolds throughout the novella."
