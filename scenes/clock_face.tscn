@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://4ambqsa2g3ma"]
+
+[ext_resource type="Script" path="res://scripts/clock_face.gd" id="1_377ja"]
+
+[sub_resource type="Gradient" id="Gradient_23l08"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[node name="ClockFace" type="Node2D"]
+script = ExtResource("1_377ja")
+
+[node name="MinuteHand" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 0, -100)
+width = 20.0
+gradient = SubResource("Gradient_23l08")
+
+[node name="HourHand" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 0, -65)
+width = 20.0
+gradient = SubResource("Gradient_23l08")
