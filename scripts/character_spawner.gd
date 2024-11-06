@@ -20,5 +20,12 @@ func _unhandled_input(event: InputEvent) -> void:
 func spawn_character(character_name) -> void:
 	var instance = npc.instantiate()
 	add_child(instance)
-	instance.set_character(load("res://resources/characters/{name}.tres".format({"name": character_name})))
+	
+	var character_resource = load("res://resources/characters/{name}.tres".format({"name": character_name}))
+
+	if GameManager.data.character_glossary.histories.has(character_resource):
+		character_resource.previous_recommendations = GameManager.data.character_glossary.histories[character_resource].previous_recommendations
+
+	instance.set_character(character_resource)
+		
 	char_count += 1

@@ -107,3 +107,4 @@ sprite_frames = SubResource("SpriteFrames_eo3bn")
 intro_line = "Hi I'm Josephine, I'm new in town!"
 previous_book_line = "Thanks for recommending {book}, it was {feeling} but let's see if there's anything else you can find me"
 no_more_hints_line = "Hmm, it's hard to articulate what I need, any other suggetsions?"
+success_line = "Wow, that was amazing! I can't wait to read the rest of the series. Thank you so much for the recommendation."

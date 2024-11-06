@@ -17,6 +17,7 @@ func create_or_load_save() -> void:
 	else:
 		data = SaveGame.new()
 		data.write_save()
+	print(data)
 		
 func save_game() -> void:
 	data.write_save()

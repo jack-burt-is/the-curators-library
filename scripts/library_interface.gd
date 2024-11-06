@@ -4,13 +4,13 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 	reload_books()
 	
 func reload_books() -> void:
 	item_list.clear()
 	for book in GameManager.data.library_inventory.books:
-		item_list.add_item(book.title)
-
+		item_list.add_item(book.title + " by " + book.author)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -26,9 +26,18 @@ func add_random_book() -> void:
 	GameManager.data.library_inventory.add_item(book)
 	
 	reload_books()
-	
-	
-
 
 func _on_button_pressed() -> void:
 	add_random_book()
+
+func _on_item_list_item_selected(index: int) -> void:
+	GameManager.data.selected_book = GameManager.data.library_inventory.books[index]
+	unpause()
+	
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("pause"):
+		unpause()
+
+func unpause() -> void:
+	hide()
+	get_tree().paused = false

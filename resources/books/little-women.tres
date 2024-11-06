@@ -7,7 +7,6 @@
 [ext_resource type="Resource" uid="uid://dtpes7prkxpda" path="res://resources/genres/classics.tres" id="4_cbctq"]
 
 [resource]
-resource_name = "little-women"
 script = ExtResource("1_w63y6")
 title = "Little Women"
 author = "Louisa May Alcott"
@@ -15,5 +14,5 @@ released = "1868"
 category = 0
 genres = Array[ExtResource("1_ssamf")]([ExtResource("1_6n5w0"), ExtResource("3_xsc7m"), ExtResource("4_cbctq")])
 length = 0
-popularity = null
+popularity = 0
 synopsis = "\"Little Women; Or, Meg, Jo, Beth, and Amy\" by Louisa May Alcott is a classic novel written in the mid-19th century. The story revolves around the lives and experiences of four sisters—Meg, Jo, Beth, and Amy March—as they navigate the challenges of growing up in a modest household during the American Civil War. The novel explores themes of family, sacrifice, and the pursuit of personal dreams, showcasing the distinct personalities and aspirations of each sister. The opening of the book introduces readers to the March sisters, who are grappling with their financial struggles and longing for a more comfortable life. As they gather around the fire to express their frustrations about being poor, their mother reinforces the idea that they should embrace gratitude and make sacrifices for those suffering during the war, particularly their father, who is away serving as a chaplain. This chapter sets the tone for the sisters' individual journeys, highlighting their different approaches to hardship—Meg longs for material wealth, Jo is a spirited tomboy who craves independence, Beth is the gentle peacemaker, and Amy is the aspiring artist concerned with appearances. Through their interactions and hopes, Alcott paints a vivid picture of their lives, filled with warmth, humor, and the bonds of sisterhood."

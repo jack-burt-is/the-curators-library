@@ -46,4 +46,5 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_r8jeg")
 text = "Add Random Book"
 
+[connection signal="item_selected" from="PanelContainer/MarginContainer/VBoxContainer/ItemList" to="." method="_on_item_list_item_selected"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

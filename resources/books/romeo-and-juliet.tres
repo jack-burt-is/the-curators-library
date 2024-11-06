@@ -6,7 +6,6 @@
 [ext_resource type="Resource" uid="uid://dtpes7prkxpda" path="res://resources/genres/classics.tres" id="2_mgjfa"]
 
 [resource]
-resource_name = "romeo-and-juliet"
 script = ExtResource("1_wjah7")
 title = "The Tradegy of Romeo and Juliet"
 author = "William Shakespeare"
@@ -14,5 +13,5 @@ released = "1597"
 category = 0
 genres = Array[ExtResource("1_clo2c")]([ExtResource("2_mgjfa"), ExtResource("1_h5cln")])
 length = 0
-popularity = null
+popularity = 0
 synopsis = "\"Romeo and Juliet\" by William Shakespeare is a tragedy likely written during the late 16th century. The play centers on the intense love affair between two young lovers, Romeo Montague and Juliet Capulet, whose families are embroiled in a bitter feud. Their love, while passionate and profound, is met with adversities that ultimately lead to tragic consequences. At the start of the play, a Prologue delivered by the Chorus sets the stage for the tale of forbidden love, revealing the familial conflict that surrounds Romeo and Juliet. The opening scenes depict a public brawl ignited by the feud between the Montagues and Capulets, showcasing the hostility that envelops their lives. As we are introduced to various characters such as Benvolio, Tybalt, and Mercutio, we learn of Romeo's unrequited love for Rosaline. However, this quickly changes when Romeo encounters Juliet at the Capulet ball, where they share a famous and romantic exchange, unwittingly falling in love with each other despite their families' bitter enmity. This initial encounter foreshadows the obstacles they will face as their love story unfolds amidst chaos and conflict."

@@ -7,7 +7,6 @@
 [ext_resource type="Resource" uid="uid://cln36840m5gqr" path="res://resources/genres/science-fiction.tres" id="4_50td4"]
 
 [resource]
-resource_name = "the-path"
 script = ExtResource("2_7aycq")
 title = "The Path"
 author = "Clive McArthur"

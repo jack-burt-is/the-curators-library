@@ -7,10 +7,9 @@
 [ext_resource type="Resource" uid="uid://dtpes7prkxpda" path="res://resources/genres/classics.tres" id="4_hufwp"]
 
 [resource]
-resource_name = "the-servants-story"
 script = ExtResource("2_y14l3")
 title = "The Servant's Story"
-author = "Mara Atwater"
+author = "Mara Atwood"
 released = "1985-04-17"
 category = 0
 genres = Array[ExtResource("1_ei3ag")]([ExtResource("2_a8t2v"), ExtResource("3_1rj1u"), ExtResource("4_hufwp")])

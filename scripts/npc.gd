@@ -79,9 +79,11 @@ func _on_interact() -> void:
 		return
 			
 	var layout = Dialogic.start(character.generate_dialogic_timeline())
-	var char_resource = "res://dialogue/characters/{name}.dch".format({"name": character.name.to_lower()})
-	var loaded = load(char_resource)
-	layout.register_character(loaded, dialog_marker)
+	
+	var char_resource = "res://dialogue/characters/{name}.dch".format({"name": character.name.to_lower()})		
+	var character_loaded = load(char_resource)
+		
+	layout.register_character(character_loaded, dialog_marker)
 	
 func make_path() -> void:
 	navigation_agent.target_position = target_positions.get_children(false).pick_random().global_position
@@ -98,11 +100,13 @@ func _on_navigation_agent_2d_target_reached() -> void:
 	timer.start(delay)
 	
 func _on_dialogic_signal(argument:String):
+	if argument == "book_given_" + character.name:
+		character.previous_recommendations.append(GameManager.data.selected_book)
+		GameManager.data.character_glossary.update_character(character)
+		
 	if argument == "leave_" + character.name:
-		timer.stop()
-		leaving = true
-		target_reached = false
-		navigation_agent.target_position = navigation_leave.global_position
+		trigger_character_exit()
+		
 		
 func _on_timeline_started() -> void:
 	target_zoom = dialog_zoom
@@ -119,3 +123,9 @@ func _on_animated_sprite_2d_frame_changed() -> void:
 func set_character(char) -> void:
 	character = char
 	animated_sprite.sprite_frames = character.sprite_frames
+	
+func trigger_character_exit() -> void:
+	timer.stop()
+	leaving = true
+	target_reached = false
+	navigation_agent.target_position = navigation_leave.global_position

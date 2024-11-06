@@ -8,3 +8,4 @@ func _ready() -> void:
 
 func _on_interact() -> void:
 	library_interface.show()
+	get_tree().paused = true

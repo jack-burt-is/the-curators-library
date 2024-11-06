@@ -7,13 +7,12 @@
 [ext_resource type="Resource" uid="uid://be6ofta3yiyjx" path="res://resources/genres/horror.tres" id="4_x43vf"]
 
 [resource]
-resource_name = "the-picture-of-dorian-gray"
 script = ExtResource("1_t18r0")
 title = "The Picture of Dorian Gray"
 author = "Oscar Wilde"
 released = "1890"
-category = null
+category = 0
 genres = Array[ExtResource("1_65g4n")]([ExtResource("2_j3o0h"), ExtResource("1_0kxfi"), ExtResource("4_x43vf"), null])
 length = 0
-popularity = null
+popularity = 0
 synopsis = "\"The Picture of Dorian Gray\" by Oscar Wilde is a novel written during the late 19th century. The story explores themes of art, beauty, and morality, centering on the life of a young man named Dorian Gray, who becomes entranced by his own beauty and the hedonistic philosophies of Lord Henry Wotton. As Dorian gains fame and pleasure through his youthful looks, he grapples with the implications of vanity and the cost of immortality. At the start of the novel, we are introduced to Lord Henry Wotton and the artist Basil Hallward, who has painted a stunning portrait of Dorian Gray. Basil is deeply enamored with Dorian's beauty and harbors a secret affection for him. The opening chapters establish the dynamic between Lord Henry's cynical worldview and Basil's idealism, culminating in Dorian's arrival in the studio. Dorian's first encounter with Lord Henry sparks a transformative moment; as they converse, Dorian is exposed to Henry’s hedonistic philosophies, which shape his perception of beauty and life. The chapter sets a tone that hints at the foreboding price Dorian may pay for his fascination with youth and aesthetic pleasure."

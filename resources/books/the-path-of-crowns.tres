@@ -5,7 +5,6 @@
 [ext_resource type="Script" path="res://resources/bases/book.gd" id="2_uhfaj"]
 
 [resource]
-resource_name = "the-path-of-crowns"
 script = ExtResource("2_uhfaj")
 title = "The Path of Crowns"
 author = "Borris Sonderman"
