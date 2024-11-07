@@ -44,6 +44,9 @@ func update_time(delta: float) -> void:
 		data.current_hour -= 24.0
 	
 func start_new_day() -> void:
+	SceneTransition.change_scene("res://scenes/calendar.tscn")
+	
+	# Set date data
 	data.current_day += 1
 	data.current_hour = DAY_START_HOUR
 	data.current_minute = 0.0

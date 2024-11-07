@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbm7ok1u4o5hq"]
+
+[ext_resource type="Script" path="res://scripts/clock.gd" id="1_h3u0j"]
+[ext_resource type="PackedScene" uid="uid://4ambqsa2g3ma" path="res://scenes/clock_face.tscn" id="2_xlohy"]
+[ext_resource type="PackedScene" uid="uid://cu3ld8cpbe23m" path="res://scenes/interaction_area.tscn" id="3_ylsjt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xnid4"]
+
+[node name="Clock" type="Node2D"]
+position = Vector2(-87.5, -49.5)
+script = ExtResource("1_h3u0j")
+
+[node name="ClockFace" parent="." instance=ExtResource("2_xlohy")]
+z_index = 10
+scale = Vector2(0.05, 0.05)
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_ylsjt")]
+action_name = "start new day"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, 25)
+shape = SubResource("CircleShape2D_xnid4")

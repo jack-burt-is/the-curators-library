@@ -1,0 +1,185 @@
+[gd_scene load_steps=9 format=3 uid="uid://b2agtjoeyaicm"]
+
+[ext_resource type="Texture2D" uid="uid://by4gs0x002nu" path="res://assets/sprites/calendar.png" id="1_sulcd"]
+[ext_resource type="Script" path="res://scripts/calendar.gd" id="1_xnuhc"]
+[ext_resource type="FontFile" uid="uid://5ihhn67dre4l" path="res://assets/fonts/monogram-extended.ttf" id="2_ch8qe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ph0oc"]
+atlas = ExtResource("1_sulcd")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5mf6"]
+atlas = ExtResource("1_sulcd")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="Animation" id="Animation_mknay"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../FallingDay:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../FallingDay:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(944, 524)]
+}
+
+[sub_resource type="Animation" id="Animation_sl5cd"]
+resource_name = "new_day"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../FallingDay:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5, 0.7, 0.933333, 1.36667, 1.76667, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(944, 524), Vector2(958.885, 537.105), Vector2(964.785, 539.86), Vector2(958.885, 537.105), Vector2(964.785, 539.86), Vector2(958.885, 537.105), Vector2(958.885, 537.105), Vector2(1200, 1186.55)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../FallingDay:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5, 0.7, 0.933333, 1.36667, 1.76667, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.204204, -0.272271, -0.204204, -0.272271, -0.204204, -0.204204, -4.21148]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xuypp"]
+_data = {
+"RESET": SubResource("Animation_mknay"),
+"new_day": SubResource("Animation_sl5cd")
+}
+
+[node name="Calendar" type="CanvasLayer"]
+layer = 10
+script = ExtResource("1_xnuhc")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0588235, 0.207843, 0.211765, 1)
+
+[node name="NewDay" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5, 5)
+pivot_offset = Vector2(16, 16)
+texture = SubResource("AtlasTexture_ph0oc")
+
+[node name="Label" type="Label" parent="NewDay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -5.0
+offset_right = 15.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ch8qe")
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FallingDay" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5, 5)
+pivot_offset = Vector2(16, 16)
+texture = SubResource("AtlasTexture_ph0oc")
+
+[node name="Label" type="Label" parent="FallingDay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -5.0
+offset_right = 15.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ch8qe")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rings" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5, 5)
+pivot_offset = Vector2(16, 16)
+texture = SubResource("AtlasTexture_t5mf6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Rings")
+libraries = {
+"": SubResource("AnimationLibrary_xuypp")
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
