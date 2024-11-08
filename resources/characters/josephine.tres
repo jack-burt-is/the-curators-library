@@ -4,22 +4,18 @@
 [ext_resource type="Script" path="res://resources/bases/character.gd" id="1_xtgo8"]
 [ext_resource type="Script" path="res://resources/bases/book.gd" id="2_tixm6"]
 [ext_resource type="Script" path="res://resources/bases/hint.gd" id="2_u4i1k"]
+[ext_resource type="Resource" uid="uid://cthbbcla1ll6i" path="res://resources/books/pride-and-prejudice.tres" id="3_c3516"]
 [ext_resource type="Texture2D" uid="uid://bb3vwy0qvgrad" path="res://assets/sprites/character.png" id="5_4f4jq"]
 
-[sub_resource type="Resource" id="Resource_e6qeb"]
+[sub_resource type="Resource" id="Resource_ahea1"]
 script = ExtResource("2_u4i1k")
-hint = "I'm looking for a book to transport me to a whole new world..."
-strength = 2
+book = ExtResource("1_nmv4j")
+hints = Array[String](["I'm looking for a book that transports me to a new world", "I love romance but in a fantastical setting", "I've heard of this romantasy book that's about some kind of flower?"])
 
-[sub_resource type="Resource" id="Resource_v1upj"]
+[sub_resource type="Resource" id="Resource_0bcte"]
 script = ExtResource("2_u4i1k")
-hint = "I love fantasy but I also love romance, do you have anything that fits both?"
-strength = 6
-
-[sub_resource type="Resource" id="Resource_bqkvs"]
-script = ExtResource("2_u4i1k")
-hint = "I heard about this romantic fantasy series to do with flowers and kingdoms, do you know the one I mean? "
-strength = 10
+book = ExtResource("3_c3516")
+hints = Array[String](["I'm in the mood for something less modern", "I would still like some elements of romance but something more witty and challenging", "How about a story focusing on having to overcome initial perceptions and prejudices to find happiness"])
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u5b80"]
 atlas = ExtResource("5_4f4jq")
@@ -100,11 +96,14 @@ animations = [{
 [resource]
 script = ExtResource("1_xtgo8")
 name = "Josephine"
-favourite_book = ExtResource("1_nmv4j")
+favourite_books = Array[ExtResource("2_tixm6")]([ExtResource("1_nmv4j"), ExtResource("3_c3516")])
+books_found = 0
 previous_recommendations = Array[ExtResource("2_tixm6")]([])
-hints = Array[ExtResource("2_u4i1k")]([SubResource("Resource_e6qeb"), SubResource("Resource_v1upj"), SubResource("Resource_bqkvs")])
+hints = Array[ExtResource("2_u4i1k")]([SubResource("Resource_ahea1"), SubResource("Resource_0bcte")])
 sprite_frames = SubResource("SpriteFrames_eo3bn")
 intro_line = "Hi I'm Josephine, I'm new in town!"
 previous_book_line = "Thanks for recommending {book}, it was {feeling} but let's see if there's anything else you can find me"
 no_more_hints_line = "Hmm, it's hard to articulate what I need, any other suggetsions?"
-success_line = "Wow, that was amazing! I can't wait to read the rest of the series. Thank you so much for the recommendation."
+success_line = "Wow, that was amazing! Thank you so much for a perfect recommendation."
+complete_line = "I think I'm all read-out for now, thanks for all your help."
+visit_rarity = 1

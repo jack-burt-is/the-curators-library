@@ -100,6 +100,8 @@ stream_3/stream = ExtResource("7_fm8gj")
 stream_4/stream = ExtResource("8_3g1ix")
 
 [node name="NPC" type="CharacterBody2D"]
+z_index = 5
+z_as_relative = false
 y_sort_enabled = true
 motion_mode = 1
 wall_min_slide_angle = 0.0
@@ -109,8 +111,6 @@ script = ExtResource("1_5ngs7")
 shape = SubResource("CircleShape2D_se3gd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-z_index = 5
-y_sort_enabled = true
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_v0ldl")
 animation = &"walk"

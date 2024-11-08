@@ -1,8 +1,8 @@
 class_name Hint
 extends Resource
 
-## The Hint in plain text (type String)
-@export var hint: String
+## The book the character will be hinting at
+@export var book: Book
 
-## How helpful the hint is on a scale of 1-10 (type int)
-@export var strength: int
+## The collection of hints for that book
+@export var hints: Array[String] = []

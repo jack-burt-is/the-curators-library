@@ -6,8 +6,8 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	falling_label.text = str(GameManager.data.current_day - 1)
-	new_label.text = str(GameManager.data.current_day)
+	falling_label.text = str(GameManager.data.current_day)
+	new_label.text = str(GameManager.data.current_day + 1)
 	animation_player.play("new_day")
 	
 

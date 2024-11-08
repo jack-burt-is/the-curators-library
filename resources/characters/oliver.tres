@@ -1,30 +1,21 @@
-[gd_resource type="Resource" script_class="Character" load_steps=20 format=3 uid="uid://dn5q1oo5ltsw8"]
+[gd_resource type="Resource" script_class="Character" load_steps=19 format=3 uid="uid://dn5q1oo5ltsw8"]
 
 [ext_resource type="Script" path="res://resources/bases/hint.gd" id="1_8a45e"]
 [ext_resource type="Resource" uid="uid://4uh8fdrtn3vl" path="res://resources/books/celsius-232.tres" id="1_any0e"]
+[ext_resource type="Resource" uid="uid://dsnc6nxdswa3n" path="res://resources/books/2085.tres" id="2_we3gw"]
 [ext_resource type="Script" path="res://resources/bases/book.gd" id="2_wpv74"]
 [ext_resource type="Script" path="res://resources/bases/character.gd" id="3_hnupu"]
 [ext_resource type="Texture2D" uid="uid://bb3vwy0qvgrad" path="res://assets/sprites/character.png" id="5_dwpmn"]
 
-[sub_resource type="Resource" id="Resource_2xhmj"]
+[sub_resource type="Resource" id="Resource_v7lmb"]
 script = ExtResource("1_8a45e")
-hint = "I'm looking for something bleak and dystopian that really makes me think"
-strength = 3
+book = ExtResource("2_we3gw")
+hints = Array[String](["I'm in the mood for something thought-provoking... maybe a bit dark and intense.", "I'm looking for a story set in a dystopian society, with themes of control and surveillance.", "I want a book where the characters live under constant watch—maybe where even thoughts aren’t safe.", "I heard about this book with a totalitarian government and a mysterious figure called Big Brother."])
 
-[sub_resource type="Resource" id="Resource_rj2s2"]
+[sub_resource type="Resource" id="Resource_xbn3n"]
 script = ExtResource("1_8a45e")
-hint = "How about a book with a dystopian future that is getting more relevant and realistic by the day..."
-strength = 5
-
-[sub_resource type="Resource" id="Resource_vlhgm"]
-script = ExtResource("1_8a45e")
-hint = "I'm intrigued by the idea of censorship and the protection of knowledge. "
-strength = 8
-
-[sub_resource type="Resource" id="Resource_j3chm"]
-script = ExtResource("1_8a45e")
-hint = "I haven't found anything that perfectly hits the mark. Maybe we should just burn all the books!"
-strength = 10
+book = ExtResource("1_any0e")
+hints = Array[String](["I want to read something that explores censorship and society... maybe with a bit of a dark, futuristic vibe.", "I'm looking for a story about a world where people are discouraged from thinking deeply and knowledge is restricted.", "I heard about a book where firemen don’t put out fires—they start them. And books are actually illegal.", "There's this one story about a guy who burns books for a living until he realizes their true value."])
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vsctp"]
 atlas = ExtResource("5_dwpmn")
@@ -105,10 +96,14 @@ animations = [{
 [resource]
 script = ExtResource("3_hnupu")
 name = "Oliver"
-favourite_book = ExtResource("1_any0e")
+favourite_books = Array[ExtResource("2_wpv74")]([ExtResource("2_we3gw"), ExtResource("1_any0e")])
+books_found = 0
 previous_recommendations = Array[ExtResource("2_wpv74")]([])
-hints = Array[ExtResource("1_8a45e")]([SubResource("Resource_2xhmj"), SubResource("Resource_rj2s2"), SubResource("Resource_vlhgm"), SubResource("Resource_j3chm")])
+hints = Array[ExtResource("1_8a45e")]([SubResource("Resource_v7lmb"), SubResource("Resource_xbn3n")])
 sprite_frames = SubResource("SpriteFrames_h1cmu")
 intro_line = "Hi, my name's Oliver and I was hoping you'd be able to recommend a book for me to read."
 previous_book_line = "Thanks for your recommendation to read {book}, it was {feeling} but not quite what I was looking for."
 no_more_hints_line = "Hmm, I don't know what more I can give you, maybe you just don't stock what I'm looking for yet... Do you have any other ideas?"
+success_line = "The last book you recommended was fantastic, thank you."
+complete_line = "Going to take a little break, thanks for your help."
+visit_rarity = 1

@@ -1,11 +1,10 @@
-[gd_scene load_steps=19 format=4 uid="uid://xbamugk6ccdk"]
+[gd_scene load_steps=18 format=4 uid="uid://xbamugk6ccdk"]
 
 [ext_resource type="PackedScene" uid="uid://7ugb3rp7suaw" path="res://scenes/player.tscn" id="1_7xs0p"]
 [ext_resource type="TileSet" uid="uid://dmqptk0k06agj" path="res://assets/tilesets/interior.tres" id="1_tqh7g"]
 [ext_resource type="PackedScene" uid="uid://cc2nji1qrcita" path="res://scenes/library_interface.tscn" id="3_krj8d"]
 [ext_resource type="PackedScene" uid="uid://bfeyc2q7uhq8a" path="res://scenes/embers.tscn" id="4_tkxoj"]
 [ext_resource type="PackedScene" uid="uid://drvu6y7qatqg5" path="res://scenes/lamp.tscn" id="6_r1p8v"]
-[ext_resource type="Script" path="res://scripts/character_spawner.gd" id="7_44jot"]
 [ext_resource type="PackedScene" uid="uid://cu3ld8cpbe23m" path="res://scenes/interaction_area.tscn" id="8_ei2pv"]
 [ext_resource type="Script" path="res://scripts/desk.gd" id="8_eo1yw"]
 [ext_resource type="PackedScene" uid="uid://cmfs8ryjemo1u" path="res://scenes/door.tscn" id="8_x81t4"]
@@ -94,7 +93,7 @@ tile_set = ExtResource("1_tqh7g")
 [node name="Player" parent="." instance=ExtResource("1_7xs0p")]
 z_index = 5
 y_sort_enabled = true
-position = Vector2(6, 7)
+position = Vector2(-53, 6)
 
 [node name="Camera" type="Camera2D" parent="Player"]
 unique_name_in_owner = true
@@ -135,7 +134,6 @@ texture = SubResource("GradientTexture2D_g1yrr")
 
 [node name="Entrance" type="Node2D" parent="."]
 position = Vector2(-64, 383)
-script = ExtResource("7_44jot")
 
 [node name="NavigationLeave" type="Node2D" parent="Entrance"]
 unique_name_in_owner = true
@@ -210,3 +208,8 @@ unique_name_in_owner = true
 visible = false
 
 [node name="Clock" parent="." instance=ExtResource("13_xpijs")]
+
+[node name="SpawnedNpcs" type="Node2D" parent="."]
+unique_name_in_owner = true
+z_index = 5
+y_sort_enabled = true

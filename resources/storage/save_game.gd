@@ -8,6 +8,9 @@ const SAVE_GAME_BASE_PATH := "user://save"
 @export var current_hour: float = 0.0
 @export var current_minute: float = 0.0
 
+# Camera
+@export var zoom: Vector2 = Vector2(4, 4)
+
 # Complex data
 @export var library_inventory: LibraryInventory = LibraryInventory.new()
 @export var selected_book: Book

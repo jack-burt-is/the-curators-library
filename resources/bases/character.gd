@@ -5,7 +5,10 @@ extends Resource
 @export var name: String
 
 ## The book they are seeking (type Book)
-@export var favourite_book: Book
+@export var favourite_books: Array[Book] = []
+
+## The number of favourite books the player has already recommended
+@export var books_found: int = 0
 
 ## Any recommendations the player has previously given them (type Array[Book])
 @export var previous_recommendations: Array[Book] = []
@@ -28,6 +31,14 @@ extends Resource
 ## The character's line if you have found them their favourite book
 @export var success_line: String
 
+## The character's line if you have found them their favourite book
+@export var complete_line: String
+
+## The rarity of a character's visit, 1 to 10, 1 being common, 10 being rare
+@export var visit_rarity: int = 1
+
+var have_spoken: bool = false
+
 func get_feedback(positivity: int) -> String:
 	match positivity:
 		0:
@@ -48,41 +59,49 @@ func generate_dialogic_timeline() -> DialogicTimeline:
 	var events : Array[String]
 	
 	# NPC Dialog Consruction
-	if previous_recommendations.size() == 0:
-		events.append(get_dialogic_start() + intro_line)
-	elif previous_recommendations[-1] == favourite_book:
-		success = true
-		events.append(get_dialogic_start() + success_line)
-		events.append_array("""
-			[signal arg="perfect_book_given_{name}"]
-			[signal arg="leave_{name}"]
-		""".format({"name": name}).split('\n'))
-	else:
-		var positivity = 0
-		for genre in favourite_book.genres:
-			if previous_recommendations[-1].genres.has(genre):
-				positivity += 1
-			
-		events.append(get_dialogic_start() + previous_book_line.format({"book": previous_recommendations[-1].title, "feeling": get_feedback(positivity)}))
 	
-	if not success:
-		if previous_recommendations.size() < hints.size():
-			events.append(get_dialogic_start() + hints[previous_recommendations.size()].hint)
+	# Skip the preamble if we've already spoken today
+	if not have_spoken:
+		# Never recommended anything before
+		if books_found == 0 and previous_recommendations.size() == 0:
+			events.append(get_dialogic_start() + intro_line)
+			
+		# Last time they were here we recommended a favourite
+		elif previous_recommendations[-1] == favourite_books[books_found]:
+			events.append(get_dialogic_start() + success_line)
+			previous_recommendations.clear()
+			books_found += 1
+			
+		# Last time they were here we recommended a non-favourite
+		else:
+			var positivity = 0
+			for genre in favourite_books[books_found].genres:
+				if previous_recommendations[-1].genres.has(genre):
+					positivity += 1
+				
+			events.append(get_dialogic_start() + previous_book_line.format({"book": previous_recommendations[-1].title, "feeling": get_feedback(positivity)}))
+	
+	# They're still looking for more books
+	if not books_found >= favourite_books.size():
+		var target_book = favourite_books[books_found]
+		var relevant_hints = hints.filter(func(e):
+			return e.book == target_book
+		)[0].hints
+		
+		if previous_recommendations.size() < relevant_hints.size():
+			events.append(get_dialogic_start() + relevant_hints[previous_recommendations.size()])
 		else:
 			events.append(get_dialogic_start() + no_more_hints_line)
 		
 		# Player choice construction
 		var choices = """
-			- I think I have just the book, bear with me one moment
+			- I think I have just the book, hold on
 				{dialogic_start}Thank you!
-			- I know just the book but need to order it in, would you mind coming back tomorrow?
-				{dialogic_start}No problem, I'll see you tomorrow. 
-				[signal arg="leave_{name}"]
 			""".format({"dialogic_start": get_dialogic_start(), "name": name}).split('\n')
 		
 		if GameManager.data.selected_book != null:
 			choices.append_array("""
-			- Here, try this one [Give current book]
+			- Here, try this one [GIVE CURRENT BOOK]
 				{dialogic_start}Thank you! 
 				[signal arg="book_given_{name}"]
 				[signal arg="leave_{name}"]
@@ -90,8 +109,20 @@ func generate_dialogic_timeline() -> DialogicTimeline:
 		)
 
 		events.append_array(choices)
+		
+	# We've finished the character's arc
+	else:
+		events.append(get_dialogic_start() + complete_line)
+		events.append_array("""
+			[signal arg="character_finished_{name}"]
+			[signal arg="leave_{name}"]
+		""".format({"name": name}).split('\n'))
 	
 	var timeline : DialogicTimeline = DialogicTimeline.new()
-	timeline.events = events
+	timeline.events = events.filter(func(e):
+		return e != null and e.dedent() != ""
+	)
+	
+	have_spoken = true
 	
 	return timeline

@@ -12,7 +12,6 @@ func _on_continue_pressed() -> void:
 
 func _on_save_pressed() -> void:
 	GameManager.save_game()
-	print("Saved")
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()

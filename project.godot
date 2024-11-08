@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="The Curator's Library"
+run/main_scene="res://scenes/store.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -25,10 +26,12 @@ InputHelper="*res://addons/input_helper/input_helper.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 GameManager="*res://scripts/singletons/game_manager.gd"
 SceneTransition="*res://scenes/singletons/scene_transition.tscn"
+CharacterSpawner="*res://scripts/singletons/character_spawner.gd"
 
 [dialogic]
 
 directories/dch_directory={
+"jack": "res://dialogue/characters/jack.dch",
 "josephine": "res://dialogue/characters/josephine.dch",
 "oliver": "res://dialogue/characters/oliver.dch"
 }

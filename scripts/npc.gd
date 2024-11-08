@@ -18,9 +18,9 @@ extends CharacterBody2D
 @onready var audio_stream_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 @onready var camera: Camera2D = get_tree().current_scene.get_node("%Camera")
-var default_zoom: Vector2
-var dialog_zoom: Vector2 = Vector2(6,6)
-var target_zoom: Vector2
+var default_zoom: Vector2 = GameManager.data.zoom
+var dialog_zoom: Vector2 = default_zoom + Vector2(2, 2)
+var target_zoom: Vector2 = default_zoom
 var zoom_speed: float = 10
 
 var target_reached = false
@@ -65,12 +65,7 @@ func _ready() -> void:
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
 	Dialogic.timeline_started.connect(_on_timeline_started)
-	var style: DialogicStyle = load("res://dialogue/styles/bubble.tres")
-	style.prepare()
-	
-	default_zoom = camera.zoom
-	target_zoom = default_zoom
-	
+		
 	interaction_area.interact = Callable(self, "_on_interact")
 	make_path()
 
@@ -100,6 +95,9 @@ func _on_navigation_agent_2d_target_reached() -> void:
 	timer.start(delay)
 	
 func _on_dialogic_signal(argument:String):
+	if argument == "character_finished_" + character.name:
+		GameManager.data.character_glossary.end_character_arc(character)
+	
 	if argument == "book_given_" + character.name:
 		character.previous_recommendations.append(GameManager.data.selected_book)
 		GameManager.data.character_glossary.update_character(character)
@@ -123,6 +121,7 @@ func _on_animated_sprite_2d_frame_changed() -> void:
 func set_character(char) -> void:
 	character = char
 	animated_sprite.sprite_frames = character.sprite_frames
+	character.have_spoken = false
 	
 func trigger_character_exit() -> void:
 	timer.stop()
