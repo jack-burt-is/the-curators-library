@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=4 uid="uid://xbamugk6ccdk"]
+[gd_scene load_steps=22 format=4 uid="uid://xbamugk6ccdk"]
 
 [ext_resource type="PackedScene" uid="uid://7ugb3rp7suaw" path="res://scenes/player.tscn" id="1_7xs0p"]
+[ext_resource type="PackedScene" uid="uid://dc8rg2vardosp" path="res://scenes/canvas.tscn" id="1_dscsk"]
 [ext_resource type="TileSet" uid="uid://dmqptk0k06agj" path="res://assets/tilesets/interior.tres" id="1_tqh7g"]
 [ext_resource type="PackedScene" uid="uid://cc2nji1qrcita" path="res://scenes/library_interface.tscn" id="3_krj8d"]
 [ext_resource type="PackedScene" uid="uid://bfeyc2q7uhq8a" path="res://scenes/embers.tscn" id="4_tkxoj"]
@@ -209,6 +210,10 @@ grow_vertical = 1
 [node name="HUD" parent="CanvasLayer" instance=ExtResource("11_0s1fq")]
 mouse_filter = 2
 
+[node name="Canvas" parent="CanvasLayer" instance=ExtResource("1_dscsk")]
+unique_name_in_owner = true
+visible = false
+
 [node name="Menu" parent="CanvasLayer" groups=["pause_menu"] instance=ExtResource("11_aiwly")]
 unique_name_in_owner = true
 visible = false
@@ -224,7 +229,7 @@ y_sort_enabled = true
 unique_name_in_owner = true
 y_sort_enabled = true
 
-[node name="RobMossPainting" parent="Unlockables" instance=ExtResource("13_t80rh")]
+[node name="Painting" parent="Unlockables" instance=ExtResource("13_t80rh")]
 position = Vector2(-40, -69)
 
 [node name="Easel" parent="Unlockables" instance=ExtResource("14_lfy8a")]

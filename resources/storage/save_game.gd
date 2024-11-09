@@ -16,6 +16,9 @@ const SAVE_GAME_BASE_PATH := "user://save"
 @export var selected_book: Book
 @export var character_glossary: CharacterGlossary = CharacterGlossary.new()
 
+# Painting
+@export var painting: PaintingResource = PaintingResource.new()
+
 func write_save() -> void:
 	ResourceSaver.save(self, get_save_path(), ResourceSaver.FLAG_CHANGE_PATH)
 
