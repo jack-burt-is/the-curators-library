@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="Character" load_steps=19 format=3 uid="uid://dn5q1oo5ltsw8"]
+[gd_resource type="Resource" script_class="Character" load_steps=18 format=3 uid="uid://dn5q1oo5ltsw8"]
 
 [ext_resource type="Script" path="res://resources/bases/hint.gd" id="1_8a45e"]
 [ext_resource type="Resource" uid="uid://4uh8fdrtn3vl" path="res://resources/books/celsius-232.tres" id="1_any0e"]
 [ext_resource type="Resource" uid="uid://dsnc6nxdswa3n" path="res://resources/books/2085.tres" id="2_we3gw"]
 [ext_resource type="Script" path="res://resources/bases/book.gd" id="2_wpv74"]
 [ext_resource type="Script" path="res://resources/bases/character.gd" id="3_hnupu"]
-[ext_resource type="Texture2D" uid="uid://bb3vwy0qvgrad" path="res://assets/sprites/character.png" id="5_dwpmn"]
+[ext_resource type="Texture2D" uid="uid://bdjhvpnoftonf" path="res://assets/sprites/characters/white-male-long-hair.png" id="6_rxujf"]
 
 [sub_resource type="Resource" id="Resource_v7lmb"]
 script = ExtResource("1_8a45e")
@@ -17,76 +17,72 @@ script = ExtResource("1_8a45e")
 book = ExtResource("1_any0e")
 hints = Array[String](["I want to read something that explores censorship and society... maybe with a bit of a dark, futuristic vibe.", "I'm looking for a story about a world where people are discouraged from thinking deeply and knowledge is restricted.", "I heard about a book where firemen don’t put out fires—they start them. And books are actually illegal.", "There's this one story about a guy who burns books for a living until he realizes their true value."])
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vsctp"]
-atlas = ExtResource("5_dwpmn")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryjop"]
+atlas = ExtResource("6_rxujf")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3dl14"]
-atlas = ExtResource("5_dwpmn")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oi1ic"]
-atlas = ExtResource("5_dwpmn")
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvbif"]
+atlas = ExtResource("6_rxujf")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ffhuh"]
-atlas = ExtResource("5_dwpmn")
+[sub_resource type="AtlasTexture" id="AtlasTexture_hdw22"]
+atlas = ExtResource("6_rxujf")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_t87x6"]
-atlas = ExtResource("5_dwpmn")
+[sub_resource type="AtlasTexture" id="AtlasTexture_vscs1"]
+atlas = ExtResource("6_rxujf")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fvd20"]
-atlas = ExtResource("5_dwpmn")
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7feh"]
+atlas = ExtResource("6_rxujf")
 region = Rect2(128, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s2ij4"]
-atlas = ExtResource("5_dwpmn")
+[sub_resource type="AtlasTexture" id="AtlasTexture_3uqf4"]
+atlas = ExtResource("6_rxujf")
 region = Rect2(160, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_j5mdm"]
-atlas = ExtResource("5_dwpmn")
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dseq"]
+atlas = ExtResource("6_rxujf")
 region = Rect2(192, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3f7pm"]
-atlas = ExtResource("5_dwpmn")
+[sub_resource type="AtlasTexture" id="AtlasTexture_7k2j4"]
+atlas = ExtResource("6_rxujf")
 region = Rect2(224, 0, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_h1cmu"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_pnnv3"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vsctp")
+"texture": SubResource("AtlasTexture_ryjop")
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3dl14")
+"texture": SubResource("AtlasTexture_ryjop")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_oi1ic")
+"texture": SubResource("AtlasTexture_wvbif")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ffhuh")
+"texture": SubResource("AtlasTexture_hdw22")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_t87x6")
+"texture": SubResource("AtlasTexture_vscs1")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fvd20")
+"texture": SubResource("AtlasTexture_q7feh")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_s2ij4")
+"texture": SubResource("AtlasTexture_3uqf4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_j5mdm")
+"texture": SubResource("AtlasTexture_5dseq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3f7pm")
+"texture": SubResource("AtlasTexture_7k2j4")
 }],
 "loop": true,
 "name": &"walk",
@@ -100,7 +96,7 @@ favourite_books = Array[ExtResource("2_wpv74")]([ExtResource("2_we3gw"), ExtReso
 books_found = 0
 previous_recommendations = Array[ExtResource("2_wpv74")]([])
 hints = Array[ExtResource("1_8a45e")]([SubResource("Resource_v7lmb"), SubResource("Resource_xbn3n")])
-sprite_frames = SubResource("SpriteFrames_h1cmu")
+sprite_frames = SubResource("SpriteFrames_pnnv3")
 intro_line = "Hi, my name's Oliver and I was hoping you'd be able to recommend a book for me to read."
 previous_book_line = "Thanks for your recommendation to read {book}, it was {feeling} but not quite what I was looking for."
 no_more_hints_line = "Hmm, I don't know what more I can give you, maybe you just don't stock what I'm looking for yet... Do you have any other ideas?"

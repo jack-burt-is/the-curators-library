@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Character" load_steps=11 format=3 uid="uid://chhybl10rn07m"]
+[gd_resource type="Resource" script_class="Character" load_steps=20 format=3 uid="uid://chhybl10rn07m"]
 
 [ext_resource type="Script" path="res://resources/bases/book.gd" id="1_rsbfm"]
 [ext_resource type="Resource" uid="uid://c6cnpo7jrnjex" path="res://resources/books/the-path.tres" id="2_fa4fq"]
@@ -6,7 +6,7 @@
 [ext_resource type="Resource" uid="uid://bsqghcnw64liy" path="res://resources/books/the-path-of-crowns.tres" id="3_7w4ww"]
 [ext_resource type="Script" path="res://resources/bases/character.gd" id="3_d8c40"]
 [ext_resource type="Resource" uid="uid://dgb6gpj3ttpip" path="res://resources/books/blooms-for-angus.tres" id="4_3mism"]
-[ext_resource type="SpriteFrames" uid="uid://cmqhy1fkxdput" path="res://animations/player.tres" id="7_wh5y7"]
+[ext_resource type="Texture2D" uid="uid://doqbir5qxxsdh" path="res://assets/sprites/characters/white-buzz-basic.png" id="7_qyx2x"]
 
 [sub_resource type="Resource" id="Resource_kyjkl"]
 script = ExtResource("2_s47ms")
@@ -23,6 +23,78 @@ script = ExtResource("2_s47ms")
 book = ExtResource("4_3mism")
 hints = Array[String](["I'm in the mood for something deeply emotional that explores human nature and relationships.", "I want a story with a science fiction twist, maybe something that deals with intelligence and self-discovery.", "I heard about a story where a man’s intelligence is artificially increased, and he forms a bond with a lab mouse."])
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_iv0hi"]
+atlas = ExtResource("7_qyx2x")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uh28t"]
+atlas = ExtResource("7_qyx2x")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhth0"]
+atlas = ExtResource("7_qyx2x")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82y2x"]
+atlas = ExtResource("7_qyx2x")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qek61"]
+atlas = ExtResource("7_qyx2x")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0ydo"]
+atlas = ExtResource("7_qyx2x")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ck60h"]
+atlas = ExtResource("7_qyx2x")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lm4ud"]
+atlas = ExtResource("7_qyx2x")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iaq8e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iv0hi")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iv0hi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uh28t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yhth0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_82y2x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qek61")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s0ydo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ck60h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lm4ud")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
 [resource]
 script = ExtResource("3_d8c40")
 name = "Jack"
@@ -30,7 +102,7 @@ favourite_books = Array[ExtResource("1_rsbfm")]([ExtResource("2_fa4fq"), ExtReso
 books_found = 0
 previous_recommendations = Array[ExtResource("1_rsbfm")]([])
 hints = Array[ExtResource("2_s47ms")]([SubResource("Resource_kyjkl"), SubResource("Resource_il2xu"), SubResource("Resource_q25sc")])
-sprite_frames = ExtResource("7_wh5y7")
+sprite_frames = SubResource("SpriteFrames_iaq8e")
 intro_line = "Hey, I'm hoping you can help me find something to read."
 previous_book_line = "{book} was {feeling}, but didn't quite hit the spot."
 no_more_hints_line = "Not sure what other information I can give you..."
