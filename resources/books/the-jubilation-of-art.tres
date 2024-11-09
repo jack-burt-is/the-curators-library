@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Book" load_steps=5 format=3 uid="uid://21j6lmi135g4"]
+
+[ext_resource type="Script" path="res://resources/bases/genre.gd" id="1_t06fw"]
+[ext_resource type="Resource" uid="uid://d07bt0kwtko7h" path="res://resources/genres/art.tres" id="2_pom28"]
+[ext_resource type="Script" path="res://resources/bases/book.gd" id="2_ty1pk"]
+[ext_resource type="Resource" uid="uid://da4r44p4g474m" path="res://resources/genres/self-help.tres" id="3_0gg3f"]
+
+[resource]
+script = ExtResource("2_ty1pk")
+title = "The Jubilation of Art"
+author = "Rob Moss"
+released = "01-01-1983"
+category = 1
+genres = Array[ExtResource("1_t06fw")]([ExtResource("2_pom28"), ExtResource("3_0gg3f")])
+length = 256
+popularity = 0
+synopsis = "With gentle guidance and soothing words, artist Rob Moss shares his techniques for creating serene landscapes and capturing nature’s beauty. Through step-by-step lessons, he encourages readers to find joy, peace, and self-expression in painting, reminding them that there are no mistakes—only happy little moments on the canvas."

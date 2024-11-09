@@ -1,0 +1,99 @@
+[gd_resource type="Resource" script_class="Character" load_steps=16 format=3 uid="uid://cpmd4o7baef4t"]
+
+[ext_resource type="Script" path="res://resources/bases/book.gd" id="1_ff11q"]
+[ext_resource type="Resource" uid="uid://21j6lmi135g4" path="res://resources/books/the-jubilation-of-art.tres" id="2_3cr28"]
+[ext_resource type="Script" path="res://resources/bases/hint.gd" id="2_qb1hb"]
+[ext_resource type="Script" path="res://resources/bases/character.gd" id="3_sfxjw"]
+[ext_resource type="Texture2D" uid="uid://o6wskysrv60b" path="res://assets/sprites/characters/painter.png" id="5_tsk2e"]
+
+[sub_resource type="Resource" id="Resource_l0i3m"]
+script = ExtResource("2_qb1hb")
+book = ExtResource("2_3cr28")
+hints = Array[String](["I’m looking for something relaxing and uplifting, maybe with a bit of inspiration for creativity.", "There are no mistakes, only happy little accidents."])
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkkk8"]
+atlas = ExtResource("5_tsk2e")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6emt"]
+atlas = ExtResource("5_tsk2e")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1kxq"]
+atlas = ExtResource("5_tsk2e")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xyrw2"]
+atlas = ExtResource("5_tsk2e")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hk7ic"]
+atlas = ExtResource("5_tsk2e")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_va5hr"]
+atlas = ExtResource("5_tsk2e")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_euwx5"]
+atlas = ExtResource("5_tsk2e")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6e6no"]
+atlas = ExtResource("5_tsk2e")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0vr7j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkkk8")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkkk8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6emt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o1kxq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xyrw2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hk7ic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_va5hr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_euwx5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6e6no")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[resource]
+script = ExtResource("3_sfxjw")
+name = "Rob"
+favourite_books = Array[ExtResource("1_ff11q")]([ExtResource("2_3cr28")])
+books_found = 0
+previous_recommendations = Array[ExtResource("1_ff11q")]([])
+hints = Array[ExtResource("2_qb1hb")]([SubResource("Resource_l0i3m")])
+sprite_frames = SubResource("SpriteFrames_0vr7j")
+intro_line = "Hi, it's great to meet you."
+previous_book_line = "That last book wasn't quite for me, but don't worry."
+no_more_hints_line = "All the answers are right here – just take a step back and let them come to you."
+success_line = "This little book is like a friendly guide, gently reminding us that we can all create something beautiful."
+complete_line = "Thank you, my friend. I’ll leave you a little gift – something to bring a bit more joy to your world."
+visit_rarity = 8

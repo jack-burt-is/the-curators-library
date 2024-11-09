@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://cd4aotvrvd36y"]
+
+[ext_resource type="Script" path="res://scripts/unlocks/painting.gd" id="1_1ahcg"]
+[ext_resource type="Texture2D" uid="uid://c8jo6knhkneme" path="res://assets/sprites/paintings/pixel-art-bob.png" id="1_p4jxk"]
+[ext_resource type="Resource" uid="uid://cpmd4o7baef4t" path="res://resources/characters/rob.tres" id="2_0kd7y"]
+[ext_resource type="Texture2D" uid="uid://q57e4wcwx8r3" path="res://assets/sprites/paintings/frame.png" id="2_c2gaw"]
+
+[node name="Painting" type="Node2D"]
+visible = false
+z_index = 1
+script = ExtResource("1_1ahcg")
+character = ExtResource("2_0kd7y")
+
+[node name="Painting" type="Sprite2D" parent="."]
+texture = ExtResource("1_p4jxk")
+
+[node name="Frame" type="Sprite2D" parent="."]
+texture = ExtResource("2_c2gaw")

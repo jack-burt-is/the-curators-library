@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2iemsoe77aop"]
+
+[ext_resource type="Script" path="res://scripts/unlocks/easel.gd" id="1_yt320"]
+[ext_resource type="Texture2D" uid="uid://db8aa0vu70ra1" path="res://assets/sprites/furniture/easel.png" id="2_sdu1y"]
+[ext_resource type="PackedScene" uid="uid://cu3ld8cpbe23m" path="res://scenes/interaction_area.tscn" id="3_2avjd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w8o0b"]
+radius = 12.0
+
+[node name="Easel" type="Node2D"]
+z_index = 5
+z_as_relative = false
+y_sort_enabled = true
+script = ExtResource("1_yt320")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_sdu1y")
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_2avjd")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_w8o0b")

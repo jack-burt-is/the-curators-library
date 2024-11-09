@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SaveGame" load_steps=17 format=3 uid="uid://dtetytxuw7p5l"]
+[gd_resource type="Resource" script_class="SaveGame" load_steps=18 format=3 uid="uid://dtetytxuw7p5l"]
 
 [ext_resource type="Script" path="res://resources/storage/character_glossary.gd" id="1_djxya"]
 [ext_resource type="Script" path="res://resources/bases/book.gd" id="2_6rsfy"]
@@ -13,6 +13,7 @@
 [ext_resource type="Resource" uid="uid://cf6beofbcgpyl" path="res://resources/books/the-picture-of-dorian-gray.tres" id="11_bny5h"]
 [ext_resource type="Resource" uid="uid://c7w4hfemjfq1v" path="res://resources/books/frankenstein.tres" id="12_ld3ra"]
 [ext_resource type="Script" path="res://resources/storage/library_inventory.gd" id="13_cdf3y"]
+[ext_resource type="Resource" uid="uid://21j6lmi135g4" path="res://resources/books/the-jubilation-of-art.tres" id="13_lciix"]
 [ext_resource type="Script" path="res://resources/storage/save_game.gd" id="14_666gh"]
 
 [sub_resource type="Resource" id="Resource_pq4ip"]
@@ -21,12 +22,13 @@ histories = {}
 
 [sub_resource type="Resource" id="Resource_4xt2p"]
 script = ExtResource("13_cdf3y")
-books = Array[ExtResource("2_6rsfy")]([ExtResource("3_l41ga"), ExtResource("4_f07gt"), ExtResource("5_2cty6"), ExtResource("6_07jhg"), ExtResource("7_8mwfr"), ExtResource("8_nkg7k"), ExtResource("9_mqc70"), ExtResource("10_34xao"), ExtResource("11_bny5h"), ExtResource("12_ld3ra")])
+books = Array[ExtResource("2_6rsfy")]([ExtResource("3_l41ga"), ExtResource("4_f07gt"), ExtResource("5_2cty6"), ExtResource("6_07jhg"), ExtResource("7_8mwfr"), ExtResource("8_nkg7k"), ExtResource("9_mqc70"), ExtResource("10_34xao"), ExtResource("11_bny5h"), ExtResource("12_ld3ra"), ExtResource("13_lciix")])
 
 [resource]
 script = ExtResource("14_666gh")
-current_day = 1
-current_hour = 9.0
+current_day = 0
+current_hour = 0.0
 current_minute = 0.0
+zoom = Vector2(4, 4)
 library_inventory = SubResource("Resource_4xt2p")
 character_glossary = SubResource("Resource_pq4ip")

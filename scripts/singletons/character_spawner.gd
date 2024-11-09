@@ -31,16 +31,23 @@ func calculate_eligible_characters() -> void:
 		
 		# If never been in the store before
 		if not histories.has(character) or histories[character].days_visited.is_empty():
-			chance_of_visiting = 1 / character.visit_rarity
-		# If they've been here before but at least yesterday
+			chance_of_visiting = 1.0 / character.visit_rarity
+		
+		# Finished and never to return
 		elif histories[character].finished:
 			break
+			
+		# Been here before
 		elif GameManager.data.current_day - histories[character].days_visited[-1] >= 1:
-			chance_of_visiting = 1 / character.visit_rarity
+			chance_of_visiting = 1.0 / (character.visit_rarity / 3)
+			if chance_of_visiting >= 1:
+				chance_of_visiting = 0.9
+			
 			
 		var is_visiting = randf() < chance_of_visiting
 		if is_visiting: 
 			visiting_characters.append(character)
+			print("Visit from: ", character.name)
 			
 func calculate_spawn_times():
 	for i in range(visiting_characters.size()):

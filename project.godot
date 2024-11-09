@@ -33,7 +33,8 @@ CharacterSpawner="*res://scripts/singletons/character_spawner.gd"
 directories/dch_directory={
 "jack": "res://dialogue/characters/jack.dch",
 "josephine": "res://dialogue/characters/josephine.dch",
-"oliver": "res://dialogue/characters/oliver.dch"
+"oliver": "res://dialogue/characters/oliver.dch",
+"rob": "res://dialogue/characters/rob.dch"
 }
 directories/dtl_directory={
 "josephine": "res://dialogue/timelines/josephine.dtl",

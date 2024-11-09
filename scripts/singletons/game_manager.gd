@@ -12,6 +12,7 @@ var DAY_END_HOUR: float = 18.0
 
 var data: SaveGame
 @onready var menu: Control = get_tree().get_first_node_in_group("pause_menu")
+@onready var unlockables: Node2D = get_tree().current_scene.get_node("%Unlockables")
 
 func _process(delta: float) -> void:
 	update_time(delta)
@@ -55,8 +56,12 @@ func start_new_day() -> void:
 	# Wait 5 seconds
 	await get_tree().create_timer(5).timeout
 	
+	for unlockable in unlockables.get_children():
+		unlockable.check_unlocked()
+	
 	# Set date data
 	data.current_day += 1
 	data.current_hour = DAY_START_HOUR - 1
 	data.current_minute = 30.0
+	
 	
