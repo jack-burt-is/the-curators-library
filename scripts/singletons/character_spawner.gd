@@ -40,9 +40,9 @@ func calculate_eligible_characters() -> void:
 		# Been here before
 		elif GameManager.data.current_day - histories[character].days_visited[-1] >= 1:
 			chance_of_visiting = 1.0 / (character.visit_rarity / 3)
-			if chance_of_visiting >= 1:
-				chance_of_visiting = 0.9
 			
+		if chance_of_visiting >= 1:
+				chance_of_visiting = 0.9
 			
 		var is_visiting = randf() < chance_of_visiting
 		if is_visiting: 
@@ -71,7 +71,6 @@ func _process(delta: float):
 	# Check if current time matches any of the call times
 	for time in spawn_times:
 		if int(time.x) == GameManager.data.current_hour and int(time.y) == int(GameManager.data.current_minute):
-			print("Spawning")
 			var index = randi_range(0, visiting_characters.size() - 1)
 			var character = visiting_characters.pop_at(index)
 			spawn_character(character)

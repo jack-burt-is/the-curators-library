@@ -26,9 +26,9 @@ books = Array[ExtResource("2_6rsfy")]([ExtResource("3_l41ga"), ExtResource("4_f0
 
 [resource]
 script = ExtResource("14_666gh")
-current_day = 0
-current_hour = 0.0
-current_minute = 0.0
+current_day = 1
+current_hour = 8.0
+current_minute = 30.0
 zoom = Vector2(4, 4)
 library_inventory = SubResource("Resource_4xt2p")
 character_glossary = SubResource("Resource_pq4ip")

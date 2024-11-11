@@ -1,0 +1,99 @@
+[gd_resource type="Resource" script_class="Character" load_steps=16 format=3 uid="uid://buworokuovmb8"]
+
+[ext_resource type="Script" path="res://resources/bases/book.gd" id="1_psktu"]
+[ext_resource type="Resource" uid="uid://dx583pdkttx55" path="res://resources/books/thing.tres" id="2_qcejy"]
+[ext_resource type="Script" path="res://resources/bases/hint.gd" id="3_pb4rn"]
+[ext_resource type="Script" path="res://resources/bases/character.gd" id="4_hhpnv"]
+[ext_resource type="Texture2D" uid="uid://477fsqfvpvsv" path="res://assets/sprites/characters/clown.png" id="5_payiq"]
+
+[sub_resource type="Resource" id="Resource_dgqnq"]
+script = ExtResource("3_pb4rn")
+book = ExtResource("2_qcejy")
+hints = Array[String](["I’d love a story where fear is the main attraction. Yes… something that shows how fear tastes… especially from children.", "Mmm, perhaps you know of a tale where a small town holds something… monstrous. Something that appears in many forms, feeding on… the young, perhaps?", "I’m looking for a book about a town where children disappear… and a group of old friends has to remember their childhood… and the terror they faced.", "How about a story where an ancient, shape-shifting creature returns every 27 years to feast on the town's children? They call me… well, let’s just say, I’m everyone’s favorite dancing clown."])
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jovhq"]
+atlas = ExtResource("5_payiq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ft6gq"]
+atlas = ExtResource("5_payiq")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2o0rq"]
+atlas = ExtResource("5_payiq")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nt6ba"]
+atlas = ExtResource("5_payiq")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ka26b"]
+atlas = ExtResource("5_payiq")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8y4pe"]
+atlas = ExtResource("5_payiq")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjw4m"]
+atlas = ExtResource("5_payiq")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vhix5"]
+atlas = ExtResource("5_payiq")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5bec6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jovhq")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jovhq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ft6gq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2o0rq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nt6ba")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ka26b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8y4pe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mjw4m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vhix5")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[resource]
+script = ExtResource("4_hhpnv")
+name = "Cleverpence"
+favourite_books = Array[ExtResource("1_psktu")]([ExtResource("2_qcejy")])
+books_found = 0
+previous_recommendations = Array[ExtResource("1_psktu")]([])
+hints = Array[ExtResource("3_pb4rn")]([SubResource("Resource_dgqnq")])
+sprite_frames = SubResource("SpriteFrames_5bec6")
+intro_line = "Well, well... what do we have here? Someone curious enough to play my little game. I do hope you’re not afraid of what you might find..."
+previous_book_line = "Oh-ho… back again... Didn’t get it last time… but maybe today we’ll get a little closer."
+no_more_hints_line = "Hmm… I’m almost out of tricks in my bag, but I can try to give you one last clue. Just… reach a little closer…"
+success_line = "Hee-hee… yes, that’s the one, ah the memories..."
+complete_line = "Well, thank you ever so much for playing with me! I’ll be off now… but remember, I’ll be back… in 27 years. Oh, and I've left you a little something to remember me by..."
+visit_rarity = 9

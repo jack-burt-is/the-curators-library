@@ -1,0 +1,105 @@
+[gd_resource type="Resource" script_class="Character" load_steps=18 format=3 uid="uid://11ylxq6rfjp7"]
+
+[ext_resource type="Script" path="res://resources/bases/book.gd" id="1_go5g1"]
+[ext_resource type="Script" path="res://resources/bases/hint.gd" id="2_eojus"]
+[ext_resource type="Resource" uid="uid://3rllmrrn6ejf" path="res://resources/books/adventures-of-huckleberry-finn.tres" id="2_mdb7r"]
+[ext_resource type="Script" path="res://resources/bases/character.gd" id="3_cfekw"]
+[ext_resource type="Resource" uid="uid://bidamm8bce3b5" path="res://resources/books/alice-in-wonderland.tres" id="3_pum3c"]
+[ext_resource type="Texture2D" uid="uid://dgv6qymfhxlxk" path="res://assets/sprites/characters/white-female-bob-blonde-tank.png" id="6_w8ecq"]
+
+[sub_resource type="Resource" id="Resource_0uww2"]
+script = ExtResource("2_eojus")
+book = ExtResource("2_mdb7r")
+hints = Array[String](["I’m in the mood for a fun, adventurous story… maybe something with rivers and, oh, a bit of trouble along the way!", "I’d love a book about a character who goes on a journey, making friends and learning a lot along the way—maybe with a bit of Southern charm?", "You know any books where a young boy has to make his way down the Mississippi River, with all kinds of people and a bit of danger?", "I heard about a classic where a boy named Huck and his friend Jim take a raft trip down the river, and it’s all about freedom and friendship!"])
+
+[sub_resource type="Resource" id="Resource_wmtbc"]
+script = ExtResource("2_eojus")
+book = ExtResource("3_pum3c")
+hints = Array[String](["I’m looking for something whimsical and a little dreamy—maybe even a bit nonsensical!", "I’d love a story where someone falls into a strange world with all kinds of curious characters and odd surprises.", "Do you know of a book where a young girl goes on an adventure in a land filled with strange creatures, talking animals, and a bit of magic?", "I heard about a book where a girl named Alice falls down a rabbit hole into a world full of unusual characters, like a mad hatter and a grinning cat!"])
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ws5ry"]
+atlas = ExtResource("6_w8ecq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_664r0"]
+atlas = ExtResource("6_w8ecq")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jy42h"]
+atlas = ExtResource("6_w8ecq")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8qmy"]
+atlas = ExtResource("6_w8ecq")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fyi4d"]
+atlas = ExtResource("6_w8ecq")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1lvo"]
+atlas = ExtResource("6_w8ecq")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3syes"]
+atlas = ExtResource("6_w8ecq")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56cg4"]
+atlas = ExtResource("6_w8ecq")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0vc64"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ws5ry")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ws5ry")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_664r0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jy42h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m8qmy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fyi4d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1lvo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3syes")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_56cg4")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[resource]
+script = ExtResource("3_cfekw")
+name = "Laura"
+favourite_books = Array[ExtResource("1_go5g1")]([ExtResource("2_mdb7r"), ExtResource("3_pum3c")])
+books_found = 0
+previous_recommendations = Array[ExtResource("1_go5g1")]([])
+hints = Array[ExtResource("2_eojus")]([SubResource("Resource_0uww2"), SubResource("Resource_wmtbc")])
+sprite_frames = SubResource("SpriteFrames_0vc64")
+intro_line = "Hi I'm Laura it's a pleasure to meet you!"
+previous_book_line = " {book} was {feeling} but I didn't fall in love with it..."
+no_more_hints_line = "Oh dear I don't know how to describe what I'm looking for!"
+success_line = "Yes! That was so fun, great recommendation thank you!"
+complete_line = "I'm all read-out, take care now and thanks for all your help."
+visit_rarity = 1

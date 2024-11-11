@@ -21,7 +21,6 @@ func add_random_book() -> void:
 
 	var random_resource = resource_files[randi() % resource_files.size()]
 	var book = load("res://resources/books/" + random_resource)
-	print ("Adding " + book.resource_name)
 	
 	GameManager.data.library_inventory.add_item(book)
 	

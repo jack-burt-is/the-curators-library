@@ -8,7 +8,7 @@ extends CharacterBody2D
 var footstep_frames: Array = [0, 4]
 
 func _process(delta: float) -> void:
-	if Dialogic.current_timeline != null:
+	if Dialogic.current_timeline != null or GameManager.freeze_player:
 		animated_sprite.play("idle")
 		return
 		

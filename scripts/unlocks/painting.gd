@@ -18,7 +18,6 @@ func apply_texture_from_resource():
 		for y in range(grid_size):
 			for x in range(grid_size):
 				var color_index = x + (y * grid_size)
-				print(color_index)
 				var color = painting.colors[color_index]
 				image.set_pixel(x, y, color)
 

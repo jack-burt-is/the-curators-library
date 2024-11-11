@@ -1,0 +1,105 @@
+[gd_resource type="Resource" script_class="Character" load_steps=18 format=3 uid="uid://ot3ixew4o3x6"]
+
+[ext_resource type="Script" path="res://resources/bases/book.gd" id="1_imgps"]
+[ext_resource type="Resource" uid="uid://c7w4hfemjfq1v" path="res://resources/books/frankenstein.tres" id="2_avj7f"]
+[ext_resource type="Resource" uid="uid://c2kykuvv5xbr0" path="res://resources/books/metamorphosis.tres" id="3_ykdv8"]
+[ext_resource type="Script" path="res://resources/bases/hint.gd" id="5_yetjr"]
+[ext_resource type="Texture2D" uid="uid://trvvkh2rwuc" path="res://assets/sprites/characters/emo-skull.png" id="6_8tl4q"]
+[ext_resource type="Script" path="res://resources/bases/character.gd" id="6_44pss"]
+
+[sub_resource type="Resource" id="Resource_4utcm"]
+script = ExtResource("5_yetjr")
+book = ExtResource("2_avj7f")
+hints = Array[String](["I… um, I’d like something… a bit dark. Maybe… something about the mysteries of life… and death?", "I guess I’m interested in… a scientist? One who… maybe goes a bit too far… with experiments.", "Do you know of… a story where… someone creates something they can’t control? Something they… sort of regret?", "I… I heard about this book where… a doctor… brings someone to life. From… well, from other people’s parts. And then… things go wrong."])
+
+[sub_resource type="Resource" id="Resource_s57v2"]
+script = ExtResource("5_yetjr")
+book = ExtResource("3_ykdv8")
+hints = Array[String](["Um, I’m… looking for something strange, maybe a little… uncomfortable? Something about, uh, change?", "I was… thinking about a story where… a person suddenly changes. Like… in a very unexpected way.", "Do you know of a book where… someone wakes up and… they’re not… themselves anymore? Not… human, even?", "I heard about this… story, um… where a man wakes up as… a bug. And… it’s about how his life, and his family… kind of fall apart after that."])
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4rrx4"]
+atlas = ExtResource("6_8tl4q")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1vsf"]
+atlas = ExtResource("6_8tl4q")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cj88g"]
+atlas = ExtResource("6_8tl4q")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ukdfa"]
+atlas = ExtResource("6_8tl4q")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6b3e"]
+atlas = ExtResource("6_8tl4q")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2g6w0"]
+atlas = ExtResource("6_8tl4q")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtk8d"]
+atlas = ExtResource("6_8tl4q")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qk1wd"]
+atlas = ExtResource("6_8tl4q")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hheak"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4rrx4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4rrx4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w1vsf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cj88g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ukdfa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6b3e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2g6w0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mtk8d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qk1wd")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[resource]
+script = ExtResource("6_44pss")
+name = "Matthew"
+favourite_books = Array[ExtResource("1_imgps")]([ExtResource("2_avj7f"), ExtResource("3_ykdv8")])
+books_found = 0
+previous_recommendations = Array[ExtResource("1_imgps")]([])
+hints = Array[ExtResource("5_yetjr")]([SubResource("Resource_4utcm"), SubResource("Resource_s57v2")])
+sprite_frames = SubResource("SpriteFrames_hheak")
+intro_line = "Hi..."
+previous_book_line = "{book} wasn't quite what I wanted..."
+no_more_hints_line = "Please..."
+success_line = "That was good, thank you..."
+complete_line = "Bye."
+visit_rarity = 1

@@ -16,8 +16,8 @@ func register_area(area: InteractionArea) -> void:
 
 func unregister_area(area: InteractionArea) -> void:
 	var index = active_areas.find(area)
-	if index != 1:
-		active_areas.remove_at(index)
+	# if index != 1:
+	active_areas.remove_at(index)
 		
 func _process(_delta: float) -> void:
 	if active_areas.size() > 0 && can_interact && Dialogic.current_timeline == null:
@@ -37,6 +37,12 @@ func _process(_delta: float) -> void:
 		
 		
 func sort_by_distance_to_player(area1, area2) -> bool:
+	# Sometimes one of them is null for some reason?
+	if area1 and not area2:
+		return area1
+	if area2 and not area1:
+		return area2
+		
 	var area1_to_player = player.global_position.distance_to(area1.global_position)
 	var area2_to_player = player.global_position.distance_to(area2.global_position)
 	return area1_to_player < area2_to_player

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Book" load_steps=5 format=3 uid="uid://dx583pdkttx55"]
+
+[ext_resource type="Script" path="res://resources/bases/genre.gd" id="1_82f8l"]
+[ext_resource type="Resource" uid="uid://be6ofta3yiyjx" path="res://resources/genres/horror.tres" id="2_gl2rq"]
+[ext_resource type="Script" path="res://resources/bases/book.gd" id="3_pj8ox"]
+[ext_resource type="Resource" uid="uid://d1mdu0e0e2483" path="res://resources/genres/thriller.tres" id="3_vm4mu"]
+
+[resource]
+script = ExtResource("3_pj8ox")
+title = "Thing"
+author = "Stewart Queen"
+released = "1986-09-15"
+category = 0
+genres = Array[ExtResource("1_82f8l")]([ExtResource("2_gl2rq"), ExtResource("3_vm4mu")])
+length = 1138
+popularity = 0
+synopsis = "In the small town of Derry, a group of childhood friends confronts a shape-shifting evil that preys on their worst fears. As adults, they must reunite to battle the horror once more, facing dark memories and the terrifying realization that some nightmares never truly die."

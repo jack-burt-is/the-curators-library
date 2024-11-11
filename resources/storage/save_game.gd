@@ -4,9 +4,9 @@ extends Resource
 const SAVE_GAME_BASE_PATH := "user://save"
 
 # Date
-@export var current_day: int = 0
-@export var current_hour: float = 0.0
-@export var current_minute: float = 0.0
+@export var current_day: int
+@export var current_hour: float
+@export var current_minute: float
 
 # Camera
 @export var zoom: Vector2 = Vector2(4, 4)

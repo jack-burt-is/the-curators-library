@@ -31,15 +31,15 @@ CharacterSpawner="*res://scripts/singletons/character_spawner.gd"
 [dialogic]
 
 directories/dch_directory={
+"cleverpence": "res://dialogue/characters/cleverpence.dch",
 "jack": "res://dialogue/characters/jack.dch",
 "josephine": "res://dialogue/characters/josephine.dch",
+"laura": "res://dialogue/characters/laura.dch",
+"matthew": "res://dialogue/characters/matthew.dch",
 "oliver": "res://dialogue/characters/oliver.dch",
 "rob": "res://dialogue/characters/rob.dch"
 }
-directories/dtl_directory={
-"josephine": "res://dialogue/timelines/josephine.dtl",
-"oliver": "res://dialogue/timelines/oliver.dtl"
-}
+directories/dtl_directory={}
 layout/style_list=["res://dialogue/styles/bubble.tres"]
 layout/default_style="res://dialogue/styles/bubble.tres"
 glossary/default_case_sensitive=true

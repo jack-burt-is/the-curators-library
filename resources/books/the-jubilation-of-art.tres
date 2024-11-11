@@ -9,7 +9,7 @@
 script = ExtResource("2_ty1pk")
 title = "The Jubilation of Art"
 author = "Rob Moss"
-released = "01-01-1983"
+released = "1983"
 category = 1
 genres = Array[ExtResource("1_t06fw")]([ExtResource("2_pom28"), ExtResource("3_0gg3f")])
 length = 256

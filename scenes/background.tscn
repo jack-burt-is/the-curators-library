@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://bd7j011v1imy8"]
+
+[ext_resource type="Script" path="res://scripts/background.gd" id="1_fjfcy"]
+[ext_resource type="Gradient" uid="uid://twm4418rdxer" path="res://assets/colours/day_gradient.tres" id="2_8ng8p"]
+[ext_resource type="Gradient" uid="uid://70qadh32sds3" path="res://assets/colours/night_gradient.tres" id="3_svo2m"]
+[ext_resource type="Texture2D" uid="uid://ndvrapptvehf" path="res://assets/sprites/background.png" id="4_afqx1"]
+
+[node name="Background" type="Node2D"]
+script = ExtResource("1_fjfcy")
+day_gradient = ExtResource("2_8ng8p")
+night_gradient = ExtResource("3_svo2m")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer"]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+texture = ExtResource("4_afqx1")
