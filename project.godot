@@ -27,6 +27,7 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 GameManager="*res://scripts/singletons/game_manager.gd"
 SceneTransition="*res://scenes/singletons/scene_transition.tscn"
 CharacterSpawner="*res://scripts/singletons/character_spawner.gd"
+Helpers="*res://scripts/singletons/helpers.gd"
 
 [dialogic]
 

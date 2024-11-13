@@ -1,42 +1,42 @@
 extends Control
 
-@onready var item_list: ItemList = $PanelContainer/MarginContainer/VBoxContainer/ItemList
+@onready var book_list: ItemList = $PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/BookList
+@onready var genre_list: ItemList = $PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/GenreList
+
+@onready var genres: Array = Helpers.load_all_resources("res://resources/genres/")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 	reload_books()
+	populate_genres()
 	
-func reload_books() -> void:
-	item_list.clear()
+func reload_books(genre: Genre = null) -> void:
+	book_list.clear()
 	for book in GameManager.data.library_inventory.books:
-		item_list.add_item(book.title + " by " + book.author)
-
+		if not genre or book.genres.has(genre):
+			book_list.add_item(book.title + " by " + book.author)
+	
+func populate_genres() -> void:
+	for genre in genres:
+		genre_list.add_item(genre.name)
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
-func add_random_book() -> void:
-	var resource_files = DirAccess.get_files_at("res://resources/books/")
-
-	var random_resource = resource_files[randi() % resource_files.size()]
-	var book = load("res://resources/books/" + random_resource)
-	
-	GameManager.data.library_inventory.add_item(book)
-	
-	reload_books()
-
-func _on_button_pressed() -> void:
-	add_random_book()
-
 func _on_item_list_item_selected(index: int) -> void:
 	GameManager.data.selected_book = GameManager.data.library_inventory.books[index]
-	unpause()
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
-		unpause()
+		hide()
 
-func unpause() -> void:
+func _on_genre_list_item_selected(index: int) -> void:
+	reload_books(genres[index])
+
+func _on_filter_clear_pressed() -> void:
+	reload_books()
+
+
+func _on_close_pressed() -> void:
 	hide()
-	get_tree().paused = false

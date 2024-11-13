@@ -28,10 +28,16 @@ func calculate_eligible_characters() -> void:
 	var characters = load_all_characters("res://resources/characters/")
 	for character in characters:
 		var chance_of_visiting = 0.0
+		var base_chance = 1.0
+		
+		# Slightly lower the chance of a new character with each new one
+		base_chance -= visiting_characters.size() / 10.0
+		if base_chance > 0.8:
+			base_chance = 0.8
 		
 		# If never been in the store before
 		if not histories.has(character) or histories[character].days_visited.is_empty():
-			chance_of_visiting = 1.0 / character.visit_rarity
+			chance_of_visiting = base_chance / character.visit_rarity
 		
 		# Finished and never to return
 		elif histories[character].finished:
@@ -39,15 +45,16 @@ func calculate_eligible_characters() -> void:
 			
 		# Been here before
 		elif GameManager.data.current_day - histories[character].days_visited[-1] >= 1:
-			chance_of_visiting = 1.0 / (character.visit_rarity / 3)
+			chance_of_visiting = base_chance / (character.visit_rarity / 3.0)
 			
-		if chance_of_visiting >= 1:
-				chance_of_visiting = 0.9
+		
+				
+		print ("Chance of ", character.name," visiting is ", chance_of_visiting)
 			
 		var is_visiting = randf() < chance_of_visiting
 		if is_visiting: 
 			visiting_characters.append(character)
-			print("Visit from: ", character.name)
+			print("Visit from ", character.name, "(" , chance_of_visiting, ")")
 			
 func calculate_spawn_times():
 	for i in range(visiting_characters.size()):
