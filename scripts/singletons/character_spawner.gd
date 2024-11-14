@@ -43,10 +43,12 @@ func calculate_eligible_characters() -> void:
 		elif histories[character].finished:
 			break
 			
-		# Been here before
+		# Rare and been here before
 		elif GameManager.data.current_day - histories[character].days_visited[-1] >= 1:
-			chance_of_visiting = base_chance / (character.visit_rarity / 3.0)
-			
+			if character.visit_rarity > 3:
+				chance_of_visiting = base_chance / (character.visit_rarity / 3.0)
+			else:
+				chance_of_visiting = base_chance / character.visit_rarity
 		
 				
 		print ("Chance of ", character.name," visiting is ", chance_of_visiting)

@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cc2nji1qrcita"]
+[gd_scene load_steps=6 format=3 uid="uid://cc2nji1qrcita"]
 
 [ext_resource type="Script" path="res://scripts/library_interface.gd" id="1_b23nf"]
 [ext_resource type="FontFile" uid="uid://5ihhn67dre4l" path="res://assets/fonts/monogram-extended.ttf" id="2_r8jeg"]
+[ext_resource type="FontFile" uid="uid://dshn4wdenoorq" path="res://assets/fonts/monogram-extended-italic.ttf" id="4_t8mrt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6mw3k"]
+
+[sub_resource type="Theme" id="Theme_d21ms"]
+PopupPanel/styles/panel = SubResource("StyleBoxEmpty_6mw3k")
 
 [node name="LibraryInterface" type="Control"]
 z_index = 50
@@ -71,11 +77,41 @@ theme_override_fonts/font = ExtResource("2_r8jeg")
 text = "RESET"
 
 [node name="BookList" type="ItemList" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(350, 0)
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 mouse_default_cursor_shape = 2
+theme = SubResource("Theme_d21ms")
 theme_override_fonts/font = ExtResource("2_r8jeg")
 auto_height = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 8
+
+[node name="BookDetail" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("2_r8jeg")
+theme_override_fonts/italics_font = ExtResource("4_t8mrt")
+bbcode_enabled = true
+text = "select a book for more detail..."
+
+[node name="SelectBook" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_r8jeg")
+text = "SELECT"
 
 [node name="ExitMargin" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2
@@ -99,4 +135,5 @@ clip_text = true
 [connection signal="item_selected" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/GenreList" to="." method="_on_genre_list_item_selected"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/FilterClear" to="." method="_on_filter_clear_pressed"]
 [connection signal="item_selected" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/BookList" to="." method="_on_item_list_item_selected"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/SelectBook" to="." method="_on_select_book_pressed"]
 [connection signal="pressed" from="PanelContainer/ExitMargin/Close" to="." method="_on_close_pressed"]
