@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cc2nji1qrcita"]
+[gd_scene load_steps=8 format=3 uid="uid://cc2nji1qrcita"]
 
 [ext_resource type="Script" path="res://scripts/library_interface.gd" id="1_b23nf"]
 [ext_resource type="FontFile" uid="uid://5ihhn67dre4l" path="res://assets/fonts/monogram-extended.ttf" id="2_r8jeg"]
 [ext_resource type="FontFile" uid="uid://dshn4wdenoorq" path="res://assets/fonts/monogram-extended-italic.ttf" id="4_t8mrt"]
+[ext_resource type="Texture2D" uid="uid://bq6ff5icxjfqr" path="res://assets/sprites/profile_placeholder.png" id="4_upvhb"]
+[ext_resource type="Texture2D" uid="uid://d3ikk0el63p1v" path="res://assets/sprites/question-mark.png" id="5_jgidy"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6mw3k"]
 
@@ -19,64 +21,71 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_b23nf")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="TabContainer" type="TabContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -124.5
-offset_top = -160.0
-offset_right = 124.5
-offset_bottom = 160.0
+offset_left = -339.0
+offset_top = -175.5
+offset_right = 339.0
+offset_bottom = 175.5
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
+theme_override_fonts/font = ExtResource("2_r8jeg")
+current_tab = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+[node name="LibraryGlossary" type="PanelContainer" parent="TabContainer"]
+visible = false
+layout_mode = 2
+mouse_filter = 1
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/LibraryGlossary"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/LibraryGlossary/MarginContainer"]
 layout_mode = 2
 mouse_filter = 2
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="TabContainer/LibraryGlossary/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_r8jeg")
 text = "Books"
 
-[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="TabContainer/LibraryGlossary/MarginContainer/VBoxContainer"]
 layout_mode = 2
 mouse_filter = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/LibraryGlossary/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/LibraryGlossary/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2
 
-[node name="GenreList" type="ItemList" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="GenreList" type="ItemList" parent="TabContainer/LibraryGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(150, 250)
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme_override_colors/font_selected_color = Color(0.348379, 0.54939, 1, 1)
 theme_override_fonts/font = ExtResource("2_r8jeg")
 
-[node name="FilterClear" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="FilterClear" type="Button" parent="TabContainer/LibraryGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_r8jeg")
 text = "RESET"
 
-[node name="BookList" type="ItemList" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="BookList" type="ItemList" parent="TabContainer/LibraryGlossary/MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 mouse_default_cursor_shape = 2
@@ -84,23 +93,23 @@ theme = SubResource("Theme_d21ms")
 theme_override_fonts/font = ExtResource("2_r8jeg")
 auto_height = true
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/LibraryGlossary/MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="PanelContainer" type="PanelContainer" parent="TabContainer/LibraryGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/LibraryGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 8
 
-[node name="BookDetail" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer"]
+[node name="BookDetail" type="RichTextLabel" parent="TabContainer/LibraryGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("2_r8jeg")
@@ -108,12 +117,12 @@ theme_override_fonts/italics_font = ExtResource("4_t8mrt")
 bbcode_enabled = true
 text = "select a book for more detail..."
 
-[node name="SelectBook" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="SelectBook" type="Button" parent="TabContainer/LibraryGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_r8jeg")
 text = "SELECT"
 
-[node name="ExitMargin" type="MarginContainer" parent="PanelContainer"]
+[node name="ExitMargin" type="MarginContainer" parent="TabContainer/LibraryGlossary"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
@@ -122,7 +131,7 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="Close" type="Button" parent="PanelContainer/ExitMargin"]
+[node name="Close" type="Button" parent="TabContainer/LibraryGlossary/ExitMargin"]
 clip_contents = true
 custom_minimum_size = Vector2(21, 21)
 layout_mode = 2
@@ -132,8 +141,184 @@ theme_override_fonts/font = ExtResource("2_r8jeg")
 text = "x"
 clip_text = true
 
-[connection signal="item_selected" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/GenreList" to="." method="_on_genre_list_item_selected"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/FilterClear" to="." method="_on_filter_clear_pressed"]
-[connection signal="item_selected" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/BookList" to="." method="_on_item_list_item_selected"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/SelectBook" to="." method="_on_select_book_pressed"]
-[connection signal="pressed" from="PanelContainer/ExitMargin/Close" to="." method="_on_close_pressed"]
+[node name="CharacterGlossary" type="PanelContainer" parent="TabContainer"]
+layout_mode = 2
+mouse_filter = 1
+metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/CharacterGlossary"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/CharacterGlossary/MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_r8jeg")
+text = "Characters
+"
+
+[node name="HSeparator" type="HSeparator" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="CharacterList" type="ItemList" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(150, 250)
+layout_mode = 2
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_colors/font_selected_color = Color(0.348379, 0.54939, 1, 1)
+theme_override_fonts/font = ExtResource("2_r8jeg")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Bio" type="VBoxContainer" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="Picture" type="TextureRect" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/HBoxContainer/Bio"]
+layout_mode = 2
+texture = ExtResource("4_upvhb")
+expand_mode = 4
+stretch_mode = 6
+
+[node name="BioText" type="RichTextLabel" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/HBoxContainer/Bio"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("2_r8jeg")
+theme_override_fonts/italics_font = ExtResource("4_t8mrt")
+bbcode_enabled = true
+text = "[table={2}]
+[cell][u]Name:[/u][/cell]
+[cell][i]{name}[/i][/cell]
+[cell][u]Age:[/u][/cell]
+[cell][i]{age}[/i][/cell]
+[/table]"
+
+[node name="Goals" type="VBoxContainer" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="Favourites" type="VBoxContainer" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/HBoxContainer/Goals"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/HBoxContainer/Goals/Favourites"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_r8jeg")
+text = "Favourite Books:"
+
+[node name="FavouritesList" type="ItemList" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/HBoxContainer/Goals/Favourites"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_r8jeg")
+
+[node name="Unlockable" type="VBoxContainer" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/HBoxContainer/Goals"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/HBoxContainer/Goals/Unlockable"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_r8jeg")
+text = "Unlockable:"
+
+[node name="UnlockableImage" type="TextureRect" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/HBoxContainer/Goals/Unlockable"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("5_jgidy")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="CurrentFind" type="VBoxContainer" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="PreviousGuesses" type="VBoxContainer" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/HBoxContainer/CurrentFind"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/HBoxContainer/CurrentFind/PreviousGuesses"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_r8jeg")
+text = "Previous Guesses:"
+
+[node name="PreviousGuessesList" type="ItemList" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/HBoxContainer/CurrentFind/PreviousGuesses"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_r8jeg")
+
+[node name="PreviousHints" type="VBoxContainer" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/HBoxContainer/CurrentFind"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/HBoxContainer/CurrentFind/PreviousHints"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_r8jeg")
+text = "Hints:"
+
+[node name="HintsList" type="ItemList" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/HBoxContainer/CurrentFind/PreviousHints"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_r8jeg")
+
+[node name="ExitMargin" type="MarginContainer" parent="TabContainer/CharacterGlossary"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Close" type="Button" parent="TabContainer/CharacterGlossary/ExitMargin"]
+clip_contents = true
+custom_minimum_size = Vector2(21, 21)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_r8jeg")
+text = "x"
+clip_text = true
+
+[connection signal="item_selected" from="TabContainer/LibraryGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/GenreList" to="." method="_on_genre_list_item_selected"]
+[connection signal="pressed" from="TabContainer/LibraryGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/FilterClear" to="." method="_on_filter_clear_pressed"]
+[connection signal="item_selected" from="TabContainer/LibraryGlossary/MarginContainer/VBoxContainer/HBoxContainer/BookList" to="." method="_on_item_list_item_selected"]
+[connection signal="pressed" from="TabContainer/LibraryGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/SelectBook" to="." method="_on_select_book_pressed"]
+[connection signal="pressed" from="TabContainer/LibraryGlossary/ExitMargin/Close" to="." method="_on_close_pressed"]
+[connection signal="item_selected" from="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/CharacterList" to="." method="_on_character_list_item_selected"]
+[connection signal="pressed" from="TabContainer/CharacterGlossary/ExitMargin/Close" to="." method="_on_close_pressed"]

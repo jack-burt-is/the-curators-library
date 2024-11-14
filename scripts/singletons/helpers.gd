@@ -21,3 +21,11 @@ func load_all_resources(directory_path: String):
 	
 	dir.list_dir_end()
 	return resources
+	
+func array_to_string(arr: Array):
+	var string = ""
+	for item in arr:
+		string += item.to_string()
+		string += ", "
+	
+	return string.left(string.length() - 2)
