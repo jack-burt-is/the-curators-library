@@ -69,8 +69,9 @@ func generate_dialogic_timeline() -> DialogicTimeline:
 		# Last time they were here we recommended a favourite
 		elif previous_recommendations[-1] == favourite_books[books_found]:
 			events.append(get_dialogic_start() + success_line)
-			previous_recommendations.clear()
 			books_found += 1
+			previous_recommendations.clear()
+			GameManager.data.character_glossary.update_character(self)
 			
 		# Last time they were here we recommended a non-favourite
 		else:

@@ -26,6 +26,7 @@ var zoom_speed: float = 10
 var target_reached = false
 var interacting = false
 var leaving = false
+var interactable = true
 
 @export var character: Character
 var footstep_frames: Array = [1, 5]
@@ -70,7 +71,7 @@ func _ready() -> void:
 	make_path()
 
 func _on_interact() -> void:
-	if Dialogic.current_timeline != null:
+	if Dialogic.current_timeline != null or not interactable:
 		return
 			
 	var layout = Dialogic.start(character.generate_dialogic_timeline())
@@ -126,6 +127,7 @@ func set_character(char) -> void:
 	character.have_spoken = false
 	
 func trigger_character_exit() -> void:
+	interactable = false
 	timer.stop()
 	leaving = true
 	target_reached = false

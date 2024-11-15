@@ -35,10 +35,9 @@ offset_bottom = 175.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_r8jeg")
-current_tab = 1
+current_tab = 0
 
 [node name="LibraryGlossary" type="PanelContainer" parent="TabContainer"]
-visible = false
 layout_mode = 2
 mouse_filter = 1
 metadata/_tab_index = 0
@@ -142,6 +141,7 @@ text = "x"
 clip_text = true
 
 [node name="CharacterGlossary" type="PanelContainer" parent="TabContainer"]
+visible = false
 layout_mode = 2
 mouse_filter = 1
 metadata/_tab_index = 1
@@ -200,22 +200,22 @@ theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 8
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer"]
+[node name="CharacterInfoContainer" type="HBoxContainer" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="Bio" type="VBoxContainer" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/HBoxContainer"]
+[node name="Bio" type="VBoxContainer" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 8
 
-[node name="Picture" type="TextureRect" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/HBoxContainer/Bio"]
+[node name="Picture" type="TextureRect" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/Bio"]
 layout_mode = 2
 texture = ExtResource("4_upvhb")
 expand_mode = 4
 stretch_mode = 6
 
-[node name="BioText" type="RichTextLabel" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/HBoxContainer/Bio"]
+[node name="BioText" type="RichTextLabel" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/Bio"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("2_r8jeg")
@@ -228,70 +228,70 @@ text = "[table={2}]
 [cell][i]{age}[/i][/cell]
 [/table]"
 
-[node name="Goals" type="VBoxContainer" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/HBoxContainer"]
+[node name="Goals" type="VBoxContainer" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 8
 
-[node name="Favourites" type="VBoxContainer" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/HBoxContainer/Goals"]
+[node name="Favourites" type="VBoxContainer" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/Goals"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/HBoxContainer/Goals/Favourites"]
+[node name="Label" type="Label" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/Goals/Favourites"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_r8jeg")
 text = "Favourite Books:"
 
-[node name="FavouritesList" type="ItemList" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/HBoxContainer/Goals/Favourites"]
+[node name="FavouritesList" type="ItemList" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/Goals/Favourites"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_r8jeg")
 
-[node name="Unlockable" type="VBoxContainer" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/HBoxContainer/Goals"]
+[node name="Unlockable" type="VBoxContainer" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/Goals"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/HBoxContainer/Goals/Unlockable"]
+[node name="Label" type="Label" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/Goals/Unlockable"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_r8jeg")
 text = "Unlockable:"
 
-[node name="UnlockableImage" type="TextureRect" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/HBoxContainer/Goals/Unlockable"]
+[node name="UnlockableImage" type="TextureRect" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/Goals/Unlockable"]
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("5_jgidy")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="CurrentFind" type="VBoxContainer" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/HBoxContainer"]
+[node name="CurrentFind" type="VBoxContainer" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 8
 
-[node name="PreviousGuesses" type="VBoxContainer" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/HBoxContainer/CurrentFind"]
+[node name="PreviousGuesses" type="VBoxContainer" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/CurrentFind"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/HBoxContainer/CurrentFind/PreviousGuesses"]
+[node name="Label" type="Label" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/CurrentFind/PreviousGuesses"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_r8jeg")
 text = "Previous Guesses:"
 
-[node name="PreviousGuessesList" type="ItemList" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/HBoxContainer/CurrentFind/PreviousGuesses"]
+[node name="PreviousGuessesList" type="ItemList" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/CurrentFind/PreviousGuesses"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_r8jeg")
 
-[node name="PreviousHints" type="VBoxContainer" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/HBoxContainer/CurrentFind"]
+[node name="PreviousHints" type="VBoxContainer" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/CurrentFind"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/HBoxContainer/CurrentFind/PreviousHints"]
+[node name="Label" type="Label" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/CurrentFind/PreviousHints"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_r8jeg")
 text = "Hints:"
 
-[node name="HintsList" type="ItemList" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/HBoxContainer/CurrentFind/PreviousHints"]
+[node name="HintsList" type="ItemList" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/CurrentFind/PreviousHints"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_r8jeg")
@@ -315,10 +315,13 @@ theme_override_fonts/font = ExtResource("2_r8jeg")
 text = "x"
 clip_text = true
 
+[connection signal="draw" from="." to="." method="_on_draw"]
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
 [connection signal="item_selected" from="TabContainer/LibraryGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/GenreList" to="." method="_on_genre_list_item_selected"]
 [connection signal="pressed" from="TabContainer/LibraryGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/FilterClear" to="." method="_on_filter_clear_pressed"]
 [connection signal="item_selected" from="TabContainer/LibraryGlossary/MarginContainer/VBoxContainer/HBoxContainer/BookList" to="." method="_on_item_list_item_selected"]
 [connection signal="pressed" from="TabContainer/LibraryGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/SelectBook" to="." method="_on_select_book_pressed"]
 [connection signal="pressed" from="TabContainer/LibraryGlossary/ExitMargin/Close" to="." method="_on_close_pressed"]
 [connection signal="item_selected" from="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/CharacterList" to="." method="_on_character_list_item_selected"]
+[connection signal="draw" from="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer" to="." method="_on_character_info_container_draw"]
 [connection signal="pressed" from="TabContainer/CharacterGlossary/ExitMargin/Close" to="." method="_on_close_pressed"]

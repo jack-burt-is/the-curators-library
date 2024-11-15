@@ -19,6 +19,8 @@ var initialised = false
 
 var freeze_player = false
 
+signal new_day_started
+
 func _process(delta: float) -> void:
 	if initialised:
 		update_time(delta)
@@ -68,6 +70,8 @@ func start_new_day() -> void:
 	
 	for unlockable in unlockables.get_children():
 		unlockable.check_unlocked()
+	
+	new_day_started.emit()
 	
 	# Set date data
 	data.current_day += 1
