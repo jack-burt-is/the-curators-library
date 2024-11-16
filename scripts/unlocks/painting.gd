@@ -12,7 +12,7 @@ func apply_texture_from_resource():
 	var painting = GameManager.data.painting
 	var grid_size = int(sqrt(painting.colors.size()))
 
-	if painting:
+	if painting and grid_size > 0:
 		var image = Image.create(grid_size, grid_size, false, Image.FORMAT_RGBA8)
 
 		for y in range(grid_size):

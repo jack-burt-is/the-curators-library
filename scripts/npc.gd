@@ -121,8 +121,8 @@ func _on_animated_sprite_2d_frame_changed() -> void:
 	if animated_sprite.frame in footstep_frames:
 		audio_stream_player.play()
 		
-func set_character(char) -> void:
-	character = char
+func set_character(character_input) -> void:
+	character = character_input
 	animated_sprite.sprite_frames = character.sprite_frames
 	character.have_spoken = false
 	

@@ -79,6 +79,6 @@ func _on_reset_pressed() -> void:
 	
 
 func _on_save_and_close_pressed() -> void:
-	var painting_resource = GameManager.data.painting.create_from_grid(grid.get_children())
+	GameManager.data.painting.create_from_grid(grid.get_children())
 	painting.apply_texture_from_resource()
 	self.hide()

@@ -5,15 +5,15 @@ extends Node2D
 @export var night_gradient: Gradient
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	# Determine which gradient to use based on the time of day
-	if is_daytime(GameManager.data.current_hour, GameManager.data.current_minute):
-		canvas_modulate.color = sample_gradient(day_gradient, GameManager.data.current_hour, GameManager.data.current_minute, 6, 18)	
+	if is_daytime(int(GameManager.data.current_hour)):
+		canvas_modulate.color = sample_gradient(day_gradient, int(GameManager.data.current_hour), int(GameManager.data.current_minute), 6, 18)	
 	else:
-		canvas_modulate.color = sample_gradient(night_gradient, GameManager.data.current_hour, GameManager.data.current_minute, 18, 6)
+		canvas_modulate.color = sample_gradient(night_gradient, int(GameManager.data.current_hour), int(GameManager.data.current_minute), 18, 6)
 
 # Checks if the time is within the daytime range (6:00 to 18:00)
-func is_daytime(hour: int, minute: int) -> bool:
+func is_daytime(hour: int) -> bool:
 	return hour >= 6 and hour < 18
 
 # Samples a color from the given gradient based on the time of day

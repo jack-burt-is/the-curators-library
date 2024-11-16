@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://xbamugk6ccdk"]
+[gd_scene load_steps=22 format=4 uid="uid://xbamugk6ccdk"]
 
 [ext_resource type="PackedScene" uid="uid://7ugb3rp7suaw" path="res://scenes/player.tscn" id="1_7xs0p"]
 [ext_resource type="PackedScene" uid="uid://dc8rg2vardosp" path="res://scenes/canvas.tscn" id="1_dscsk"]
@@ -23,20 +23,6 @@ tonemap_mode = 3
 glow_normalized = true
 glow_intensity = 1.13
 glow_blend_mode = 0
-
-[sub_resource type="GDScript" id="GDScript_c8cdf"]
-script/source = "extends TileMapLayer
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-"
 
 [sub_resource type="Gradient" id="Gradient_kbu5v"]
 interpolation_mode = 2
@@ -83,7 +69,6 @@ z_index = 5
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAFAAIAAQAFAAoAAAAHAAQAAQALAAcAABADAAQAAQAAAAwAAAD3//3/AQACAAQAAAAIAP3/AQACAAQAAAD2/wIAAQAFAAQAAAD2/wMAAQAFAAQAAAD6/wEAAQACAAQAAAD9/wEAAQACAAQAAAAJAP//AQAFAAQAABAJAAAAAQAFAAQAABD6//3/AQAEAAcAAAADAAUAAQAGAAcAAAAEAPz/AQAIAA8AAAAAAP7/AQAJAAkAAAAAAPz/AQAJAAcAAAAAAP3/AQAJAAgAAAABAPz/AQAKAAcAAAABAP3/AQAKAAgAAAABAP7/AQAKAAkAAAAAAPv/AQAJAAcAAAABAPv/AQAKAAcAAAAAAPr/AQAJAAcAAAABAPr/AQAKAAcAAAAHAAMAAQACAAAAABAEAP7/AQAAAAIAAAD2/wAAAQAGAAcAAAD8//7/AQADAAIAAAD+//7/AQADAAIAAAA=")
 tile_set = ExtResource("1_tqh7g")
-script = SubResource("GDScript_c8cdf")
 
 [node name="Upper Furniture" type="TileMapLayer" parent="TileMap"]
 z_index = 5

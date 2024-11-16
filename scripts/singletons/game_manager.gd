@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 	if initialised:
 		update_time(delta)
 
-func _unhandled_input(event: InputEvent) -> void:
+func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_pressed("pause"):
 		menu.show()
 		get_tree().paused = true

@@ -55,7 +55,6 @@ func get_dialogic_start():
 
 func generate_dialogic_timeline() -> DialogicTimeline:
 	intro_line = intro_line	
-	var success = false
 	var events : Array[String]
 	
 	# NPC Dialog Consruction

@@ -49,14 +49,13 @@ func calculate_eligible_characters() -> void:
 				chance_of_visiting = base_chance / (character.visit_rarity / 3.0)
 			else:
 				chance_of_visiting = base_chance / character.visit_rarity
-		
-				
-		print ("Chance of ", character.name," visiting is ", chance_of_visiting)
-			
+					
 		var is_visiting = randf() < chance_of_visiting
 		if is_visiting: 
 			visiting_characters.append(character)
 			print("Visit from ", character.name, "(" , chance_of_visiting, ")")
+		else:
+			print("No visit from ", character.name, "(" , chance_of_visiting, ")")		
 			
 func calculate_spawn_times():
 	for i in range(visiting_characters.size()):
@@ -76,7 +75,7 @@ func calculate_spawn_times():
 		# Add this time to the list of call times
 		spawn_times.append(Vector2(call_hour, call_minute))
 		
-func _process(delta: float):
+func _process(_delta: float):
 	# Check if current time matches any of the call times
 	for time in spawn_times:
 		if int(time.x) == GameManager.data.current_hour and int(time.y) == int(GameManager.data.current_minute):
