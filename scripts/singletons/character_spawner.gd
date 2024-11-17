@@ -17,6 +17,7 @@ func reset_spawner() -> void:
 	spawn_times.clear()
 	
 	calculate_eligible_characters()
+	calculate_random_shoppers()
 	calculate_spawn_times()
 	
 	var children = spawn_parent.get_children()
@@ -55,13 +56,21 @@ func calculate_eligible_characters() -> void:
 			visiting_characters.append(character)
 			print("Visit from ", character.name, "(" , chance_of_visiting, ")")
 		else:
-			print("No visit from ", character.name, "(" , chance_of_visiting, ")")		
+			print("No visit from ", character.name, "(" , chance_of_visiting, ")")
+			
+func calculate_random_shoppers():
+	var shoppers_range = get_shopper_range()
+	var num_shoppers = randi_range(shoppers_range[0], shoppers_range[1])
+	
+	# Spawn non-character shoppers
+	for i in shoppers_range:
+		visiting_characters.append(null)
 			
 func calculate_spawn_times():
 	for i in range(visiting_characters.size()):
 		# Generate a random number with a quadratic bias towards the start of the range
 		var progress = pow(randf(), 2)  # Change 2 to a higher number for stronger bias
-		var hour_offset = int(progress * (GameManager.DAY_END_HOUR - GameManager.DAY_START_HOUR))
+		var hour_offset = int(progress * ((GameManager.DAY_END_HOUR - 1) - GameManager.DAY_START_HOUR))
 		var minute_offset = int(randf() * 60)
 		
 		# Calculate the exact time
@@ -84,19 +93,24 @@ func _process(_delta: float):
 			spawn_character(character)
 			spawn_times.erase(time)  # Remove time to ensure it's only called once
 			break
+			
+func get_shopper_range() -> Vector2:
+	# TODO: Popularity system
+	return Vector2(4,6)
 
 func spawn_character(character) -> void:
 	var instance = npc.instantiate()
 	instance.position = navigation_leave.global_position
 	spawn_parent.add_child(instance)
 	
-	# Load save data into character resource
-	if GameManager.data.character_glossary.histories.has(character):
-		character.previous_recommendations = GameManager.data.character_glossary.histories[character].previous_recommendations
-		character.books_found = GameManager.data.character_glossary.histories[character].books_found
+	# If it's a character resource and not null
+	if character:
+		# Load save data into character resource
+		if GameManager.data.character_glossary.histories.has(character):
+			character.previous_recommendations = GameManager.data.character_glossary.histories[character].previous_recommendations
+			character.books_found = GameManager.data.character_glossary.histories[character].books_found
 
-	instance.set_character(character)
-
+		instance.set_character(character)
 
 # Function to load all .tres files in the given directory
 func load_all_characters(directory_path: String):

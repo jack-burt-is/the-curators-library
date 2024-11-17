@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://m5385aappsls"]
+[gd_scene load_steps=5 format=3 uid="uid://m5385aappsls"]
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_4k4kh"]
 [ext_resource type="Texture2D" uid="uid://c5x0rwt7l5cit" path="res://assets/sprites/book.png" id="1_fjy3x"]
+[ext_resource type="Texture2D" uid="uid://cox2yph3q2kk0" path="res://assets/sprites/coin.png" id="3_tudxl"]
+[ext_resource type="FontFile" uid="uid://5ihhn67dre4l" path="res://assets/fonts/monogram-extended.ttf" id="4_bws6h"]
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -12,7 +14,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4k4kh")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="Hotbar" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -26,18 +28,61 @@ theme_override_constants/margin_top = 64
 theme_override_constants/margin_right = 64
 theme_override_constants/margin_bottom = 64
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="Hotbar"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Hotbar/PanelContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="Hotbar/PanelContainer/MarginContainer"]
 visible = false
 layout_mode = 2
 texture = ExtResource("1_fjy3x")
+
+[node name="UpperLeft" type="MarginContainer" parent="."]
+layout_mode = 1
+offset_right = 192.0
+offset_bottom = 192.0
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="PanelContainer" type="PanelContainer" parent="UpperLeft"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UpperLeft/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="MarginContainer" type="MarginContainer" parent="UpperLeft/PanelContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="TextureRect" type="TextureRect" parent="UpperLeft/PanelContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("3_tudxl")
+expand_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="UpperLeft/PanelContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 16
+
+[node name="CoinAmount" type="Label" parent="UpperLeft/PanelContainer/HBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_bws6h")
+theme_override_font_sizes/font_size = 32
+text = "0
+"
+horizontal_alignment = 2

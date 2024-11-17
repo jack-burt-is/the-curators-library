@@ -9,6 +9,7 @@ extends CharacterBody2D
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var timer: Timer = $Timer
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var help: Sprite2D = $Help
 
 @onready var target_positions: Node2D = get_tree().current_scene.get_node("%NavigationPoints")
 @onready var navigation_leave: Node2D = get_tree().current_scene.get_node("%NavigationLeave")
@@ -30,6 +31,8 @@ var interactable = true
 
 @export var character: Character
 var footstep_frames: Array = [1, 5]
+
+var made_purchase = false
 
 func _process(delta: float) -> void:
 	
@@ -67,25 +70,32 @@ func _ready() -> void:
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
 	Dialogic.timeline_started.connect(_on_timeline_started)
 		
-	interaction_area.interact = Callable(self, "_on_interact")
 	make_path()
 
 func _on_interact() -> void:
+	help.hide()
+	
 	if Dialogic.current_timeline != null or not interactable:
 		return
 			
-	var layout = Dialogic.start(character.generate_dialogic_timeline())
-	
-	var char_resource = "res://dialogue/characters/{name}.dch".format({"name": character.name.to_lower()})		
-	var character_loaded = load(char_resource)
+	if character:
+		var layout = Dialogic.start(character.generate_dialogic_timeline())
 		
-	layout.register_character(character_loaded, dialog_marker)
-	
+		var char_resource = "res://dialogue/characters/{name}.dch".format({"name": character.name.to_lower()})		
+		var character_loaded = load(char_resource)
+			
+		layout.register_character(character_loaded, dialog_marker)
+		
 func make_path() -> void:
 	navigation_agent.target_position = target_positions.get_children(false).pick_random().global_position
 	
 func _on_timer_timeout() -> void:
 	target_reached = false
+	
+	if made_purchase:
+		make_purchase()
+		return
+		
 	make_path()
 
 func _on_navigation_agent_2d_target_reached() -> void:
@@ -95,16 +105,26 @@ func _on_navigation_agent_2d_target_reached() -> void:
 	var delay = randf_range(lower_bound, upper_bound)
 	timer.start(delay)
 	
-func _on_dialogic_signal(argument:String):
-	if argument == "character_finished_" + character.name:
-		GameManager.data.character_glossary.end_character_arc(character)
+	if not character:
+		var chance_of_purchase = 0.2
+		if randf() < chance_of_purchase:
+			made_purchase = true
+			
+	else:
+		if not character.have_spoken:
+			help.show()
 	
-	if argument == "book_given_" + character.name:
-		character.previous_recommendations.append(GameManager.data.selected_book)
-		GameManager.data.character_glossary.update_character(character)
+func _on_dialogic_signal(argument:String):
+	if character:	
+		if argument == "character_finished_" + character.name:
+			GameManager.data.character_glossary.end_character_arc(character)
 		
-	if argument == "leave_" + character.name:
-		trigger_character_exit()
+		if argument == "book_given_" + character.name:
+			character.previous_recommendations.append(GameManager.data.selected_book)
+			GameManager.data.character_glossary.update_character(character)
+			
+		if argument == "leave_" + character.name:
+			trigger_character_exit()
 		
 		
 func _on_timeline_started() -> void:
@@ -125,6 +145,7 @@ func set_character(character_input) -> void:
 	character = character_input
 	animated_sprite.sprite_frames = character.sprite_frames
 	character.have_spoken = false
+	interaction_area.interact = Callable(self, "_on_interact")
 	
 func trigger_character_exit() -> void:
 	interactable = false
@@ -132,3 +153,7 @@ func trigger_character_exit() -> void:
 	leaving = true
 	target_reached = false
 	navigation_agent.target_position = navigation_leave.global_position
+	
+func make_purchase() -> void:
+	GameManager.purchase_made()
+	trigger_character_exit()

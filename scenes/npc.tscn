@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b1krcc7d0asqt"]
+[gd_scene load_steps=23 format=3 uid="uid://b1krcc7d0asqt"]
 
 [ext_resource type="Script" path="res://scripts/npc.gd" id="1_5ngs7"]
 [ext_resource type="Texture2D" uid="uid://bb3vwy0qvgrad" path="res://assets/sprites/character.png" id="1_raqav"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://dxuhmp72ksf60" path="res://sounds/footsteps/footstep_wood_002.ogg" id="6_wgwfo"]
 [ext_resource type="AudioStream" uid="uid://cpk1mfopg0p4w" path="res://sounds/footsteps/footstep_wood_003.ogg" id="7_fm8gj"]
 [ext_resource type="AudioStream" uid="uid://dy88vrplv86al" path="res://sounds/footsteps/footstep_wood_004.ogg" id="8_3g1ix"]
+[ext_resource type="Texture2D" uid="uid://1gxxyg3rcjel" path="res://assets/sprites/exclamation_mark.png" id="9_ludjq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_se3gd"]
 radius = 4.0
@@ -99,7 +100,7 @@ stream_2/stream = ExtResource("6_wgwfo")
 stream_3/stream = ExtResource("7_fm8gj")
 stream_4/stream = ExtResource("8_3g1ix")
 
-[node name="NPC" type="CharacterBody2D"]
+[node name="NPC" type="CharacterBody2D" groups=["npc"]]
 z_index = 5
 z_as_relative = false
 y_sort_enabled = true
@@ -135,6 +136,11 @@ stream = SubResource("AudioStreamRandomizer_ljj8m")
 max_distance = 500.0
 attenuation = 6.72716
 bus = &"SFX"
+
+[node name="Help" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("9_ludjq")
+offset = Vector2(0, -30)
 
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="target_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_target_reached"]

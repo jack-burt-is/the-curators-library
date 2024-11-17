@@ -11,6 +11,9 @@ const SAVE_GAME_BASE_PATH := "user://save"
 # Camera
 @export var zoom: Vector2 = Vector2(4, 4)
 
+# Cash
+@export var coins: int = 0
+
 # Complex data
 @export var library_inventory: LibraryInventory = LibraryInventory.new()
 @export var selected_book: Book
