@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://d086nvmvljitq"]
+
+[ext_resource type="Script" path="res://scripts/cart_item.gd" id="1_hf7uw"]
+[ext_resource type="FontFile" uid="uid://5ihhn67dre4l" path="res://assets/fonts/monogram-extended.ttf" id="1_nv16r"]
+[ext_resource type="Texture2D" uid="uid://cox2yph3q2kk0" path="res://assets/sprites/coin.png" id="2_xorj8"]
+[ext_resource type="Texture2D" uid="uid://bjml23kq2x201" path="res://assets/sprites/ui/trash.png" id="3_011ml"]
+
+[node name="CartItem" type="VBoxContainer"]
+size_flags_horizontal = 3
+script = ExtResource("1_hf7uw")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_nv16r")
+text = "Book Name"
+text_overrun_behavior = 3
+
+[node name="Actions" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Actions"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Coin" type="TextureRect" parent="Actions/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("2_xorj8")
+expand_mode = 2
+
+[node name="Cost" type="Label" parent="Actions"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_nv16r")
+text = "100"
+
+[node name="VSeparator" type="VSeparator" parent="Actions"]
+layout_mode = 2
+
+[node name="Remove" type="Button" parent="Actions"]
+layout_mode = 2
+icon = ExtResource("3_011ml")
+
+[node name="HSeparator" type="HSeparator" parent="."]
+layout_mode = 2
+
+[connection signal="pressed" from="Actions/Remove" to="." method="_on_remove_pressed"]

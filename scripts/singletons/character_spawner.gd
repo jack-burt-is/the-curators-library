@@ -63,7 +63,7 @@ func calculate_random_shoppers():
 	var num_shoppers = randi_range(shoppers_range[0], shoppers_range[1])
 	
 	# Spawn non-character shoppers
-	for i in shoppers_range:
+	for i in range(num_shoppers):
 		visiting_characters.append(null)
 			
 func calculate_spawn_times():

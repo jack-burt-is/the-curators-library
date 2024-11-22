@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://xbamugk6ccdk"]
+[gd_scene load_steps=23 format=4 uid="uid://xbamugk6ccdk"]
 
 [ext_resource type="PackedScene" uid="uid://7ugb3rp7suaw" path="res://scenes/player.tscn" id="1_7xs0p"]
 [ext_resource type="PackedScene" uid="uid://dc8rg2vardosp" path="res://scenes/canvas.tscn" id="1_dscsk"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bbm7ok1u4o5hq" path="res://scenes/clock.tscn" id="13_xpijs"]
 [ext_resource type="Resource" uid="uid://cpmd4o7baef4t" path="res://resources/characters/rob.tres" id="14_cdrv3"]
 [ext_resource type="PackedScene" uid="uid://d2iemsoe77aop" path="res://scenes/furniture/easel.tscn" id="14_lfy8a"]
+[ext_resource type="PackedScene" uid="uid://ciecplcgtbvp" path="res://scenes/shop_interface.tscn" id="14_yngh6"]
 
 [sub_resource type="Environment" id="Environment_3nojf"]
 tonemap_mode = 3
@@ -196,6 +197,14 @@ visible = false
 [node name="LibraryInterface" parent="CanvasLayer" instance=ExtResource("3_krj8d")]
 unique_name_in_owner = true
 visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+scale = Vector2(2, 2)
+
+[node name="ShopInterface" parent="CanvasLayer" instance=ExtResource("14_yngh6")]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

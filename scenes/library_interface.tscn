@@ -37,54 +37,54 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_r8jeg")
 current_tab = 0
 
-[node name="LibraryGlossary" type="PanelContainer" parent="TabContainer"]
+[node name="Library" type="PanelContainer" parent="TabContainer"]
 layout_mode = 2
 mouse_filter = 1
 metadata/_tab_index = 0
 
-[node name="MarginContainer" type="MarginContainer" parent="TabContainer/LibraryGlossary"]
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Library"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/LibraryGlossary/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Library/MarginContainer"]
 layout_mode = 2
 mouse_filter = 2
 
-[node name="Label" type="Label" parent="TabContainer/LibraryGlossary/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="TabContainer/Library/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_r8jeg")
 text = "Books"
 
-[node name="HSeparator" type="HSeparator" parent="TabContainer/LibraryGlossary/MarginContainer/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="TabContainer/Library/MarginContainer/VBoxContainer"]
 layout_mode = 2
 mouse_filter = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/LibraryGlossary/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Library/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/LibraryGlossary/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Library/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2
 
-[node name="GenreList" type="ItemList" parent="TabContainer/LibraryGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="GenreList" type="ItemList" parent="TabContainer/Library/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(150, 250)
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme_override_colors/font_selected_color = Color(0.348379, 0.54939, 1, 1)
 theme_override_fonts/font = ExtResource("2_r8jeg")
 
-[node name="FilterClear" type="Button" parent="TabContainer/LibraryGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="FilterClear" type="Button" parent="TabContainer/Library/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_r8jeg")
 text = "RESET"
 
-[node name="BookList" type="ItemList" parent="TabContainer/LibraryGlossary/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="BookList" type="ItemList" parent="TabContainer/Library/MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 mouse_default_cursor_shape = 2
@@ -92,23 +92,23 @@ theme = SubResource("Theme_d21ms")
 theme_override_fonts/font = ExtResource("2_r8jeg")
 auto_height = true
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/LibraryGlossary/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/Library/MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="PanelContainer" type="PanelContainer" parent="TabContainer/LibraryGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="PanelContainer" type="PanelContainer" parent="TabContainer/Library/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="TabContainer/LibraryGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Library/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 8
 
-[node name="BookDetail" type="RichTextLabel" parent="TabContainer/LibraryGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer"]
+[node name="BookDetail" type="RichTextLabel" parent="TabContainer/Library/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("2_r8jeg")
@@ -116,12 +116,12 @@ theme_override_fonts/italics_font = ExtResource("4_t8mrt")
 bbcode_enabled = true
 text = "select a book for more detail..."
 
-[node name="SelectBook" type="Button" parent="TabContainer/LibraryGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="SelectBook" type="Button" parent="TabContainer/Library/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_r8jeg")
 text = "SELECT"
 
-[node name="ExitMargin" type="MarginContainer" parent="TabContainer/LibraryGlossary"]
+[node name="ExitMargin" type="MarginContainer" parent="TabContainer/Library"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
@@ -130,7 +130,7 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="Close" type="Button" parent="TabContainer/LibraryGlossary/ExitMargin"]
+[node name="Close" type="Button" parent="TabContainer/Library/ExitMargin"]
 clip_contents = true
 custom_minimum_size = Vector2(21, 21)
 layout_mode = 2
@@ -140,43 +140,43 @@ theme_override_fonts/font = ExtResource("2_r8jeg")
 text = "x"
 clip_text = true
 
-[node name="CharacterGlossary" type="PanelContainer" parent="TabContainer"]
+[node name="Characters" type="PanelContainer" parent="TabContainer"]
 visible = false
 layout_mode = 2
 mouse_filter = 1
 metadata/_tab_index = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="TabContainer/CharacterGlossary"]
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Characters"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/CharacterGlossary/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Characters/MarginContainer"]
 layout_mode = 2
 mouse_filter = 2
 
-[node name="Label" type="Label" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="TabContainer/Characters/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_r8jeg")
 text = "Characters
 "
 
-[node name="HSeparator" type="HSeparator" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="TabContainer/Characters/MarginContainer/VBoxContainer"]
 layout_mode = 2
 mouse_filter = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Characters/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Characters/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 mouse_filter = 2
 
-[node name="CharacterList" type="ItemList" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="CharacterList" type="ItemList" parent="TabContainer/Characters/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(150, 250)
 layout_mode = 2
 size_flags_vertical = 3
@@ -184,38 +184,38 @@ mouse_default_cursor_shape = 2
 theme_override_colors/font_selected_color = Color(0.348379, 0.54939, 1, 1)
 theme_override_fonts/font = ExtResource("2_r8jeg")
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/Characters/MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="PanelContainer" type="PanelContainer" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="PanelContainer" type="PanelContainer" parent="TabContainer/Characters/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Characters/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 8
 
-[node name="CharacterInfoContainer" type="HBoxContainer" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer"]
+[node name="CharacterInfoContainer" type="HBoxContainer" parent="TabContainer/Characters/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="Bio" type="VBoxContainer" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer"]
+[node name="Bio" type="VBoxContainer" parent="TabContainer/Characters/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 8
 
-[node name="Picture" type="TextureRect" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/Bio"]
+[node name="Picture" type="TextureRect" parent="TabContainer/Characters/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/Bio"]
 layout_mode = 2
 texture = ExtResource("4_upvhb")
 expand_mode = 4
 stretch_mode = 6
 
-[node name="BioText" type="RichTextLabel" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/Bio"]
+[node name="BioText" type="RichTextLabel" parent="TabContainer/Characters/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/Bio"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("2_r8jeg")
@@ -228,75 +228,75 @@ text = "[table={2}]
 [cell][i]{age}[/i][/cell]
 [/table]"
 
-[node name="Goals" type="VBoxContainer" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer"]
+[node name="Goals" type="VBoxContainer" parent="TabContainer/Characters/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 8
 
-[node name="Favourites" type="VBoxContainer" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/Goals"]
+[node name="Favourites" type="VBoxContainer" parent="TabContainer/Characters/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/Goals"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/Goals/Favourites"]
+[node name="Label" type="Label" parent="TabContainer/Characters/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/Goals/Favourites"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_r8jeg")
 text = "Favourite Books:"
 
-[node name="FavouritesList" type="ItemList" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/Goals/Favourites"]
+[node name="FavouritesList" type="ItemList" parent="TabContainer/Characters/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/Goals/Favourites"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_r8jeg")
 
-[node name="Unlockable" type="VBoxContainer" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/Goals"]
+[node name="Unlockable" type="VBoxContainer" parent="TabContainer/Characters/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/Goals"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/Goals/Unlockable"]
+[node name="Label" type="Label" parent="TabContainer/Characters/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/Goals/Unlockable"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_r8jeg")
 text = "Unlockable:"
 
-[node name="UnlockableImage" type="TextureRect" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/Goals/Unlockable"]
+[node name="UnlockableImage" type="TextureRect" parent="TabContainer/Characters/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/Goals/Unlockable"]
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("5_jgidy")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="CurrentFind" type="VBoxContainer" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer"]
+[node name="CurrentFind" type="VBoxContainer" parent="TabContainer/Characters/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 8
 
-[node name="PreviousGuesses" type="VBoxContainer" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/CurrentFind"]
+[node name="PreviousGuesses" type="VBoxContainer" parent="TabContainer/Characters/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/CurrentFind"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/CurrentFind/PreviousGuesses"]
+[node name="Label" type="Label" parent="TabContainer/Characters/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/CurrentFind/PreviousGuesses"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_r8jeg")
 text = "Previous Guesses:"
 
-[node name="PreviousGuessesList" type="ItemList" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/CurrentFind/PreviousGuesses"]
+[node name="PreviousGuessesList" type="ItemList" parent="TabContainer/Characters/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/CurrentFind/PreviousGuesses"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_r8jeg")
 
-[node name="PreviousHints" type="VBoxContainer" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/CurrentFind"]
+[node name="PreviousHints" type="VBoxContainer" parent="TabContainer/Characters/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/CurrentFind"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/CurrentFind/PreviousHints"]
+[node name="Label" type="Label" parent="TabContainer/Characters/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/CurrentFind/PreviousHints"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_r8jeg")
 text = "Hints:"
 
-[node name="HintsList" type="ItemList" parent="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/CurrentFind/PreviousHints"]
+[node name="HintsList" type="ItemList" parent="TabContainer/Characters/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/CurrentFind/PreviousHints"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_r8jeg")
 
-[node name="ExitMargin" type="MarginContainer" parent="TabContainer/CharacterGlossary"]
+[node name="ExitMargin" type="MarginContainer" parent="TabContainer/Characters"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
@@ -305,7 +305,7 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="Close" type="Button" parent="TabContainer/CharacterGlossary/ExitMargin"]
+[node name="Close" type="Button" parent="TabContainer/Characters/ExitMargin"]
 clip_contents = true
 custom_minimum_size = Vector2(21, 21)
 layout_mode = 2
@@ -317,11 +317,11 @@ clip_text = true
 
 [connection signal="draw" from="." to="." method="_on_draw"]
 [connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
-[connection signal="item_selected" from="TabContainer/LibraryGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/GenreList" to="." method="_on_genre_list_item_selected"]
-[connection signal="pressed" from="TabContainer/LibraryGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/FilterClear" to="." method="_on_filter_clear_pressed"]
-[connection signal="item_selected" from="TabContainer/LibraryGlossary/MarginContainer/VBoxContainer/HBoxContainer/BookList" to="." method="_on_item_list_item_selected"]
-[connection signal="pressed" from="TabContainer/LibraryGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/SelectBook" to="." method="_on_select_book_pressed"]
-[connection signal="pressed" from="TabContainer/LibraryGlossary/ExitMargin/Close" to="." method="_on_close_pressed"]
-[connection signal="item_selected" from="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/CharacterList" to="." method="_on_character_list_item_selected"]
-[connection signal="draw" from="TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer" to="." method="_on_character_info_container_draw"]
-[connection signal="pressed" from="TabContainer/CharacterGlossary/ExitMargin/Close" to="." method="_on_close_pressed"]
+[connection signal="item_selected" from="TabContainer/Library/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/GenreList" to="." method="_on_genre_list_item_selected"]
+[connection signal="pressed" from="TabContainer/Library/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/FilterClear" to="." method="_on_filter_clear_pressed"]
+[connection signal="item_selected" from="TabContainer/Library/MarginContainer/VBoxContainer/HBoxContainer/BookList" to="." method="_on_item_list_item_selected"]
+[connection signal="pressed" from="TabContainer/Library/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/SelectBook" to="." method="_on_select_book_pressed"]
+[connection signal="pressed" from="TabContainer/Library/ExitMargin/Close" to="." method="_on_close_pressed"]
+[connection signal="item_selected" from="TabContainer/Characters/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/CharacterList" to="." method="_on_character_list_item_selected"]
+[connection signal="draw" from="TabContainer/Characters/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer" to="." method="_on_character_info_container_draw"]
+[connection signal="pressed" from="TabContainer/Characters/ExitMargin/Close" to="." method="_on_close_pressed"]

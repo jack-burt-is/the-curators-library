@@ -28,5 +28,8 @@ enum Rights {PUBLIC, OBTAINED, FAKE}
 ## A summary of the book (type String)
 @export var synopsis: String
 
+## The cost of the book to buy in the shop (type int)
+@export var cost: int = 0
+
 func _to_string() -> String:
 	return title + " by " + author

@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnglaivc74xau"]
+
+[ext_resource type="Script" path="res://scripts/shop_item.gd" id="1_h14jy"]
+[ext_resource type="Texture2D" uid="uid://c5x0rwt7l5cit" path="res://assets/sprites/book.png" id="1_kpfwl"]
+[ext_resource type="Texture2D" uid="uid://cox2yph3q2kk0" path="res://assets/sprites/coin.png" id="2_po3aj"]
+[ext_resource type="FontFile" uid="uid://5ihhn67dre4l" path="res://assets/fonts/monogram-extended.ttf" id="3_ybcpf"]
+
+[node name="ShopItem" type="MarginContainer"]
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+script = ExtResource("1_h14jy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 30
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("1_kpfwl")
+expand_mode = 4
+
+[node name="Actions" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Actions"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Coin" type="TextureRect" parent="VBoxContainer/Actions/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("2_po3aj")
+expand_mode = 2
+
+[node name="Cost" type="Label" parent="VBoxContainer/Actions"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ybcpf")
+text = "100"
+
+[node name="AddToCart" type="Button" parent="VBoxContainer/Actions"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ybcpf")
+text = "+"
+
+[node name="Description" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 7
+text = "Book Name by Author Name"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[connection signal="pressed" from="VBoxContainer/Actions/AddToCart" to="." method="_on_add_to_cart_pressed"]

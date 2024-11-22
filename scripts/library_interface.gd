@@ -22,16 +22,16 @@ var character_bio_template_text = "[table={2}]
 [cell][i]{age}[/i][/cell]
 [/table]"
 
-@onready var book_list: ItemList = $TabContainer/LibraryGlossary/MarginContainer/VBoxContainer/HBoxContainer/BookList
-@onready var genre_list: ItemList = $TabContainer/LibraryGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/GenreList
-@onready var book_detail: RichTextLabel = $TabContainer/LibraryGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/BookDetail
+@onready var book_list: ItemList = $TabContainer/Library/MarginContainer/VBoxContainer/HBoxContainer/BookList
+@onready var genre_list: ItemList = $TabContainer/Library/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/GenreList
+@onready var book_detail: RichTextLabel = $TabContainer/Library/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/BookDetail
 
-@onready var character_list: ItemList = $TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/CharacterList
-@onready var bio_text: RichTextLabel = $TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/Bio/BioText
-@onready var favourites_list: ItemList = $TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/Goals/Favourites/FavouritesList
-@onready var previous_guesses_list: ItemList = $TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/CurrentFind/PreviousGuesses/PreviousGuessesList
-@onready var hints_list: ItemList = $TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/CurrentFind/PreviousHints/HintsList
-@onready var character_info_container: HBoxContainer = $TabContainer/CharacterGlossary/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer
+@onready var character_list: ItemList = $TabContainer/Characters/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/CharacterList
+@onready var bio_text: RichTextLabel = $TabContainer/Characters/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/Bio/BioText
+@onready var favourites_list: ItemList = $TabContainer/Characters/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/Goals/Favourites/FavouritesList
+@onready var previous_guesses_list: ItemList = $TabContainer/Characters/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/CurrentFind/PreviousGuesses/PreviousGuessesList
+@onready var hints_list: ItemList = $TabContainer/Characters/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer/CurrentFind/PreviousHints/HintsList
+@onready var character_info_container: HBoxContainer = $TabContainer/Characters/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/CharacterInfoContainer
 
 @onready var characters: Array = Helpers.load_all_resources("res://resources/characters/")
 @onready var genres: Array = Helpers.load_all_resources("res://resources/genres/")
