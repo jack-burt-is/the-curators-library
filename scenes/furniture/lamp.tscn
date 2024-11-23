@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://drvu6y7qatqg5"]
+[gd_scene load_steps=8 format=3 uid="uid://drvu6y7qatqg5"]
 
 [ext_resource type="Script" path="res://scripts/lamp.gd" id="1_ra7jg"]
 [ext_resource type="PackedScene" uid="uid://cu3ld8cpbe23m" path="res://scenes/interaction_area.tscn" id="2_6gp2u"]
+[ext_resource type="Texture2D" uid="uid://ceha437qdr31k" path="res://assets/sprites/furniture/lamp.png" id="2_ry3of"]
 [ext_resource type="AudioStream" uid="uid://by1cwc22n4klg" path="res://sounds/lamp.wav" id="3_f5f5o"]
 
 [sub_resource type="Gradient" id="Gradient_kbu5v"]
@@ -20,18 +21,22 @@ fill_to = Vector2(0.5, 0.3)
 radius = 14.13
 
 [node name="Lamp" type="PointLight2D"]
-position = Vector2(57, 72)
+z_index = 5
+y_sort_enabled = true
 energy = 0.62
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_ffqe5")
 script = ExtResource("1_ra7jg")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.5, 0)
+texture = ExtResource("2_ry3of")
+
 [node name="InteractionArea" parent="." instance=ExtResource("2_6gp2u")]
 action_name = "turn on/off"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-z_index = 5
-position = Vector2(0, 28.905)
+position = Vector2(0, 20)
 shape = SubResource("CircleShape2D_63b8q")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

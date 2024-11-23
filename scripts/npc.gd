@@ -11,7 +11,7 @@ extends CharacterBody2D
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var help: Sprite2D = $Help
 
-@onready var target_positions: Node2D = get_tree().current_scene.get_node("%NavigationPoints")
+@onready var target_positions: Array[Node] = get_tree().get_nodes_in_group("nav_point")
 @onready var navigation_leave: Node2D = get_tree().current_scene.get_node("%NavigationLeave")
 
 @onready var dialog_marker: Marker2D = $DialogMarker
@@ -87,7 +87,7 @@ func _on_interact() -> void:
 		layout.register_character(character_loaded, dialog_marker)
 		
 func make_path() -> void:
-	navigation_agent.target_position = target_positions.get_children(false).pick_random().global_position
+	navigation_agent.target_position = target_positions.pick_random().global_position
 	
 func _on_timer_timeout() -> void:
 	target_reached = false

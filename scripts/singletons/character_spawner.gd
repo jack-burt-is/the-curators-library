@@ -28,6 +28,16 @@ func calculate_eligible_characters() -> void:
 	var histories = GameManager.data.character_glossary.histories
 	var characters = load_all_characters("res://resources/characters/")
 	for character in characters:
+		
+		# Not currnetly stocking what they are looking for
+		var book_index = 0
+		if histories.has(character):
+			book_index = histories[character].books_found
+		
+		if not GameManager.data.library_inventory.books.has(character.favourite_books[book_index]):
+			print("Missing book for ", character.name)
+			break
+		
 		var chance_of_visiting = 0.0
 		var base_chance = 1.0
 		

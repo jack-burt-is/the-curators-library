@@ -91,6 +91,7 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/inpu
 player=""
 pause_menu=""
 npc=""
+nav_point=""
 
 [input]
 

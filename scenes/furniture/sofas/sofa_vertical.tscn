@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://u530uvas4wvk"]
+
+[ext_resource type="Texture2D" uid="uid://bcltcx0hp5fui" path="res://assets/sprites/furniture/sofa-vertical.png" id="1_dpqq1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aximd"]
+size = Vector2(20, 41)
+
+[node name="SofaVertical" type="StaticBody2D"]
+z_index = 5
+y_sort_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 7.5)
+shape = SubResource("RectangleShape2D_aximd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_dpqq1")

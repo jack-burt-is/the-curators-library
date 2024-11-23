@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://r7rpg7fw4ts2"]
+
+[ext_resource type="Texture2D" uid="uid://d27n1cacqpglr" path="res://assets/sprites/furniture/reception.png" id="1_6dvfq"]
+[ext_resource type="Script" path="res://scripts/shop.gd" id="2_3sciq"]
+[ext_resource type="Texture2D" uid="uid://cyogk2j0lpi6w" path="res://assets/sprites/furniture/pc.png" id="3_lo3rt"]
+[ext_resource type="PackedScene" uid="uid://cu3ld8cpbe23m" path="res://scenes/interaction_area.tscn" id="4_t28ll"]
+[ext_resource type="Script" path="res://scripts/desk.gd" id="5_mek8n"]
+[ext_resource type="Texture2D" uid="uid://db4on3q0pdlux" path="res://assets/sprites/furniture/open-book.png" id="6_tkhvo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rt23u"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jtbuq"]
+height = 54.0
+
+[node name="Reception" type="Node2D"]
+z_index = 5
+y_sort_enabled = true
+
+[node name="Desk" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Desk"]
+texture = ExtResource("1_6dvfq")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Desk"]
+polygon = PackedVector2Array(-29, 12, 30, 12, 30, -6, 47, -6, 47, 32, -47, 32, -47, -6, -29, -6)
+
+[node name="Computer" type="Node2D" parent="."]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-17, -2)
+script = ExtResource("2_3sciq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Computer"]
+texture = ExtResource("3_lo3rt")
+
+[node name="InteractionArea" parent="Computer" instance=ExtResource("4_t28ll")]
+action_name = "shop"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Computer/InteractionArea"]
+shape = SubResource("CircleShape2D_rt23u")
+
+[node name="Glossary" type="Node2D" parent="."]
+position = Vector2(16, 4)
+script = ExtResource("5_mek8n")
+
+[node name="Sprite2D" type="Sprite2D" parent="Glossary"]
+texture = ExtResource("6_tkhvo")
+
+[node name="InteractionArea" parent="Glossary" instance=ExtResource("4_t28ll")]
+action_name = "browse"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Glossary/InteractionArea"]
+position = Vector2(0, 10)
+shape = SubResource("CapsuleShape2D_jtbuq")

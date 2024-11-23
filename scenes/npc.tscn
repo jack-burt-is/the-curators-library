@@ -124,6 +124,7 @@ position = Vector2(0, -9)
 shape = SubResource("CircleShape2D_ufsgp")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+avoidance_enabled = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.001

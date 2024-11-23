@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var interaction_area: InteractionArea = $InteractionArea
-@onready var library_interface: Control = %LibraryInterface
+@onready var library_interface: Control = get_tree().current_scene.get_node("%LibraryInterface")
 
 func _ready() -> void:
 	interaction_area.interact = Callable(self, "_on_interact")

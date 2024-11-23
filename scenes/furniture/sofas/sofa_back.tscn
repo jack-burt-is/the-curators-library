@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cx4ldcs60dhlx"]
+
+[ext_resource type="Texture2D" uid="uid://3g2jw8uej0nb" path="res://assets/sprites/furniture/sofa-back.png" id="1_wsc0y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_th4p7"]
+size = Vector2(49, 16)
+
+[node name="SofaBack" type="StaticBody2D"]
+z_index = 5
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wsc0y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 8)
+shape = SubResource("RectangleShape2D_th4p7")

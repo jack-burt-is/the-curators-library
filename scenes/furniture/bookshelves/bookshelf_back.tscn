@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://csi2weudotgl2"]
+
+[ext_resource type="Texture2D" uid="uid://drjnwk5skg6lo" path="res://assets/sprites/furniture/bookshelf.png" id="1_1ddex"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44ksj"]
+atlas = ExtResource("1_1ddex")
+region = Rect2(64, 0, 48, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qrpel"]
+size = Vector2(46, 20)
+
+[node name="BookshelfBack" type="StaticBody2D"]
+z_index = 5
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_44ksj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 22)
+shape = SubResource("RectangleShape2D_qrpel")
+
+[node name="NavigationPoint" type="Node2D" parent="." groups=["nav_point"]]
+position = Vector2(0, -5)

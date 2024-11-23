@@ -5,8 +5,8 @@ extends Unlockable
 
 
 func _ready() -> void:
-	interaction_area.interact = Callable(self, "_on_interact")
-	check_unlocked()
+	if check_unlocked():
+		interaction_area.interact = Callable(self, "_on_interact")
 
 func _on_interact() -> void:
 	canvas.show()
