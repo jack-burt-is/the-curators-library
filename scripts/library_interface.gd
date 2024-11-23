@@ -138,5 +138,6 @@ func update_character_info():
 				hints_list.add_item("???")
 
 func _on_draw() -> void:
+	reload_books()
 	if selected_character:
 		update_character_info()

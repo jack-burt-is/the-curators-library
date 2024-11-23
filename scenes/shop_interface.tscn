@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://ciecplcgtbvp"]
+[gd_scene load_steps=7 format=3 uid="uid://ciecplcgtbvp"]
 
 [ext_resource type="Script" path="res://scripts/shop_interface.gd" id="1_le0l4"]
 [ext_resource type="Texture2D" uid="uid://c5x0rwt7l5cit" path="res://assets/sprites/book.png" id="2_qttyb"]
 [ext_resource type="FontFile" uid="uid://5ihhn67dre4l" path="res://assets/fonts/monogram-extended.ttf" id="3_soj60"]
 [ext_resource type="Texture2D" uid="uid://c5srdy5s55523" path="res://assets/sprites/ui/search.png" id="4_4ua6e"]
 [ext_resource type="PackedScene" uid="uid://cnglaivc74xau" path="res://scenes/shop_item.tscn" id="5_t2u5g"]
+[ext_resource type="Texture2D" uid="uid://cox2yph3q2kk0" path="res://assets/sprites/coin.png" id="6_cax1w"]
 
 [node name="ShopInterface" type="Control"]
 layout_mode = 3
@@ -89,6 +90,7 @@ theme_override_fonts/font = ExtResource("3_soj60")
 text = "RESET"
 
 [node name="MainContentContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Body"]
+custom_minimum_size = Vector2(360, 0)
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Body/MainContentContainer"]
@@ -128,12 +130,31 @@ theme_override_constants/margin_right = 5
 [node name="Cart" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Body/CartContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Body/CartContainer/VBoxContainer/MarginContainer/Cart"]
+[node name="SubtotalLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Body/CartContainer/VBoxContainer/MarginContainer/Cart"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_soj60")
-text = "Subtotal
-£0.00"
+text = "Subtotal"
 horizontal_alignment = 1
+
+[node name="Actions" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Body/CartContainer/VBoxContainer/MarginContainer/Cart"]
+layout_mode = 2
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Body/CartContainer/VBoxContainer/MarginContainer/Cart/Actions"]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="Coin" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Body/CartContainer/VBoxContainer/MarginContainer/Cart/Actions/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("6_cax1w")
+expand_mode = 2
+
+[node name="SubtotalValue" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Body/CartContainer/VBoxContainer/MarginContainer/Cart/Actions"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_soj60")
+text = "0"
 
 [node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/Body/CartContainer/VBoxContainer/MarginContainer/Cart"]
 layout_mode = 2
@@ -154,3 +175,10 @@ size_flags_vertical = 8
 theme_override_fonts/font = ExtResource("3_soj60")
 text = "PURCHASE
 "
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Header/Close" to="." method="_on_close_pressed"]
+[connection signal="item_selected" from="PanelContainer/MarginContainer/VBoxContainer/Body/Filters/GenreList" to="." method="_on_genre_list_item_selected"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Body/Filters/FilterClear" to="." method="_on_filter_clear_pressed"]
+[connection signal="child_entered_tree" from="PanelContainer/MarginContainer/VBoxContainer/Body/CartContainer/VBoxContainer/MarginContainer/Cart/ScrollContainer/CartItems" to="." method="_on_cart_items_child_entered_tree"]
+[connection signal="child_exiting_tree" from="PanelContainer/MarginContainer/VBoxContainer/Body/CartContainer/VBoxContainer/MarginContainer/Cart/ScrollContainer/CartItems" to="." method="_on_cart_items_child_exiting_tree"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Body/CartContainer/VBoxContainer/Purchase" to="." method="_on_purchase_pressed"]

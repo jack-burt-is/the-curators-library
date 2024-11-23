@@ -4,7 +4,7 @@ extends Node
 @onready var description: Label = $VBoxContainer/Description
 @onready var add_to_cart: Button = $VBoxContainer/Actions/AddToCart
 
-var book_item
+var book_item: Book
 
 signal add_book_to_cart(book)
 

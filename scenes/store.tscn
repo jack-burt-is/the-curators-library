@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://xbamugk6ccdk"]
+[gd_scene load_steps=25 format=4 uid="uid://xbamugk6ccdk"]
 
 [ext_resource type="PackedScene" uid="uid://7ugb3rp7suaw" path="res://scenes/player.tscn" id="1_7xs0p"]
 [ext_resource type="PackedScene" uid="uid://dc8rg2vardosp" path="res://scenes/canvas.tscn" id="1_dscsk"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://drvu6y7qatqg5" path="res://scenes/lamp.tscn" id="6_r1p8v"]
 [ext_resource type="PackedScene" uid="uid://cu3ld8cpbe23m" path="res://scenes/interaction_area.tscn" id="8_ei2pv"]
 [ext_resource type="Script" path="res://scripts/desk.gd" id="8_eo1yw"]
+[ext_resource type="Script" path="res://scripts/shop.gd" id="8_icqlx"]
 [ext_resource type="PackedScene" uid="uid://cmfs8ryjemo1u" path="res://scenes/door.tscn" id="8_x81t4"]
 [ext_resource type="AudioStream" uid="uid://dfj7ixvi3gsx0" path="res://sounds/crackling-fire.wav" id="9_ykf7b"]
 [ext_resource type="PackedScene" uid="uid://m5385aappsls" path="res://scenes/hud.tscn" id="11_0s1fq"]
@@ -34,6 +35,9 @@ gradient = SubResource("Gradient_kbu5v")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.5, 0.3)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k3fm1"]
+radius = 12.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y5tov"]
 radius = 15.0
@@ -68,7 +72,7 @@ tile_set = ExtResource("1_tqh7g")
 [node name="Furniture" type="TileMapLayer" parent="TileMap"]
 z_index = 5
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAFAAIAAQAFAAoAAAAHAAQAAQALAAcAABADAAQAAQAAAAwAAAD3//3/AQACAAQAAAAIAP3/AQACAAQAAAD2/wIAAQAFAAQAAAD2/wMAAQAFAAQAAAD6/wEAAQACAAQAAAD9/wEAAQACAAQAAAAJAP//AQAFAAQAABAJAAAAAQAFAAQAABD6//3/AQAEAAcAAAADAAUAAQAGAAcAAAAEAPz/AQAIAA8AAAAAAP7/AQAJAAkAAAAAAPz/AQAJAAcAAAAAAP3/AQAJAAgAAAABAPz/AQAKAAcAAAABAP3/AQAKAAgAAAABAP7/AQAKAAkAAAAAAPv/AQAJAAcAAAABAPv/AQAKAAcAAAAAAPr/AQAJAAcAAAABAPr/AQAKAAcAAAAHAAMAAQACAAAAABAEAP7/AQAAAAIAAAD2/wAAAQAGAAcAAAD8//7/AQADAAIAAAD+//7/AQADAAIAAAA=")
+tile_map_data = PackedByteArray("AAAFAAIAAQAFAAoAAAAHAAQAAQALAAcAABADAAQAAQAAAAwAAAD3//3/AQACAAQAAAAIAP3/AQACAAQAAAD2/wIAAQAFAAQAAAD2/wMAAQAFAAQAAAD6/wEAAQACAAQAAAD9/wEAAQACAAQAAAAJAP//AQAFAAQAABAJAAAAAQAFAAQAABD6//3/AQAEAAcAAAADAAUAAQAGAAcAAAAEAPz/AQAIAA8AAAAAAP7/AQAJAAkAAAAAAPz/AQAJAAcAAAAAAP3/AQAJAAgAAAABAPz/AQAKAAcAAAABAP3/AQAKAAgAAAABAP7/AQAKAAkAAAAAAPv/AQAJAAcAAAABAPv/AQAKAAcAAAAAAPr/AQAJAAcAAAABAPr/AQAKAAcAAAAHAAMAAQACAAAAABAEAP7/AQAAAAIAAAD2/wAAAQAGAAcAAAD8//7/AQADAAIAAAD+//7/AQADAAIAAAACAP7/AQALAAAAAAA=")
 tile_set = ExtResource("1_tqh7g")
 
 [node name="Upper Furniture" type="TileMapLayer" parent="TileMap"]
@@ -80,7 +84,7 @@ tile_set = ExtResource("1_tqh7g")
 [node name="Accessories" type="TileMapLayer" parent="TileMap"]
 z_index = 6
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAFAAMAAgAAAAMAAAAEAPv/AQAAAAoAAAAHAAIAAgACAAMAAAADAP3/AgABAAMAAAAFAP3/AgAGAAEAAAAEAP3/AgAEAAMAAAA=")
+tile_map_data = PackedByteArray("AAAFAAMAAgAAAAMAAAAEAPv/AQAAAAoAAAAHAAIAAgACAAMAAAADAP3/AgABAAMAAAAFAP3/AgAGAAEAAAAEAP3/AgAEAAMAAAACAP3/AgAAAAMAAAA=")
 tile_set = ExtResource("1_tqh7g")
 
 [node name="Player" parent="." instance=ExtResource("1_7xs0p")]
@@ -171,6 +175,17 @@ autoplay = true
 max_distance = 300.0
 attenuation = 9.51364
 
+[node name="Shop" type="Node2D" parent="."]
+position = Vector2(39, -37)
+script = ExtResource("8_icqlx")
+
+[node name="InteractionArea" parent="Shop" instance=ExtResource("8_ei2pv")]
+position = Vector2(1, 14)
+action_name = "shop"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shop/InteractionArea"]
+shape = SubResource("CircleShape2D_k3fm1")
+
 [node name="Desk" type="Node2D" parent="."]
 position = Vector2(71, -22)
 script = ExtResource("8_eo1yw")
@@ -205,6 +220,8 @@ anchor_bottom = 0.5
 scale = Vector2(2, 2)
 
 [node name="ShopInterface" parent="CanvasLayer" instance=ExtResource("14_yngh6")]
+unique_name_in_owner = true
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

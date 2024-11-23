@@ -159,6 +159,7 @@ texture = ExtResource("2_4d0fq")
 10:0/0 = 0
 11:0/size_in_atlas = Vector2i(1, 2)
 11:0/0 = 0
+11:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(6.875, 1.875, 4.41942, 10.4298, -4.24264, 10.0763, -6.75, 2)
 12:0/size_in_atlas = Vector2i(1, 2)
 12:0/0 = 0
 5:2/size_in_atlas = Vector2i(2, 2)
