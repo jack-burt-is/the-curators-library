@@ -27,7 +27,7 @@ polygon = PackedVector2Array(-29, 12, 30, 12, 30, -6, 47, -6, 47, 32, -47, 32, -
 [node name="Computer" type="Node2D" parent="."]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(-17, -2)
+position = Vector2(-15, -3)
 script = ExtResource("2_3sciq")
 
 [node name="Sprite2D" type="Sprite2D" parent="Computer"]

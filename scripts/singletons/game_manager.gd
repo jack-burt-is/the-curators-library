@@ -102,7 +102,7 @@ func start_new_day() -> void:
 	data.current_minute = 30.0
 	
 func reset_player_position() -> void:
-	player.position = Vector2(0,0)
+	player.position = Vector2(-60,60)
 	freeze_player = false
 	
 func purchase_made():
