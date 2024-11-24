@@ -212,7 +212,6 @@ offset = Vector2(0, -4)
 texture = SubResource("AtlasTexture_yt1w5")
 
 [node name="InteractionArea" parent="." instance=ExtResource("9_6qflm")]
-visible = false
 action_name = "turn on/off"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]

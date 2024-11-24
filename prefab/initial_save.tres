@@ -30,5 +30,6 @@ current_day = 1
 current_hour = 8.0
 current_minute = 30.0
 zoom = Vector2(4, 4)
+coins = 0
 library_inventory = SubResource("Resource_4xt2p")
 character_glossary = SubResource("Resource_pq4ip")

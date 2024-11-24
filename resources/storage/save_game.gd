@@ -18,6 +18,7 @@ const SAVE_GAME_BASE_PATH := "user://save"
 @export var library_inventory: LibraryInventory = LibraryInventory.new()
 @export var selected_book: Book
 @export var character_glossary: CharacterGlossary = CharacterGlossary.new()
+@export var purchased_items: PurchasedItems = PurchasedItems.new()
 
 # Painting
 @export var painting: PaintingResource = PaintingResource.new()

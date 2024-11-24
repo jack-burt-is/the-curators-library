@@ -92,6 +92,7 @@ player=""
 pause_menu=""
 npc=""
 nav_point=""
+unlockable=""
 
 [input]
 

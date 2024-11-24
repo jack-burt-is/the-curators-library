@@ -112,18 +112,6 @@ unique_name_in_owner = true
 z_index = 5
 y_sort_enabled = true
 
-[node name="Unlockables" type="Node2D" parent="."]
-unique_name_in_owner = true
-y_sort_enabled = true
-
-[node name="Painting" parent="Unlockables" instance=ExtResource("13_t80rh")]
-position = Vector2(-64, -167)
-
-[node name="Easel" parent="Unlockables" instance=ExtResource("14_lfy8a")]
-visible = false
-position = Vector2(-141, -106)
-character = ExtResource("14_cdrv3")
-
 [node name="Furniture" type="Node2D" parent="."]
 y_sort_enabled = true
 
@@ -163,7 +151,17 @@ scale = Vector2(1, -1)
 position = Vector2(-62, -104)
 
 [node name="Fireplace" parent="Furniture/SittingArea" instance=ExtResource("21_ojrmr")]
+visible = false
 position = Vector2(-64, -132)
+
+[node name="Painting" parent="Furniture/SittingArea" groups=["unlockable"] instance=ExtResource("13_t80rh")]
+unique_name_in_owner = true
+position = Vector2(-64, -170)
+
+[node name="Easel" parent="Furniture/SittingArea" groups=["unlockable"] instance=ExtResource("14_lfy8a")]
+visible = false
+position = Vector2(-141, -106)
+character = ExtResource("14_cdrv3")
 
 [node name="Bookshelves" type="Node2D" parent="Furniture"]
 y_sort_enabled = true

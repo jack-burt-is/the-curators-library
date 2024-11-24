@@ -6,7 +6,7 @@ var is_painting = false  # Track if mouse is being dragged
 
 @onready var grid: GridContainer = $CenterContainer/PanelContainer/MarginContainer/VSplitContainer/Drawing/GridContainer
 @onready var color_picker: ColorPickerButton = $CenterContainer/PanelContainer/MarginContainer/VSplitContainer/Drawing/ColorPickerButton
-@onready var painting: Node2D = $"../../Unlockables/Painting"
+@onready var painting: Node2D = %Painting
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

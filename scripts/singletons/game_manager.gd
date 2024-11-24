@@ -15,7 +15,7 @@ var data: SaveGame
 
 # Nodes
 @onready var menu: Control = get_tree().get_first_node_in_group("pause_menu")
-@onready var unlockables: Node2D = get_tree().current_scene.get_node("%Unlockables")
+@onready var unlockables: Array[Node] = get_tree().get_nodes_in_group("unlockable")
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var sfx_player = create_sfx_player()
 
@@ -91,7 +91,7 @@ func start_new_day() -> void:
 	
 	reset_player_position()
 	
-	for unlockable in unlockables.get_children():
+	for unlockable in unlockables:
 		unlockable.check_unlocked()
 	
 	new_day_started.emit()

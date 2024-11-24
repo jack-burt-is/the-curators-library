@@ -3,12 +3,12 @@ extends Node
 @onready var title: Label = $Title
 @onready var cost: Label = $Actions/Cost
 
-var book_item: Book
+var item: Resource
 
-func init_cart_item(book: Book):
-	cost.text = str(book.cost)
-	title.text = book.to_string()
-	book_item = book
+func init_cart_item(resource: Resource):
+	cost.text = str(resource.cost)
+	title.text = resource.to_string()
+	item = resource
 
 func _on_remove_pressed() -> void:
 	queue_free()

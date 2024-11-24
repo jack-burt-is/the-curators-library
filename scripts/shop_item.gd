@@ -3,15 +3,19 @@ extends Node
 @onready var cost: Label = $VBoxContainer/Actions/Cost
 @onready var description: Label = $VBoxContainer/Description
 @onready var add_to_cart: Button = $VBoxContainer/Actions/AddToCart
+@onready var texture_rect: TextureRect = $VBoxContainer/MarginContainer/TextureRect
 
-var book_item: Book
+var item: Resource
 
-signal add_book_to_cart(book)
+signal add_item_to_cart(book)
 
-func init_book(book: Book):
-	cost.text = str(book.cost)
-	description.text = book.to_string()
-	book_item = book
+func init_item(resource: Resource):
+	cost.text = str(resource.cost)
+	description.text = resource.to_string()
+	item = resource
+	
+	if "texture" in item:
+		texture_rect.texture = item.texture
 
 func _on_add_to_cart_pressed() -> void:
-	add_book_to_cart.emit(book_item)
+	add_item_to_cart.emit(item)

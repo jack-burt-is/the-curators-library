@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ciecplcgtbvp"]
+[gd_scene load_steps=10 format=3 uid="uid://ciecplcgtbvp"]
 
 [ext_resource type="Script" path="res://scripts/shop_interface.gd" id="1_le0l4"]
 [ext_resource type="Texture2D" uid="uid://c5x0rwt7l5cit" path="res://assets/sprites/book.png" id="2_qttyb"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://csw3v458gkkeo" path="res://assets/sprites/ui/furniture-store-logo.png" id="5_tsos6"]
 [ext_resource type="Texture2D" uid="uid://cox2yph3q2kk0" path="res://assets/sprites/coin.png" id="6_cax1w"]
 [ext_resource type="Script" path="res://scripts/book_shop_interface.gd" id="6_fdo3m"]
+[ext_resource type="Script" path="res://scripts/furniture_shop_interface.gd" id="9_thsw5"]
 
 [node name="ShopInterface" type="Control"]
 layout_mode = 3
@@ -246,6 +247,7 @@ theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
+script = ExtResource("9_thsw5")
 metadata/_tab_index = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/Browser/TabContainer/Lunka"]
@@ -292,13 +294,11 @@ layout_mode = 2
 horizontal_scroll_mode = 0
 
 [node name="FurnitureList" type="GridContainer" parent="PanelContainer/Browser/TabContainer/Lunka/VBoxContainer/Body/MainContentContainer/MarginContainer/ScrollContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 columns = 3
-
-[node name="MarginContainer" parent="PanelContainer/Browser/TabContainer/Lunka/VBoxContainer/Body/MainContentContainer/MarginContainer/ScrollContainer/FurnitureList" instance=ExtResource("5_t2u5g")]
-layout_mode = 2
 
 [node name="CartContainer" type="PanelContainer" parent="PanelContainer/Browser/TabContainer/Lunka/VBoxContainer/Body"]
 layout_mode = 2
@@ -371,6 +371,5 @@ text = "PURCHASE
 [connection signal="pressed" from="PanelContainer/Browser/TabContainer/Booooks/VBoxContainer/Body/Filters/FilterClear" to="PanelContainer/Browser/TabContainer/Booooks" method="_on_filter_clear_pressed"]
 [connection signal="child_exiting_tree" from="PanelContainer/Browser/TabContainer/Booooks/VBoxContainer/Body/CartContainer/VBoxContainer/MarginContainer/Cart/ScrollContainer/CartItems" to="PanelContainer/Browser/TabContainer/Booooks" method="_on_cart_items_child_exiting_tree"]
 [connection signal="pressed" from="PanelContainer/Browser/TabContainer/Booooks/VBoxContainer/Body/CartContainer/VBoxContainer/Purchase" to="PanelContainer/Browser/TabContainer/Booooks" method="_on_purchase_pressed"]
-[connection signal="child_entered_tree" from="PanelContainer/Browser/TabContainer/Lunka/VBoxContainer/Body/CartContainer/VBoxContainer/MarginContainer/Cart/ScrollContainer/CartItems" to="." method="_on_cart_items_child_entered_tree"]
-[connection signal="child_exiting_tree" from="PanelContainer/Browser/TabContainer/Lunka/VBoxContainer/Body/CartContainer/VBoxContainer/MarginContainer/Cart/ScrollContainer/CartItems" to="." method="_on_cart_items_child_exiting_tree"]
-[connection signal="pressed" from="PanelContainer/Browser/TabContainer/Lunka/VBoxContainer/Body/CartContainer/VBoxContainer/Purchase" to="." method="_on_purchase_pressed"]
+[connection signal="child_exiting_tree" from="PanelContainer/Browser/TabContainer/Lunka/VBoxContainer/Body/CartContainer/VBoxContainer/MarginContainer/Cart/ScrollContainer/CartItems" to="PanelContainer/Browser/TabContainer/Lunka" method="_on_cart_items_child_exiting_tree"]
+[connection signal="pressed" from="PanelContainer/Browser/TabContainer/Lunka/VBoxContainer/Body/CartContainer/VBoxContainer/Purchase" to="PanelContainer/Browser/TabContainer/Lunka" method="_on_purchase_pressed"]

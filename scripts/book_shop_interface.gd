@@ -40,15 +40,15 @@ func reload_books(genre: Genre = null) -> void:
 		if (not genre or book.genres.has(genre)) and not GameManager.data.library_inventory.books.has(book):
 			var shop_item_instance = shop_item.instantiate()
 			book_list.add_child(shop_item_instance)
-			shop_item_instance.init_book(book)
-			shop_item_instance.add_book_to_cart.connect(_add_book_to_cart)
+			shop_item_instance.init_item(book)
+			shop_item_instance.add_item_to_cart.connect(_add_book_to_cart)
 			
 			
 func _add_book_to_cart(book: Book):
 	# Ensure no duplicates
 	if cart_items.get_child_count() > 0:
-		for item in cart_items.get_children():
-			if item.book_item == book:
+		for existing_item in cart_items.get_children():
+			if existing_item.item == book:
 				return
 			
 	var cart_item_instance = cart_item.instantiate()
@@ -70,7 +70,7 @@ func _on_purchase_pressed() -> void:
 	# Clear cart
 	var children = cart_items.get_children()
 	for child in children:
-		GameManager.data.library_inventory.add_item(child.book_item)
+		GameManager.data.library_inventory.add_item(child.item)
 		child.free()
 		
 	reload_books(current_genre_filter)
@@ -83,7 +83,7 @@ func refresh_subtotal(node: Node = null):
 	var children = cart_items.get_children()
 	for child in children:
 		if not node or not child == node:
-			total_value += child.book_item.cost
+			total_value += child.item.cost
 		
 	subtotal_value.text = str(total_value)
 
