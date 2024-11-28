@@ -36,4 +36,7 @@ animation = &"idle"
 stream = SubResource("AudioStreamRandomizer_0mjm6")
 bus = &"SFX"
 
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
+[connection signal="target_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_target_reached"]

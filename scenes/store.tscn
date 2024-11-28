@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://xbamugk6ccdk"]
+[gd_scene load_steps=26 format=4 uid="uid://xbamugk6ccdk"]
 
 [ext_resource type="PackedScene" uid="uid://7ugb3rp7suaw" path="res://scenes/player.tscn" id="1_7xs0p"]
 [ext_resource type="PackedScene" uid="uid://dc8rg2vardosp" path="res://scenes/canvas.tscn" id="1_dscsk"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://b12pbey1u3nai" path="res://scenes/furniture/coffee_table.tscn" id="22_b2yfe"]
 [ext_resource type="PackedScene" uid="uid://bviwf73xuybct" path="res://scenes/furniture/bookshelves/bookshelf_front.tscn" id="23_y2f2b"]
 [ext_resource type="PackedScene" uid="uid://csi2weudotgl2" path="res://scenes/furniture/bookshelves/bookshelf_back.tscn" id="24_3gdti"]
+[ext_resource type="PackedScene" uid="uid://dss56gcy6u376" path="res://scenes/cutscene_manager.tscn" id="24_l4y84"]
 [ext_resource type="PackedScene" uid="uid://cwdm22o4ntbq4" path="res://scenes/furniture/bookshelves/bookshelf_vertical.tscn" id="25_oqw34"]
 
 [sub_resource type="Environment" id="Environment_3nojf"]
@@ -36,6 +37,8 @@ y_sort_enabled = true
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 energy = 0.5
 blend_mode = 1
+
+[node name="NavigationLink2D" type="NavigationLink2D" parent="DirectionalLight2D"]
 
 [node name="Background" parent="." instance=ExtResource("1_x6wuv")]
 
@@ -63,6 +66,7 @@ position = Vector2(-60, 60)
 [node name="Camera" type="Camera2D" parent="Player"]
 unique_name_in_owner = true
 zoom = Vector2(4, 4)
+limit_bottom = 300
 position_smoothing_enabled = true
 
 [node name="Entrance" type="Node2D" parent="."]
@@ -77,6 +81,7 @@ position = Vector2(1, -252)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource("11_0s1fq")]
+unique_name_in_owner = true
 mouse_filter = 2
 
 [node name="Canvas" parent="CanvasLayer" instance=ExtResource("1_dscsk")]
@@ -125,6 +130,7 @@ position = Vector2(-312, 167)
 position = Vector2(-165, -43)
 
 [node name="Reception" parent="Furniture" instance=ExtResource("17_i5eyj")]
+unique_name_in_owner = true
 position = Vector2(-60, 74)
 
 [node name="Clock" parent="Furniture" instance=ExtResource("13_xpijs")]
@@ -156,10 +162,10 @@ position = Vector2(-64, -132)
 
 [node name="Painting" parent="Furniture/SittingArea" groups=["unlockable"] instance=ExtResource("13_t80rh")]
 unique_name_in_owner = true
+visible = true
 position = Vector2(-64, -170)
 
 [node name="Easel" parent="Furniture/SittingArea" groups=["unlockable"] instance=ExtResource("14_lfy8a")]
-visible = false
 position = Vector2(-141, -106)
 character = ExtResource("14_cdrv3")
 
@@ -254,3 +260,6 @@ position = Vector2(-84, -16)
 
 [node name="BookshelfBack8" parent="Furniture/Bookshelves" instance=ExtResource("24_3gdti")]
 position = Vector2(-36, -16)
+
+[node name="CutsceneManager" parent="." instance=ExtResource("24_l4y84")]
+unique_name_in_owner = true

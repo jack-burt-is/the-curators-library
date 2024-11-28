@@ -96,4 +96,4 @@ previous_book_line = "That last book wasn't quite for me, but don't worry."
 no_more_hints_line = "All the answers are right here – just take a step back and let them come to you."
 success_line = "This little book is like a friendly guide, gently reminding us that we can all create something beautiful."
 complete_line = "Thank you, my friend. I’ll leave you a little gift – something to bring a bit more joy to your world."
-visit_rarity = 8
+visit_rarity = 1

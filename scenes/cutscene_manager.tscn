@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dss56gcy6u376"]
+
+[ext_resource type="Script" path="res://scripts/cutscene_manager.gd" id="1_5pohi"]
+
+[node name="CutsceneManager" type="Node2D"]
+script = ExtResource("1_5pohi")
+
+[connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
+[connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]

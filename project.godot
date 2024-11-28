@@ -32,6 +32,7 @@ Helpers="*res://scripts/singletons/helpers.gd"
 [dialogic]
 
 directories/dch_directory={
+"auctioneer": "res://dialogue/characters/auctioneer.dch",
 "cleverpence": "res://dialogue/characters/cleverpence.dch",
 "jack": "res://dialogue/characters/jack.dch",
 "josephine": "res://dialogue/characters/josephine.dch",
@@ -40,7 +41,9 @@ directories/dch_directory={
 "oliver": "res://dialogue/characters/oliver.dch",
 "rob": "res://dialogue/characters/rob.dch"
 }
-directories/dtl_directory={}
+directories/dtl_directory={
+"intro": "res://dialogue/timelines/intro.dtl"
+}
 layout/style_list=["res://dialogue/styles/bubble.tres"]
 layout/default_style="res://dialogue/styles/bubble.tres"
 glossary/default_case_sensitive=true

@@ -17,11 +17,11 @@
 "volume_variance": 0.0
 }
 },
-"style": ""
+"style": "bubble"
 },
 "default_portrait": "Neutral",
 "description": "",
-"display_name": "Cleverpence",
+"display_name": "Auctioneer",
 "mirror": false,
 "nicknames": [""],
 "offset": Vector2(0, 0),

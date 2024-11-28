@@ -18,6 +18,7 @@ var data: SaveGame
 @onready var unlockables: Array[Node] = get_tree().get_nodes_in_group("unlockable")
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var sfx_player = create_sfx_player()
+@onready var cutscene_manager = get_tree().current_scene.get_node("%CutsceneManager")
 
 # Sounds
 var purchase_sound = preload("res://sounds/purchase.wav")
@@ -72,7 +73,13 @@ func save_game() -> void:
 	data.write_save()
 
 func update_time(delta: float) -> void:
-	data.current_minute += delta * TIME_MULTIPLIER
+	var augmentation = 1
+	
+	if cutscene_manager.cutscene_playing:
+		augmentation = 0.01
+		
+	
+	data.current_minute += delta * TIME_MULTIPLIER * augmentation
 	
 	if data.current_minute > 60.0:
 		data.current_minute -= 60.0
@@ -114,4 +121,4 @@ func purchase_made():
 	data.coins += 100
 	
 func debug():
-	purchase_made()
+	cutscene_manager.add_child(load("res://scenes/cutscenes/intro.tscn").instantiate())
