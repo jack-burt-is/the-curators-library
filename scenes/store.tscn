@@ -270,6 +270,7 @@ scale = Vector2(2, 2)
 
 [node name="Letterbox" parent="UI" instance=ExtResource("10_j6d54")]
 unique_name_in_owner = true
+mouse_filter = 2
 
 [node name="Fader" type="ColorRect" parent="UI"]
 unique_name_in_owner = true
@@ -278,5 +279,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 script = ExtResource("12_vjwhv")

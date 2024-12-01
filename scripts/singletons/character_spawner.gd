@@ -32,6 +32,9 @@ func calculate_eligible_characters() -> void:
 		var chance_of_visiting = 0.0
 		var base_chance = 1.0
 		
+		if character.visit_rarity == 0 or character.favourite_books.size() == 0:
+			continue
+		
 		# Slightly lower the chance of a new character with each new one
 		base_chance -= visiting_characters.size() / 10.0
 		if base_chance > 0.8:
@@ -43,9 +46,8 @@ func calculate_eligible_characters() -> void:
 		
 		# Finished and never to return
 		elif histories[character].finished:
-			break
+			continue
 			
-		
 			
 		# Rare and been here before
 		elif GameManager.data.current_day - histories[character].days_visited[-1] >= 1:
@@ -61,7 +63,7 @@ func calculate_eligible_characters() -> void:
 		
 		if not GameManager.data.library_inventory.books.has(character.favourite_books[book_index]):
 			print("Missing book for ", character.name)
-			break
+			continue
 					
 		var is_visiting = randf() < chance_of_visiting
 		if is_visiting: 

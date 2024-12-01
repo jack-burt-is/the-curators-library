@@ -126,7 +126,7 @@ func _on_timeline_started() -> void:
 	timer.paused = true
 
 func _on_timeline_ended() -> void:
-	camera.zoom_out()
+	camera.reset_zoom()
 	timer.paused = false
 
 func _on_animated_sprite_2d_frame_changed() -> void:

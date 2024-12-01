@@ -1,27 +1,9 @@
-[gd_resource type="Resource" script_class="Character" load_steps=20 format=3 uid="uid://naoxlx6o2oij"]
+[gd_resource type="Resource" script_class="Character" load_steps=14 format=3 uid="uid://naoxlx6o2oij"]
 
 [ext_resource type="Script" path="res://resources/bases/book.gd" id="1_q3uma"]
-[ext_resource type="Resource" uid="uid://c6cnpo7jrnjex" path="res://resources/books/the-path.tres" id="2_orick"]
-[ext_resource type="Resource" uid="uid://bsqghcnw64liy" path="res://resources/books/the-path-of-crowns.tres" id="3_3fjeo"]
-[ext_resource type="Resource" uid="uid://dgb6gpj3ttpip" path="res://resources/books/blooms-for-angus.tres" id="4_nlcdj"]
 [ext_resource type="Script" path="res://resources/bases/hint.gd" id="5_50cpc"]
 [ext_resource type="Script" path="res://resources/bases/character.gd" id="6_dthpc"]
 [ext_resource type="Texture2D" uid="uid://hit2tx4trl88" path="res://assets/sprites/characters/white-male-beard-glasses.png" id="7_cy5s1"]
-
-[sub_resource type="Resource" id="Resource_kyjkl"]
-script = ExtResource("5_50cpc")
-book = ExtResource("2_orick")
-hints = Array[String](["I'm in the mood for something bleak and haunting, maybe a post-apocalyptic story.", "I want a story about survival—a journey through a barren landscape where hope is hard to come by.", "I'm looking for a book about a father and son struggling to survive in a post-apocalyptic wasteland.", "I heard about this novel where a man and his son travel through a destroyed world, trying to hold on to their humanity."])
-
-[sub_resource type="Resource" id="Resource_il2xu"]
-script = ExtResource("5_50cpc")
-book = ExtResource("3_3fjeo")
-hints = Array[String](["I want a sweeping epic fantasy, something with a deep world and a lot of lore to get lost in.", "I’m looking for a story with multiple characters on epic journeys, where magic plays a big role and there are mysterious ancient forces.", "I want a book that involves a mystical order of knights, complex politics, and hints of a larger, hidden power.", "I heard about a story with massive storms, magical gemstones, and a hero struggling with oaths to protect others in a world on the brink."])
-
-[sub_resource type="Resource" id="Resource_q25sc"]
-script = ExtResource("5_50cpc")
-book = ExtResource("4_nlcdj")
-hints = Array[String](["I'm in the mood for something deeply emotional that explores human nature and relationships.", "I want a story with a science fiction twist, maybe something that deals with intelligence and self-discovery.", "I heard about a story where a man’s intelligence is artificially increased, and he forms a bond with a lab mouse."])
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xppk7"]
 atlas = ExtResource("7_cy5s1")
@@ -97,15 +79,15 @@ animations = [{
 
 [resource]
 script = ExtResource("6_dthpc")
-name = "Jack"
-favourite_books = Array[ExtResource("1_q3uma")]([ExtResource("2_orick"), ExtResource("3_3fjeo"), ExtResource("4_nlcdj")])
+name = "Auctioneer"
+favourite_books = Array[ExtResource("1_q3uma")]([])
 books_found = 0
 previous_recommendations = Array[ExtResource("1_q3uma")]([])
-hints = Array[ExtResource("5_50cpc")]([SubResource("Resource_kyjkl"), SubResource("Resource_il2xu"), SubResource("Resource_q25sc")])
+hints = Array[ExtResource("5_50cpc")]([])
 sprite_frames = SubResource("SpriteFrames_iaq8e")
-intro_line = "Hey, I'm hoping you can help me find something to read."
-previous_book_line = "{book} was {feeling}, but didn't quite hit the spot."
-no_more_hints_line = "Not sure what other information I can give you..."
-success_line = "That was an amazing read, thank you for the help!"
-complete_line = "Thanks for your help, I'll see you around."
-visit_rarity = 1
+intro_line = ""
+previous_book_line = ""
+no_more_hints_line = ""
+success_line = ""
+complete_line = ""
+visit_rarity = 0
