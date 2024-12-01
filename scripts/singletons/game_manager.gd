@@ -19,6 +19,7 @@ var data: SaveGame
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var sfx_player = create_sfx_player()
 @onready var cutscene_manager = get_tree().current_scene.get_node("%CutsceneManager")
+@onready var fader = get_tree().current_scene.get_node("%Fader")
 
 # Sounds
 var purchase_sound = preload("res://sounds/purchase.wav")
@@ -29,6 +30,8 @@ var freeze_player = false
 
 # Signals
 signal new_day_started
+
+var new_game = false
 
 func _process(delta: float) -> void:
 	if initialised:
@@ -49,14 +52,21 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _ready() -> void:
 	create_or_load_save()
-	
+
 	# Pre-load
 	var style: DialogicStyle = load("res://dialogue/styles/bubble.tres")
 	style.prepare()
 	
+	await wait(2)
+	
+	fader.fade_in()
+	
+	# Load the intro cutscene if new game
+	if new_game:
+		cutscene_manager.add_child(load("res://scenes/cutscenes/intro.tscn").instantiate())
+	
 func create_sfx_player() -> AudioStreamPlayer:
 	var sfx = AudioStreamPlayer.new()
-	sfx.volume_db = -15
 	sfx.bus = "SFX"
 	add_child(sfx)
 	return sfx	
@@ -67,6 +77,8 @@ func create_or_load_save() -> void:
 	else:
 		data = load("res://prefab/initial_save.tres")
 		data.write_save()
+		new_game = true
+		
 	initialised = true
 		
 func save_game() -> void:
@@ -78,7 +90,6 @@ func update_time(delta: float) -> void:
 	if cutscene_manager.cutscene_playing:
 		augmentation = 0.01
 		
-	
 	data.current_minute += delta * TIME_MULTIPLIER * augmentation
 	
 	if data.current_minute > 60.0:
@@ -112,13 +123,20 @@ func reset_player_position() -> void:
 	player.position = Vector2(-60,60)
 	freeze_player = false
 	
-func purchase_made():
-	# Play sound
-	sfx_player.set_stream(purchase_sound)
+func play_sound(sound, volume = 0):
+	sfx_player.volume_db = volume
+	sfx_player.set_stream(sound)
 	sfx_player.play()
 	
+func purchase_made():
+	# Play sound
+	play_sound(purchase_sound, -15)
+		
 	# Increment coinage
 	data.coins += 100
+	
+func wait(duration):  
+	await get_tree().create_timer(duration, false, false, true).timeout
 	
 func debug():
 	cutscene_manager.add_child(load("res://scenes/cutscenes/intro.tscn").instantiate())

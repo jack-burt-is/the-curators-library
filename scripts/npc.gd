@@ -19,10 +19,6 @@ extends CharacterBody2D
 @onready var audio_stream_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 @onready var camera: Camera2D = get_tree().current_scene.get_node("%Camera")
-var default_zoom: Vector2 = GameManager.data.zoom
-var dialog_zoom: Vector2 = default_zoom + Vector2(2, 2)
-var target_zoom: Vector2 = default_zoom
-var zoom_speed: float = 10
 
 var target_reached = false
 var interacting = false
@@ -35,8 +31,6 @@ var footstep_frames: Array = [1, 5]
 var made_purchase = false
 
 func _process(delta: float) -> void:
-	
-	camera.zoom = camera.zoom.move_toward(target_zoom, zoom_speed * delta)
 	
 	if Dialogic.current_timeline != null:
 		animated_sprite.play("idle")
@@ -128,11 +122,11 @@ func _on_dialogic_signal(argument:String):
 		
 		
 func _on_timeline_started() -> void:
-	target_zoom = dialog_zoom
+	camera.zoom_in()
 	timer.paused = true
 
 func _on_timeline_ended() -> void:
-	target_zoom = default_zoom
+	camera.zoom_out()
 	timer.paused = false
 
 func _on_animated_sprite_2d_frame_changed() -> void:

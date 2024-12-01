@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var audio_stream_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var navigation_agent_2d: NavigationAgent2D = $NavigationAgent2D
+@onready var cutscene_manager: Node2D = %CutsceneManager
 
 var being_moved = false
 var footstep_frames: Array = [0, 4]
@@ -17,7 +18,7 @@ func _process(delta: float) -> void:
 	if being_moved:
 		var direction = to_local(navigation_agent_2d.get_next_path_position()).normalized()
 		velocity = direction * speed * delta * 40
-	else:
+	elif not cutscene_manager.cutscene_playing:
 		# Initialize the movement vector
 		var movement_vector: Vector2 = Vector2.ZERO
 
@@ -38,6 +39,8 @@ func _process(delta: float) -> void:
 
 		# Move the character based on the movement vector and speed
 		velocity = movement_vector * speed * delta * 65
+	else:
+		velocity = Vector2(0,0)
 
 	# Flip sprite
 	if velocity.x > 0:
@@ -51,7 +54,6 @@ func _process(delta: float) -> void:
 	else:
 		animated_sprite.play("idle")
 		
-	print(global_position)
 
 	# Apply movement
 	move_and_slide()
@@ -69,3 +71,9 @@ func move_to(position) -> void:
 
 func _on_navigation_agent_2d_target_reached() -> void:
 	being_moved = false
+
+func face_right() -> void:
+	animated_sprite.flip_h = false
+	
+func face_left() -> void:
+	animated_sprite.flip_h = true

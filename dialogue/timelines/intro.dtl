@@ -1,29 +1,29 @@
-auctioneer: And here it is, congrats on your new purchase
-auctioneer: You know I hear this used to be quite the spot back in the day
-auctioneer: It was before my time but I've heard the rumours of all sorts of strange folk coming in here
-auctioneer: Buying books and whatnot
-auctioneer: I ain't much of a reader myself you see
-auctioneer: But hopefully you can turn this dump round into its former glory
-auctioneer: Now the purchase price included a few books and this old computer here but that's about it
-auctioneer: So you might want to think about getting some more stock in to attract some customers
+auctioneer (Neutral): And here it is, congrats on your new purchase
+auctioneer (Neutral): You know I hear this used to be quite the spot back in the day
+auctioneer (Neutral): It was before my time but I've heard the rumours of all sorts of strange folk coming in here
+auctioneer (Neutral): Buying books and whatnot
+auctioneer (Neutral): I ain't much of a reader myself you see
+auctioneer (Neutral): But hopefully you can turn this dump round into its former glory
+auctioneer (Neutral): Now the purchase price included a few books and this old computer here but that's about it
+auctioneer (Neutral): So you might want to think about getting some more stock in to attract some customers
 label questions
 - How do I buy more stock?
-	auctioneer: Ain't you ever heard of the internet boy?
-	auctioneer: Just head right on over to that computer and buy whatever takes ya fancy
+	auctioneer (Neutral): Ain't you ever heard of the internet boy?
+	auctioneer (Neutral): Just head right on over to that computer and buy whatever takes ya fancy
 	jump questions
 - Can I buy more things to spruce the place up?
-	auctioneer: Sure can, you own the place now, do what you like!
-	auctioneer: There's some bookmarked links on the computer
-	auctioneer: Take a gander, there's definitely a furniture store there amongst other things
-	auctioneer: Heh, the place sure does need some cozying up don't it...
+	auctioneer (Neutral): Sure can, you own the place now, do what you like!
+	auctioneer (Neutral): There's some bookmarked links on the computer
+	auctioneer (Neutral): Take a gander, there's definitely a furniture store there amongst other things
+	auctioneer (Neutral): Heh, the place sure does need some cozying up don't it...
 	jump questions
 - How long has this place been empty?
-	auctioneer: Long as I've been around
-	auctioneer: Been a few people try to buy the place in that time
-	auctioneer: But always been one thing or another that ends up scaring them off
-	auctioneer: One time the second a fella walked through the door, a bat swooped down and bit him!
-	auctioneer: If I ain't no better I'd think the building has purposefully been spooking off potential buyers
-	auctioneer: Heh I'm sure you've got nothing to worry about though, you see like the exact type a guy this place needs
+	auctioneer (Neutral): Long as I've been around
+	auctioneer (Neutral): Been a few people try to buy the place in that time
+	auctioneer (Neutral): But always been one thing or another that ends up scaring them off
+	auctioneer (Neutral): One time the second a fella walked through the door, a bat swooped down and bit him!
+	auctioneer (Neutral): If I ain't no better I'd think the building has purposefully been spooking off potential buyers
+	auctioneer (Neutral): Heh I'm sure you've got nothing to worry about though, you see like the exact type a guy this place needs
 	jump questions
 - Thanks for your help.
-auctioneer: Good luck! Maybe I'll pop in once you're setup
+auctioneer (Neutral): Good luck! Maybe I'll pop in once you're setup

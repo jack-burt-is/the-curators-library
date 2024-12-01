@@ -116,4 +116,5 @@ max_distance = 500.0
 attenuation = 6.72716
 bus = &"SFX"
 
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="target_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_target_reached"]
