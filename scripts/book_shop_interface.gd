@@ -69,9 +69,13 @@ func _on_purchase_pressed() -> void:
 	
 	# Clear cart
 	var children = cart_items.get_children()
-	for child in children:
-		GameManager.data.library_inventory.add_item(child.item)
-		child.free()
+	if children.size() > 0:
+		# Play sound
+		GameManager.play_purchased_sound()
+		
+		for child in children:
+			GameManager.data.library_inventory.add_item(child.item)
+			child.free()
 		
 	reload_books(current_genre_filter)
 	refresh_subtotal()

@@ -116,6 +116,7 @@ func _on_dialogic_signal(argument:String):
 		if argument == "book_given_" + character.name:
 			character.previous_recommendations.append(GameManager.data.selected_book)
 			GameManager.data.character_glossary.update_character(character)
+			GameManager.purchase_made()
 			
 		if argument == "leave_" + character.name:
 			trigger_character_exit()

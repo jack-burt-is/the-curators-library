@@ -21,5 +21,7 @@ func load_books(book_amount: BookAmount) -> void:
 			sprite_offset_y = 2 * BOOKSHELF_HEIGHT
 		BookAmount.HIGH:
 			sprite_offset_y = 3 * BOOKSHELF_HEIGHT
+			
+	var sprite_offset_x = randi_range(0, VARIATION_RANGE-1) * BOOKSHELF_WIDTH
 
-	books.texture.region.position = Vector2(randi_range(0, VARIATION_RANGE-1) * BOOKSHELF_WIDTH, sprite_offset_y)
+	books.texture.region.position = Vector2(sprite_offset_x, sprite_offset_y)

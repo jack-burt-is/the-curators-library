@@ -37,11 +37,58 @@ glow_blend_mode = 0
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
 
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="UI" instance=ExtResource("11_0s1fq")]
+unique_name_in_owner = true
+mouse_filter = 2
+
+[node name="Canvas" parent="UI" instance=ExtResource("1_dscsk")]
+unique_name_in_owner = true
+visible = false
+
+[node name="Menu" parent="UI" groups=["pause_menu"] instance=ExtResource("11_aiwly")]
+unique_name_in_owner = true
+visible = false
+
+[node name="LibraryInterface" parent="UI" instance=ExtResource("3_krj8d")]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+scale = Vector2(2, 2)
+
+[node name="ShopInterface" parent="UI" instance=ExtResource("14_yngh6")]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+scale = Vector2(2, 2)
+
+[node name="Letterbox" parent="UI" instance=ExtResource("10_j6d54")]
+unique_name_in_owner = true
+mouse_filter = 2
+
+[node name="Fader" type="ColorRect" parent="UI"]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("12_vjwhv")
+
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 energy = 0.5
 blend_mode = 1
-
-[node name="NavigationLink2D" type="NavigationLink2D" parent="DirectionalLight2D"]
 
 [node name="Background" parent="." instance=ExtResource("1_x6wuv")]
 
@@ -132,10 +179,10 @@ position = Vector2(-64, -132)
 
 [node name="Painting" parent="Furniture/SittingArea" groups=["unlockable"] instance=ExtResource("13_t80rh")]
 unique_name_in_owner = true
-visible = true
 position = Vector2(-64, -170)
 
 [node name="Easel" parent="Furniture/SittingArea" groups=["unlockable"] instance=ExtResource("14_lfy8a")]
+visible = false
 position = Vector2(-141, -106)
 character = ExtResource("14_cdrv3")
 
@@ -233,52 +280,3 @@ position = Vector2(-36, -16)
 
 [node name="CutsceneManager" parent="." instance=ExtResource("24_l4y84")]
 unique_name_in_owner = true
-
-[node name="UI" type="CanvasLayer" parent="."]
-
-[node name="HUD" parent="UI" instance=ExtResource("11_0s1fq")]
-unique_name_in_owner = true
-mouse_filter = 2
-
-[node name="Canvas" parent="UI" instance=ExtResource("1_dscsk")]
-unique_name_in_owner = true
-visible = false
-
-[node name="Menu" parent="UI" groups=["pause_menu"] instance=ExtResource("11_aiwly")]
-unique_name_in_owner = true
-visible = false
-
-[node name="LibraryInterface" parent="UI" instance=ExtResource("3_krj8d")]
-unique_name_in_owner = true
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-scale = Vector2(2, 2)
-
-[node name="ShopInterface" parent="UI" instance=ExtResource("14_yngh6")]
-unique_name_in_owner = true
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-scale = Vector2(2, 2)
-
-[node name="Letterbox" parent="UI" instance=ExtResource("10_j6d54")]
-unique_name_in_owner = true
-mouse_filter = 2
-
-[node name="Fader" type="ColorRect" parent="UI"]
-unique_name_in_owner = true
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0, 0, 0, 1)
-script = ExtResource("12_vjwhv")

@@ -129,11 +129,14 @@ func play_sound(sound, volume = 0):
 	sfx_player.play()
 	
 func purchase_made():
-	# Play sound
-	play_sound(purchase_sound, -15)
+	play_purchased_sound()
 		
 	# Increment coinage
 	data.coins += 100
+	
+func play_purchased_sound():
+	# Play sound
+	play_sound(purchase_sound, -15)
 	
 func wait(duration):  
 	await get_tree().create_timer(duration, false, false, true).timeout

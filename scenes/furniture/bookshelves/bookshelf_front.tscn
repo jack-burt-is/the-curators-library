@@ -8,8 +8,9 @@ atlas = ExtResource("2_8bv3w")
 region = Rect2(0, 0, 48, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ig86g"]
+resource_local_to_scene = true
 atlas = ExtResource("2_8bv3w")
-region = Rect2(128, 0, 48, 64)
+region = Rect2(0, 0, 48, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hevbi"]
 size = Vector2(46, 20)
